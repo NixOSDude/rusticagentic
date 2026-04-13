@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scott Baker — Resume | RusticAgentic</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <style>
+    :root {
+      --bg:         #0a0806;
+      --bg2:        #100d0a;
+      --bg3:        #181210;
+      --border:     #2e2218;
+      --rust:       #c87941;
+      --rust-bright:#e8924a;
+      --rust-dim:   #7a4a28;
+      --copper:     #b87333;
+      --gold:       #c8a84b;
+      --gold-dim:   #8a7032;
+      --red:        #e05555;
+      --text:       #c8b89a;
+      --text-dim:   #7a6a58;
+      --white:      #f0e8d8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,8,6,0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      width: min(1320px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo img { height: 38px; width: auto; display: block; }
+    .nav-links { display: flex; gap: clamp(16px,2.5vw,36px); align-items: center; }
+    .nav-links a { font-size: 0.875rem; color: var(--text-dim); font-weight: 500; text-decoration: none; }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-cta {
+      background: var(--rust); color: #000 !important;
+      padding: 7px 18px; border-radius: 4px; font-weight: 700; font-size: 0.875rem;
+    }
+    .nav-cta:hover { background: var(--rust-bright); }
+
+    /* ─── PAGE ─── */
+    .page {
+      width: min(900px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto;
+      padding: 56px 0 80px;
+    }
+
+    /* ─── RESUME HEADER ─── */
+    .resume-header {
+      margin-bottom: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .resume-header h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800; color: var(--white);
+      letter-spacing: -0.02em; margin-bottom: 6px;
+    }
+    .resume-header .tagline {
+      color: var(--rust); font-weight: 600;
+      font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+      margin-bottom: 12px; line-height: 1.5;
+    }
+    .resume-header .contact-line {
+      color: var(--text-dim); font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 6px 16px;
+    }
+    .resume-header .contact-line a { color: var(--rust); text-decoration: none; }
+    .resume-header .contact-line a:hover { text-decoration: underline; }
+
+    /* ─── SECTION HEADINGS ─── */
+    h2 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ─── SUMMARY ─── */
+    .summary-box {
+      background: var(--bg3);
+      border-left: 3px solid var(--rust);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      font-size: 0.95rem;
+    }
+    .summary-box p { margin-bottom: 12px; color: var(--text); }
+    .summary-box ul { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 6px; }
+    .summary-box li { color: var(--text-dim); font-size: 0.9rem; }
+    .summary-box li strong { color: var(--text); }
+    .summary-box a { color: var(--rust); }
+
+    /* ─── JOBS ─── */
+    .job { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    .job:last-child { border-bottom: none; }
+    .job-header {
+      display: flex; justify-content: space-between;
+      align-items: baseline; flex-wrap: wrap; gap: 4px 12px;
+      margin-bottom: 10px;
+    }
+    .job-title   { font-weight: 700; color: var(--white); font-size: 1rem; }
+    .job-company { color: var(--rust); font-weight: 600; }
+    .job-dates   { color: var(--text-dim); font-size: 0.85rem; white-space: nowrap; }
+    .job ul { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 5px; }
+    .job li { color: var(--text-dim); font-size: 0.9rem; }
+    .job li strong { color: var(--text); }
+    .job a { color: var(--rust); text-decoration: none; }
+    .job a:hover { text-decoration: underline; }
+
+    /* ─── SKILLS ─── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+      gap: 12px;
+    }
+    .skill-group {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px 16px;
+      transition: border-color 0.2s;
+    }
+    .skill-group:hover { border-color: var(--rust-dim); }
+    .skill-group .label {
+      font-weight: 700; font-size: 0.78rem;
+      color: var(--rust); margin-bottom: 6px;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .skill-group p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+
+    /* ─── CERTS ─── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+      gap: 14px;
+    }
+    .cert-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; padding: 18px 20px;
+      transition: border-color 0.2s;
+    }
+    .cert-card:hover { border-color: var(--rust); }
+    .cert-card .cert-name { font-weight: 700; color: var(--white); margin-bottom: 4px; font-size: 0.95rem; }
+    .cert-card .cert-issuer { color: var(--text-dim); font-size: 0.82rem; margin-bottom: 12px; }
+    .cert-card a {
+      font-size: 0.82rem; color: var(--rust); text-decoration: none;
+      border: 1px solid var(--border); padding: 4px 10px;
+      border-radius: 4px; display: inline-block; transition: border-color 0.15s;
+    }
+    .cert-card a:hover { border-color: var(--rust); text-decoration: none; }
+
+    /* ─── EDUCATION ─── */
+    .edu-item { margin-bottom: 12px; }
+    .edu-item .school { font-weight: 700; color: var(--white); }
+    .edu-item .degree { color: var(--text-dim); font-size: 0.9rem; }
+
+    /* ─── PRINT BUTTON ─── */
+    .print-btn {
+      position: fixed; bottom: 2rem; right: 2rem;
+      background: var(--rust); color: #000;
+      font-weight: 700; padding: 10px 20px;
+      border-radius: 6px; cursor: pointer;
+      border: none; font-size: 0.9rem;
+      transition: background 0.15s;
+    }
+    .print-btn:hover { background: var(--rust-bright); }
+
+    @media print {
+      body { background: #fff; color: #111; }
+      nav, .print-btn { display: none; }
+      .summary-box { background: #f7f4f0; border-color: #c87941; }
+      .cert-card, .skill-group, .job { break-inside: avoid; }
+      h2 { color: #c87941; border-color: #ddd; }
+    }
+    @media(max-width:768px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo-icon.png" alt="RusticAgentic" height="38">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#problem">The Problem</a>
+      <a href="index.html#capabilities">Capabilities</a>
+      <a href="index.html#demo">Demo</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#contact" class="nav-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="resume-header">
+    <h1>Scott Baker</h1>
+    <div class="tagline">
+      Sovereign AI Engineer · Legal Document Intelligence · Post-Quantum Cryptography ·
+      Data Engineer · Databricks Certified · AWS Certified Solutions Architect
+    </div>
+    <div class="contact-line">
+      <a href="mailto:scottbaker@rusticagentic.agency">scottbaker@rusticagentic.agency</a>
+      <span>·</span>
+      <a href="https://rusticagentic.agency">rusticagentic.agency</a>
+      <span>·</span>
+      <a href="https://duckdatamaster.guru">duckdatamaster.guru</a>
+      <span>·</span>
+      <a href="https://github.com/NixOSDude" target="_blank">github.com/NixOSDude</a>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <h2>Professional Summary</h2>
+  <div class="summary-box">
+    <p>
+      Systems engineer and data architect specializing in sovereign AI infrastructure, legal document
+      intelligence, and post-quantum cryptography. I build private RAG pipelines that run entirely
+      on client-controlled hardware — no cloud APIs, no data egress, no third-party access to
+      privileged documents. My systems have processed 300-document legal corpora with sub-20-second
+      query latency on consumer hardware; production deployments on A100/H100 deliver 2–5 second
+      cited answers across 500,000+ document vaults.
+    </p>
+    <p>
+      Since December 2022, while managing a long-term medical disability, I have been in
+      continuous full-time technical development — earning industry certifications, benchmarking
+      production workloads at <strong>171M rows/sec on a single node</strong> using DuckDB against
+      685M rows of real-world data, and architecting sovereign AI systems from first principles.
+    </p>
+    <ul>
+      <li><strong>Sovereign AI:</strong> Private RAG · Mistral NeMo 12B / Mistral Large 2 · HNSW vector index · gte-large-en-v1.5 ONNX embeddings · llama.cpp · zero API egress</li>
+      <li><strong>Post-Quantum Crypto:</strong> ML-DSA-65 (NIST FIPS 204) signed deliverables · ML-KEM-768 · liboqs 0.15.0 · DuckDB PQC extension (author)</li>
+      <li><strong>Legal AI:</strong> Three-tier PDF extraction (native → poppler → OCR) · legal-aware document chunking · 300-doc corpus RAG demo on RTX 3060</li>
+      <li><strong>Data Engineering:</strong> DuckDB · Apache Spark 3.5 (Scala FP) · multi-cloud pipelines (AWS/Azure/GCP) · 685M row benchmarks</li>
+      <li><strong>Security background:</strong> HIPAA compliance · HITRUST audit remediation · CrowdStrike · CyberArk · Qualys · enterprise vulnerability management</li>
+      <li><strong>Certified:</strong> Databricks Associate Developer (Scala) · AWS Certified Solutions Architect (Associate)</li>
+    </ul>
+  </div>
+
+  <!-- TECHNICAL SKILLS -->
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="label">Sovereign AI / RAG</div>
+      <p>llama.cpp · Mistral NeMo 12B · Mistral Large 2 · HNSW (usearch) · gte-large-en-v1.5 · ONNX Runtime · CUDA · private vector indexing</p>
+    </div>
+    <div class="skill-group">
+      <div class="label">Post-Quantum Cryptography</div>
+      <p>ML-DSA-65 · ML-KEM-768 · liboqs 0.15.0 · AES-256-GCM · NIST FIPS 204/203 · DuckDB C++ extension (author)</p>
+    </div>
+    <div class="skill-group">
+      <div class="label">Document Intelligence</div>
+      <p>PDF extraction (pdf-extract / poppler / tesseract OCR) · DOCX parsing · legal-aware chunking · section boundary detection · Rust (ra-rag / ra-vault crates)</p>
+    </div>
+    <div class="skill-group">
+      <div class="label">Data Engineering</div>
+      <p>DuckDB · Apache Spark 3.5 · Scala (FP / sbt) · PySpark · Parquet · Databricks · columnar pipeline design</p>
+    </div>
+    <div class="skill-group">
+      <div class="label">Cloud Platforms</div>
+      <p>AWS (S3 · EC2 · Glue · Athena) · Azure (Blob · ADLS Gen2 · Synapse) · GCP (GCS · BigQuery · Sole-Tenant Nodes)</p>
+    </div>
+    <div class="skill-group">
+      <div class="label">Systems & Infrastructure</div>
+      <p>NixOS · Arch Linux · bare-metal GPU deployment · CUDA drivers · VPS hardening · SFTP · Git / Gitea self-hosted</p>
+    </div>
+    <div class="skill-group">
+      <div class="label">Security & Compliance</div>
+      <p>HIPAA · HITRUST · CrowdStrike · CyberArk · Qualys · vulnerability management · attorney-client privilege architecture</p>
+    </div>
+    <div class="skill-group">
+      <div class="label">Languages</div>
+      <p>Rust · Python · Scala · C/C++ (DuckDB extension ABI) · SQL (DuckDB) · Bash · Nix</p>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <h2>Professional Experience</h2>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-company">RusticAgentic</span> —
+        <span class="job-title">Founder · Sovereign AI Engineer</span>
+      </span>
+      <span class="job-dates">2024 – Present</span>
+    </div>
+    <ul>
+      <li><strong>Designed and built</strong> RusticAgentic — a sovereign AI document intelligence platform for law firms, processing privileged legal documents entirely on client-controlled hardware with zero cloud API egress.</li>
+      <li><strong>Implemented</strong> a three-tier PDF extraction pipeline (native text → poppler → tesseract OCR) and a legal-aware document chunker that splits at ARTICLE/SECTION/WHEREAS boundaries rather than arbitrary character counts.</li>
+      <li><strong>Built</strong> a private RAG pipeline: gte-large-en-v1.5 1024-dim ONNX embeddings via CUDA → HNSW vector index (usearch) → Mistral NeMo 12B via llama.cpp — all on isolated hardware, no external APIs.</li>
+      <li><strong>Demonstrated</strong> 8-query RAG against a 300-document legal corpus (NDAs, MSAs, employment agreements, depositions, settlements, IP assignments) on a consumer RTX 3060 with sub-20-second latency.</li>
+      <li><strong>Signed all deliverables</strong> with ML-DSA-65 (NIST FIPS 204) post-quantum signatures — tamper-evident chain of custody on every query/response pair.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-company">Independent Data Engineering / DuckDB Data Master</span> —
+        <span class="job-title">Data Engineer · Consultant</span>
+      </span>
+      <span class="job-dates">December 2022 – Present</span>
+    </div>
+    <ul>
+      <li><strong>Benchmarked</strong> DuckDB at 171M rows/sec processing 685M NYC Yellow Cab records (2022–2025) across 48 Parquet files on a single node — zero cluster, zero JVM overhead.</li>
+      <li><strong>Architected</strong> multi-cloud data ingestion pipelines reading directly from AWS S3, Azure Blob Storage, and GCP Cloud Storage using DuckDB's httpfs, azure, and gcs extensions.</li>
+      <li><strong>Authored</strong> a DuckDB C++ extension implementing post-quantum cryptography functions (ML-KEM-768, ML-DSA-65) via liboqs 0.15.0 — callable directly from SQL.</li>
+      <li><strong>Engineered</strong> HazyNet: a multi-node Apache Spark 3.5 cluster in Scala with pure functional programming patterns and CUDA integration on RTX 3060.</li>
+      <li><strong>Earned</strong> Databricks Certified Associate Developer for Apache Spark (Scala) and AWS Certified Solutions Architect (Associate).</li>
+      <li><strong>Built</strong> real-time Streamlit analytics dashboards backed by DuckDB — interactive columnar analytics with zero cloud dependency.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-company">Ultra Clean Technologies</span> —
+        <span class="job-title">IT Analyst</span>
+      </span>
+      <span class="job-dates">June 2019 – August 2022</span>
+    </div>
+    <ul>
+      <li><strong>Automated</strong> enterprise-wide hardware deployments via MS SCCM image creation and push.</li>
+      <li><strong>Administered</strong> Active Directory and Office 365/Teams deployments for a global user base.</li>
+      <li><strong>Managed</strong> CrowdStrike endpoint protection and CyberArk privilege management platforms.</li>
+      <li><strong>Governed</strong> VMware Horizon VMs and CCURE secure access systems across facilities.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-company">Cognizant (TJX / TJMAXX Project)</span> —
+        <span class="job-title">Desktop &amp; Systems Support</span>
+      </span>
+      <span class="job-dates">April 2018 – June 2019</span>
+    </div>
+    <ul>
+      <li><strong>Restored</strong> mission-critical "Store Down" scenarios under pressure to ensure business continuity.</li>
+      <li><strong>Supported</strong> virtual servers and in-store infrastructure via VNC and Hyper-V remote control.</li>
+      <li><strong>Governed</strong> remote access to POS registers and backend retail applications for 24/7 uptime.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-company">CIOX Health, Inc.</span> —
+        <span class="job-title">Jr. Information Security Analyst &amp; Tech Support</span>
+      </span>
+      <span class="job-dates">April 2014 – October 2017</span>
+    </div>
+    <ul>
+      <li><strong>Engineered</strong> an AWS-based HIPAA-compliant medical records retrieval system with secure client portals.</li>
+      <li><strong>Analyzed</strong> security data using Qualys; led intrusion detection audits and firewall security configuration.</li>
+      <li><strong>Remediated</strong> audit findings for HITRUST certification and led HIPAA compliance initiatives firm-wide.</li>
+      <li><strong>Orchestrated</strong> vulnerability management and patch cycles for the entire server fleet.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-company">Endurance International Group</span> —
+        <span class="job-title">Level 3 Linux Support / Web Hosting</span>
+      </span>
+      <span class="job-dates">July 2012 – February 2014</span>
+    </div>
+    <ul>
+      <li><strong>Advanced</strong> to Level 3 Linux support; configured VPS environments on PLESK and managed high-traffic Linux servers.</li>
+      <li><strong>Managed</strong> 120+ client accounts including WordPress architecture, security hardening, and VPS configuration.</li>
+    </ul>
+  </div>
+
+  <!-- PROJECTS -->
+  <h2>Projects &amp; Inventions</h2>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-company">RusticAgentic</span> —
+        <span class="job-title">Sovereign AI Platform for Law Firms · Founder</span>
+      </span>
+      <span class="job-dates">2024 – Present</span>
+    </div>
+    <ul>
+      <li>Private RAG pipeline — no cloud APIs, no data egress. Runs on client hardware (GCP sole-tenant A100/H100 or on-premise).</li>
+      <li>Legal-aware chunking, three-tier PDF extraction, ML-DSA-65 signed deliverables, HNSW vector search at 500,000+ document scale.</li>
+      <li>Live demo: 8 queries against 300-document legal corpus — NDAs, MSAs, depositions, settlements, IP assignments — all answered with verbatim citations in under 20 seconds on an RTX 3060.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span>
+        <span class="job-company"><a href="https://skr8tr.online" target="_blank">skr8tr</a></span> —
+        <span class="job-title">Inventor &amp; Creator</span>
+      </span>
+      <span class="job-dates">2024 – Present</span>
+    </div>
+    <ul>
+      <li><strong>Designed</strong> a sovereign, masterless distributed systems framework — no certificate authorities, no central broker, no single point of failure.</li>
+      <li><strong>Implemented</strong> post-quantum authenticated command propagation using ML-DSA-65 over a UDP mesh network. Every packet cryptographically verified on arrival.</li>
+      <li><strong>Built</strong> in C23 and Haskell with zero external identity dependencies.</li>
+    </ul>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <h2>Certifications</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-name">Databricks Certified Associate Developer for Apache Spark</div>
+      <div class="cert-issuer">Databricks · Scala track</div>
+      <a href="https://credentials.databricks.com/embed/96e65e17-56d5-4682-a8f4-c9e77b2a7251" target="_blank">Verify Credential ↗</a>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">AWS Certified Solutions Architect</div>
+      <div class="cert-issuer">Associate — Amazon Web Services</div>
+      <a href="https://www.credly.com/badges/0957ca40-e7ba-4984-99b8-444E8DE58A18/public_url" target="_blank">Verify on Credly ↗</a>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <h2>Education</h2>
+  <div class="edu-item">
+    <div class="school">Western Governors University</div>
+    <div class="degree">Information Technology · 2008 – 2011 · 3 years completed</div>
+  </div>
+  <div class="edu-item">
+    <div class="school">The Knox School</div>
+    <div class="degree">High School Diploma · 1985 – 1990</div>
+  </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+
+</body>
+</html>
