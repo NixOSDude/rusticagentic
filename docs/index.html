@@ -538,7 +538,7 @@
       <div class="pipe-step">
         <div class="pipe-num">Step 01</div>
         <h4>Drop Documents</h4>
-        <p>PDF, DOCX, scanned images. Drop into a watched folder or GCS bucket. Three-tier extraction: native text → poppler → OCR.</p>
+        <p>PDF, DOCX, HTML, Markdown, and standalone images (PNG, JPG, TIFF). Drop into a watched folder or GCS bucket. Three-tier PDF extraction: native text → poppler → OCR. Standalone images go directly to tesseract.</p>
       </div>
       <div class="pipe-step">
         <div class="pipe-num">Step 02</div>
@@ -1057,7 +1057,7 @@
             <td style="color:var(--rust);font-weight:600">50 – 80 full documents in context</td>
           </tr>
           <tr>
-            <td><strong>OCR for Scanned PDFs</strong></td>
+            <td><strong>OCR — Scanned PDFs &amp; Standalone Images</strong></td>
             <td class="vendor">✓ tesseract (CPU)</td>
             <td style="color:var(--gold)">✓ tesseract + GPU-accelerated rendering</td>
             <td style="color:var(--rust)">✓ tesseract + GPU-accelerated rendering</td>
@@ -1131,7 +1131,7 @@
       </div>
       <div class="proof-item">
         <div class="proof-big">3-tier</div>
-        <div class="proof-desc">PDF extraction: native →<br>poppler → OCR fallback</div>
+        <div class="proof-desc">PDF extraction: native →<br>poppler → OCR · images direct to tesseract</div>
       </div>
       <div class="proof-item">
         <div class="proof-big">0</div>
@@ -1368,7 +1368,7 @@
         <div style="font-size:0.875rem;color:var(--text);">✓ No per-user seat fees — unlimited users at your firm</div>
         <div style="font-size:0.875rem;color:var(--text);">✓ No data egress to OpenAI, Anthropic, or any shared cloud</div>
         <div style="font-size:0.875rem;color:var(--text);">✓ Source citations on every answer — no hallucination without a flag</div>
-        <div style="font-size:0.875rem;color:var(--text);">✓ Three-tier PDF extraction: native → poppler → OCR for scanned docs</div>
+        <div style="font-size:0.875rem;color:var(--text);">✓ Ingest PDF, DOCX, HTML, Markdown, PNG, JPG, TIFF — three-tier PDF extraction + standalone image OCR</div>
         <div style="font-size:0.875rem;color:var(--text);">✓ Continuous ingest — new documents searchable within minutes of upload</div>
       </div>
     </div>
