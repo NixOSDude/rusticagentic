@@ -1004,15 +1004,57 @@
         <div class="price-tier gold">Rapid Delivery</div>
         <div class="price-name">48-Hour Due Diligence Pulse</div>
         <div class="price-amount">$10,000 <span>– $15,000</span></div>
-        <div class="price-recur">Fixed fee · one-time · no retainer required</div>
+        <div class="price-recur">Fixed fee · one-time · quoted per engagement</div>
+
+        <div style="background:rgba(224,85,85,0.07);border:1px solid rgba(224,85,85,0.25);border-radius:6px;padding:12px 14px;margin:12px 0 18px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+          <strong style="color:var(--red);">Important:</strong> This service involves transferring your documents to our isolated processing hardware. It is <em>not</em> a sovereign deployment — your documents temporarily leave your possession. This service is not appropriate for matters where document egress is prohibited. Confirm with your ethics counsel before proceeding.
+        </div>
+
         <ul class="price-list">
-          <li><strong>What you get:</strong> A fully cited, ML-DSA-65 signed PDF report answering your specific due diligence questions across your document set — delivered in 48 hours.</li>
-          <li><strong>Ideal for:</strong> M&amp;A due diligence, pre-litigation document review, contract portfolio audits before a transaction closes.</li>
-          <li><strong>You provide:</strong> Documents via encrypted transfer. A list of 5–15 specific questions (or we draft them with you on the scoping call).</li>
-          <li><strong>We deliver:</strong> Signed HTML + PDF report with every finding cited to source document, section number, and verbatim clause quote. Includes governing law map, liability cap summary, auto-renewal risk flags, and HIPAA obligation inventory.</li>
-          <li><strong>Turnaround:</strong> 48 hours from document receipt. Rush (24hr) available at 1.5× rate.</li>
-          <li><strong>Volume:</strong> Up to 5,000 pages / ~500 documents. Additional volume at $1,500 per 1,000 additional pages.</li>
-          <li><strong>Signing:</strong> Every output is post-quantum signed (ML-DSA-65 NIST FIPS 204). Sidecar .sig.json file proves the report has not been altered since delivery.</li>
+          <li>
+            <div>
+              <strong>What you must provide before work begins:</strong>
+              <ul style="list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:4px;">
+                <li style="padding:0;border:none;">— Executed mutual NDA / confidentiality agreement (we provide our standard form, or use yours)</li>
+                <li style="padding:0;border:none;">— Signed engagement letter specifying scope, fee, and document handling terms</li>
+                <li style="padding:0;border:none;">— Written list of 5–15 specific, answerable questions (not open-ended instructions)</li>
+                <li style="padding:0;border:none;">— Documents uploaded via our one-time encrypted transfer link — no email attachments accepted</li>
+                <li style="padding:0;border:none;">— Clear identification of which documents are privileged, confidential, or under protective order</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>What we do with your documents:</strong>
+              <ul style="list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:4px;">
+                <li style="padding:0;border:none;">— Documents are processed on isolated, offline hardware — not uploaded to any cloud service or third-party API</li>
+                <li style="padding:0;border:none;">— No OpenAI, Anthropic, or external LLM API is used at any point</li>
+                <li style="padding:0;border:none;">— All documents are permanently deleted from our systems within 24 hours of report delivery — we provide written deletion confirmation</li>
+                <li style="padding:0;border:none;">— We do not retain copies, indexes, embeddings, or any derivative of your documents after deletion</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>What you receive:</strong>
+              <ul style="list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:4px;">
+                <li style="padding:0;border:none;">— HTML + PDF report delivered via encrypted link, answering each question with citations to source document, section number, and verbatim clause where applicable</li>
+                <li style="padding:0;border:none;">— ML-DSA-65 post-quantum signature on every deliverable (.sig.json sidecar file) — proves the report has not been altered since delivery</li>
+                <li style="padding:0;border:none;">— Written confirmation of document deletion upon completion</li>
+              </ul>
+            </div>
+          </li>
+          <li><strong>48-hour clock starts when:</strong> NDA is executed <em>and</em> engagement letter is signed <em>and</em> all documents and written questions are received in full. Incomplete submissions pause the clock.</li>
+          <li><strong>Volume:</strong> Up to 5,000 pages / ~500 documents included. Additional volume quoted in advance — not assumed. Engagements exceeding scope are re-quoted before work continues.</li>
+          <li><strong>Rush (24-hour) turnaround:</strong> Available at 1.5× the quoted fee. Must be confirmed and paid before work begins.</li>
+          <li>
+            <div>
+              <strong style="color:var(--text-dim);">Disclaimer — read before engaging:</strong>
+              <p style="font-size:0.82rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
+                Output is AI-generated analysis, not legal advice. It does not constitute the work product of a licensed attorney and should not be relied upon without independent attorney review. We do not verify document authenticity, completeness, or chain of custody. OCR accuracy varies with scan quality — we flag where OCR was used. Citations are to the documents provided — we make no representation as to their accuracy or legal effect.
+              </p>
+            </div>
+          </li>
         </ul>
       </div>
 
