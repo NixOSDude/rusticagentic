@@ -460,6 +460,19 @@
 
 </div>
 
+<div style="background:var(--bg3);border-top:1px solid var(--border);margin-top:48px;padding:20px 0;">
+  <div style="width:min(900px,100% - clamp(24px,4vw,80px)*2);margin:0 auto;display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+    <div style="font-size:0.82rem;color:var(--text-dim);">
+      All RusticAgentic deliverables are post-quantum signed with <strong style="color:var(--text);">ML-DSA-65 (NIST FIPS 204)</strong>.
+      Download the public key to independently verify any signed report.
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="assets/rusticagentic-mldsa65.pub.pem" download style="font-size:0.82rem;color:var(--rust);border:1px solid var(--border);padding:6px 14px;border-radius:4px;text-decoration:none;">↓ Public Key (.pem)</a>
+      <a href="assets/rusticagentic-mldsa65.pub.hex" download style="font-size:0.82rem;color:var(--text-dim);border:1px solid var(--border);padding:6px 14px;border-radius:4px;text-decoration:none;">↓ Public Key (.hex)</a>
+    </div>
+  </div>
+</div>
+
 <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
 
 </body>
