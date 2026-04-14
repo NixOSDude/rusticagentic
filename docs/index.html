@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RusticAgentic — Sovereign AI document intelligence for law firms. Private RAG search across contracts, depositions, and case files. Your documents never leave your infrastructure.">
+  <meta name="description" content="RusticAgentic — Sovereign AI document intelligence for law firms. Private RAG search across contracts, depositions, and case files on your dedicated GCP A100 node. Post-quantum encrypted. Zero data egress.">
   <title>RusticAgentic — Sovereign AI for Law Firms</title>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
@@ -388,7 +388,8 @@
     <p class="hero-sub">
       The only legal AI platform with post-quantum vault encryption (ML-KEM + AES-256-GCM)
       and ML-DSA-65 signed audit trails — NIST FIPS 203/204. Searches your entire contract vault,
-      depositions, and case files with no cloud, no data egress, and no Relativity invoice.
+      depositions, and case files on your private sovereign cloud — zero data egress, zero shared infrastructure,
+      and no Relativity invoice.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Book a Free Scoping Call</a>
@@ -406,7 +407,7 @@
       </div>
       <div class="proof-stat">
         <div class="proof-num"><span>0</span></div>
-        <div class="proof-label">bytes leave your infrastructure</div>
+        <div class="proof-label">bytes leave your private GCP node</div>
       </div>
       <div class="proof-stat">
         <div class="proof-num">~<span>72hr</span></div>
@@ -434,8 +435,8 @@
       </div>
       <div class="problem-card good">
         <div class="card-tag rust">RusticAgentic</div>
-        <h3>Sovereign AI deployed on your infrastructure</h3>
-        <p>$15k–$22k one-time setup, then $3,500–$5,000/month flat managed hosting. Your documents run on hardware you control — on-premise or your private cloud. Zero egress. Attorney-client privilege preserved. No per-user seats. No renewal leverage.</p>
+        <h3>Sovereign AI on your private GCP node</h3>
+        <p>$15k–$22k one-time setup, then $3,500–$5,000/month flat managed hosting. Your documents run on a sole-tenant GCP A100 node billed directly to your account — physically isolated, never shared. Zero egress. Attorney-client privilege preserved. No per-user seats. No renewal leverage.</p>
       </div>
       <div class="problem-card bad">
         <div class="card-tag red">The Associate Tax</div>
@@ -509,7 +510,7 @@
           <tr class="ours-row">
             <td><strong style="color:var(--rust)">RusticAgentic</strong></td>
             <td class="cost-good">$57k–$82k yr 1 · $42k–$60k/yr ongoing</td>
-            <td class="check">✓ Your infrastructure</td>
+            <td class="check">✓ Your private GCP node</td>
             <td class="check">✓</td>
             <td class="check">✓ Unlimited users</td>
             <td class="check" style="color:var(--rust);font-weight:700">✓ ML-KEM + ML-DSA-65<br><span style="font-size:0.78em;font-weight:400;color:var(--text-dim)">NIST FIPS 203/204 — no competitor offers this</span></td>
@@ -531,8 +532,8 @@
     <h2>Drop files in. Ask questions.<br>Get cited answers.</h2>
     <p class="section-intro">
       No training. No fine-tuning. No IT project. Your documents are chunked,
-      embedded, and stored in a private vector index on your hardware.
-      Queries run locally against a 12B–123B parameter language model. Nothing touches the internet.
+      embedded, and stored in a private vector index on your sole-tenant GCP node.
+      Queries run on your private A100 against a 123B parameter language model — nothing touches shared infrastructure.
     </p>
     <div class="pipeline">
       <div class="pipe-step">
@@ -563,7 +564,7 @@
       <div class="pipe-step">
         <div class="pipe-num">Step 06</div>
         <h4>Ask Your Vault</h4>
-        <p>Natural language query → top-K retrieved chunks → Mistral 12B generates a cited answer. Every response shows the source document and paragraph.</p>
+        <p>Natural language query → top-K retrieved chunks → Mistral Large 2 (123B) generates a cited answer. Every response shows the source document and paragraph.</p>
       </div>
       <div class="pipe-step">
         <div class="pipe-num">Step 07</div>
@@ -992,9 +993,10 @@
     <h2>The demo above ran on a developer GPU.<br>Here's what your deployment actually delivers.</h2>
     <p class="section-intro">
       The 20 queries you just read were generated on an NVIDIA RTX 3060 — a consumer gaming card
-      with 12GB of memory. That is the development environment. Client deployments run on data
-      center hardware that removes every constraint you saw: larger context windows, faster responses,
-      more capable models, and the ability to handle your entire firm's document library simultaneously.
+      with 12GB of memory. That is the development environment. Client deployments run on a
+      GCP A100 80GB sole-tenant node that removes every constraint you saw: larger context windows,
+      faster responses, a significantly more capable model, and the ability to handle your entire
+      firm's document library simultaneously.
     </p>
 
     <div class="table-wrap" style="margin-top:36px;">
@@ -1002,9 +1004,8 @@
         <thead>
           <tr>
             <th>Capability</th>
-            <th style="color:var(--text-dim)">Demo (RTX 3060)</th>
-            <th style="color:var(--gold)">GCP A100 80GB<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Standard Deployment</span></th>
-            <th style="color:var(--rust)">GCP H100 80GB<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Premium / On-Premise</span></th>
+            <th style="color:var(--text-dim)">Dev Demo (RTX 3060)</th>
+            <th style="color:var(--gold)">GCP A100 80GB<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Client Deployment — Cloud Sovereign</span></th>
           </tr>
         </thead>
         <tbody>
@@ -1012,73 +1013,61 @@
             <td><strong>GPU VRAM</strong></td>
             <td class="vendor">12 GB</td>
             <td style="color:var(--gold);font-weight:600">80 GB</td>
-            <td style="color:var(--rust);font-weight:600">80 GB (NVLink: 160 GB dual)</td>
           </tr>
           <tr>
             <td><strong>Language Model</strong></td>
             <td class="vendor">Mistral NeMo 12B (quantized)</td>
             <td style="color:var(--gold);font-weight:600">Mistral Large 2 · 123B params<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Full precision — significantly stronger legal reasoning</span></td>
-            <td style="color:var(--rust);font-weight:600">Llama 3.3 70B or Mistral Large 2<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Full precision + faster throughput</span></td>
           </tr>
           <tr>
             <td><strong>Context Window</strong><br><span style="font-size:0.78em;color:var(--text-dim)">How much of your vault fits in one query</span></td>
             <td class="vendor">8,192 tokens<br><span style="font-size:0.8em">~32,000 chars · ~25 pages</span></td>
             <td style="color:var(--gold);font-weight:600">128,000 tokens<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">~512,000 chars · ~400 pages per query — 16× the demo</span></td>
-            <td style="color:var(--rust);font-weight:600">128,000 tokens<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">~512,000 chars · ~400 pages per query</span></td>
           </tr>
           <tr>
             <td><strong>Query Latency</strong><br><span style="font-size:0.78em;color:var(--text-dim)">Time from question to full cited answer</span></td>
             <td class="vendor">4 – 15 seconds (measured)</td>
             <td style="color:var(--gold);font-weight:600">est. 2 – 6 seconds</td>
-            <td style="color:var(--rust);font-weight:600">est. 1 – 4 seconds</td>
           </tr>
           <tr>
             <td><strong>Inference Speed</strong></td>
             <td class="vendor">~25 tokens/sec (measured)</td>
             <td style="color:var(--gold);font-weight:600">est. ~80 tokens/sec</td>
-            <td style="color:var(--rust);font-weight:600">est. ~150 tokens/sec</td>
           </tr>
           <tr>
             <td><strong>Concurrent Users</strong></td>
             <td class="vendor">1 (dev/demo)</td>
-            <td style="color:var(--gold);font-weight:600">est. 6 – 8 simultaneous</td>
-            <td style="color:var(--rust);font-weight:600">est. 10 – 15 simultaneous</td>
+            <td style="color:var(--gold);font-weight:600">est. 6 – 8 simultaneous per node<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Add a node to scale — see below</span></td>
           </tr>
           <tr>
             <td><strong>Document Vault Capacity</strong></td>
-            <td class="vendor">150 docs tested · scales with NVMe</td>
-            <td style="color:var(--gold);font-weight:600">No hard limit — scales with NVMe<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">HNSW index + object_store GCS backend</span></td>
-            <td style="color:var(--rust);font-weight:600">No hard limit — scales with NVMe<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Add NVMe capacity as corpus grows</span></td>
+            <td class="vendor">150 docs tested · scales with storage</td>
+            <td style="color:var(--gold);font-weight:600">No hard limit — scales with GCS storage<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">HNSW index + encrypted GCS backend</span></td>
           </tr>
           <tr>
-            <td><strong>Documents per Single Query</strong><br><span style="font-size:0.78em;color:var(--text-dim)">With keyword prefilter + full context</span></td>
+            <td><strong>Documents per Single Query</strong><br><span style="font-size:0.78em;color:var(--text-dim)">Top-K retrieved chunks in context</span></td>
             <td class="vendor">4 – 8 docs in context</td>
             <td style="color:var(--gold);font-weight:600">50 – 80 full documents in context<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Entire contract portfolios fit in a single query</span></td>
-            <td style="color:var(--rust);font-weight:600">50 – 80 full documents in context</td>
           </tr>
           <tr>
-            <td><strong>OCR — Scanned PDFs &amp; Standalone Images</strong></td>
+            <td><strong>OCR — Scanned PDFs &amp; Images</strong></td>
             <td class="vendor">✓ tesseract (CPU)</td>
             <td style="color:var(--gold)">✓ tesseract + GPU-accelerated rendering</td>
-            <td style="color:var(--rust)">✓ tesseract + GPU-accelerated rendering</td>
           </tr>
           <tr>
             <td><strong>Embedding Model</strong></td>
             <td class="vendor">gte-large-en-v1.5 · 1024-dim · CUDA</td>
             <td style="color:var(--gold)">gte-large-en-v1.5 · 1024-dim · A100 CUDA</td>
-            <td style="color:var(--rust)">gte-large-en-v1.5 · 1024-dim · H100 CUDA</td>
           </tr>
           <tr>
             <td><strong>PQ Signing</strong></td>
             <td class="vendor">ML-DSA-65 on every output</td>
             <td style="color:var(--gold)">ML-DSA-65 · full audit log encrypted at rest</td>
-            <td style="color:var(--rust)">ML-DSA-65 · full audit log encrypted at rest</td>
           </tr>
           <tr>
             <td><strong>Uptime</strong></td>
             <td class="vendor">Dev machine</td>
             <td style="color:var(--gold);font-weight:600">GCP SLA: 99.9%</td>
-            <td style="color:var(--rust);font-weight:600">GCP SLA: 99.9% / On-premise: managed</td>
           </tr>
         </tbody>
       </table>
@@ -1090,27 +1079,28 @@
         <ul style="list-style:none;font-size:0.875rem;color:var(--text);">
           <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Query latency drops from the 4–15s measured on dev hardware to an estimated <strong>2–6 seconds</strong></li>
           <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Entire deal room of contracts fits in one query — no keyword prefiltering needed</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Mistral Large 2 (123B) reasons at near-GPT-4 level — sharper clause interpretation</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Est. 6–8 attorneys can query simultaneously without queuing</li>
+          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Mistral Large 2 (123B) reasons at near-GPT-4 level — significantly sharper clause interpretation</li>
+          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Est. 6–8 attorneys querying simultaneously on a single node without queuing</li>
           <li style="padding:5px 0;">New matter docs typically searchable within minutes of upload</li>
         </ul>
       </div>
       <div style="background:rgba(200,121,65,0.05);border:1px solid var(--rust-dim);border-radius:8px;padding:22px;">
-        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:12px;">H100 / On-Premise — Maximum capability</div>
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:12px;">Add a Node — Scale Without Limits</div>
+        <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:12px;">Each A100 node handles an estimated 6–8 simultaneous users. When your firm grows, you add a node — not a seat license. New nodes join the mesh automatically and begin sharing query load immediately.</p>
         <ul style="list-style:none;font-size:0.875rem;color:var(--text);">
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Est. ~150 tokens/sec — most queries expected to complete in under 4 seconds</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Dual NVLink config: 160GB VRAM — run two models simultaneously</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Data never leaves your physical premises — air-gap capable</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Est. 10–15 concurrent users — full firm deployment, no capacity bottleneck</li>
-          <li style="padding:5px 0;">Future-proof: hardware runs any open model released in the next 5 years</li>
+          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">1 node → est. 6–8 concurrent users</li>
+          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">2 nodes → est. 12–16 concurrent users</li>
+          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Scale to any size — same flat managed fee per node</li>
+          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Subject to GCP A100 availability per region</li>
+          <li style="padding:5px 0;">No artificial software limits — hardware is the only constraint</li>
         </ul>
       </div>
     </div>
 
     <p style="font-size:0.8rem;color:var(--text-dim);margin-top:18px;text-align:center;">
-      GCP A100/H100 pricing: ~$2.50–$3.50/hr on 1-year committed use, billed to your GCP account.
-      Estimated annual infrastructure cost: <strong style="color:var(--text)">$22,000–$31,000/yr</strong> — a fraction of a Relativity license.
-      We manage the stack; you own the machine.
+      GCP A100 80GB pricing: est. ~$2.50–$3.50/hr on 1-year committed use, billed directly to your GCP account.
+      Estimated annual infrastructure cost per node: <strong style="color:var(--text)">~$22,000–$31,000/yr</strong> — a fraction of a Relativity license.
+      We manage the stack; you own the compute. A100 availability subject to GCP regional quota.
     </p>
   </div>
 </section>
@@ -1161,21 +1151,12 @@
     </p>
 
     <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:28px;">
-      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">Choose Your Deployment Model</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px;">
-        <div>
-          <div style="font-weight:700;color:var(--white);margin-bottom:4px;">☁ Cloud Sovereign (GCP Sole-Tenant)</div>
-          <div style="font-size:0.85rem;color:var(--text-dim);">Your data runs on a GCP sole-tenant node billed directly to <em>your</em> GCP account. Physically isolated hardware — no hypervisor sharing, no multi-tenancy. We deploy and manage the stack. You own the compute. <strong style="color:var(--rust)">Recommended for most firms.</strong></div>
-          <div style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;padding:8px;background:rgba(200,121,65,0.05);border-radius:4px;border-left:2px solid var(--rust-dim);">
-            <strong>Important note:</strong> GCP sole-tenancy provides physical hardware isolation within Google's infrastructure. It satisfies most law firm IT security and bar ethics requirements. However, a small number of jurisdictions have issued ethics opinions requiring data to reside on <em>firm-controlled</em> hardware. Confirm compliance with your state bar before proceeding.
-          </div>
-        </div>
-        <div>
-          <div style="font-weight:700;color:var(--white);margin-bottom:4px;">🖥 On-Premise (Your Hardware)</div>
-          <div style="font-size:0.85rem;color:var(--text-dim);">We travel to your location, procure and rack the hardware, configure the full stack, and hand you the keys. Data never leaves your building. Appropriate for firms with strict on-premise requirements or jurisdictions with conservative ethics opinions on cloud data residency.</div>
-          <div style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;padding:8px;background:rgba(200,168,75,0.05);border-radius:4px;border-left:2px solid var(--gold-dim);">
-            Hardware billed at cost (typically $25,000–$60,000). Setup fee is separate. <strong>Travel, hotel, and meals must be booked and covered by the firm in advance.</strong> A flat on-site day rate is quoted per engagement.
-          </div>
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">Deployment Model</div>
+      <div>
+        <div style="font-weight:700;color:var(--white);margin-bottom:4px;">☁ Cloud Sovereign — GCP A100 Sole-Tenant Node</div>
+        <div style="font-size:0.85rem;color:var(--text-dim);">Your data runs on a GCP A100 80GB sole-tenant node billed directly to <em>your</em> GCP account. Physically isolated hardware — no hypervisor sharing, no multi-tenancy. We deploy and manage the full stack. You own the compute. Need more capacity? Add a node — each additional A100 joins the query mesh automatically and expands your concurrent user capacity.</div>
+        <div style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;padding:8px;background:rgba(200,121,65,0.05);border-radius:4px;border-left:2px solid var(--rust-dim);">
+          <strong>Important note:</strong> GCP sole-tenancy provides physical hardware isolation within Google's infrastructure. It satisfies most law firm IT security and bar ethics requirements. However, a small number of jurisdictions have issued ethics opinions requiring data to reside on <em>firm-controlled</em> hardware. Confirm compliance with your state bar before proceeding. A100 availability subject to GCP regional quota.
         </div>
       </div>
     </div>
@@ -1249,7 +1230,7 @@
         <div class="price-amount">$15,000 <span>– $22,000</span></div>
         <div class="price-recur">Setup fee + <strong>$3,500 – $5,000/mo</strong> managed hosting · GCP infra billed separately to your account</div>
         <ul class="price-list">
-          <li><strong>Infrastructure:</strong> GCP sole-tenant A100 80GB node billed to your GCP account (~$2.50–$3.50/hr committed use, ~$22k–$31k/yr). You own the compute; we manage the stack.</li>
+          <li><strong>Infrastructure:</strong> GCP sole-tenant A100 80GB node billed directly to your GCP account (est. ~$2.50–$3.50/hr on committed use, ~$22k–$31k/yr per node). You own the compute; we manage the stack. Need more capacity? Add a node — flat managed fee per node, same stack.</li>
           <li><strong>Setup includes:</strong> Full RusticAgentic deployment, vault configuration, document migration, SSL, custom domain, staff onboarding session (half-day), and 30 days of hypercare support.</li>
           <li><strong>Monthly retainer includes:</strong> Unlimited queries, continuous document ingest (new files searchable within 60 seconds), model upgrades quarterly, security patch management, uptime monitoring, and email support with 4-hour SLA.</li>
           <li><strong>Document capacity:</strong> Unlimited. Index scales with storage. Tested to 500,000 documents.</li>
@@ -1259,42 +1240,27 @@
         </ul>
       </div>
 
-      <!-- Tier 3 -->
-      <div class="price-card">
-        <div class="price-tier" style="color:var(--copper)">On-Premise</div>
-        <div class="price-name">On-Premise Enterprise<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">(Your Hardware, Your Building)</span></div>
-        <div class="price-amount">$25,000 <span>– $40,000</span></div>
-        <div class="price-recur">Setup + travel + config · hardware billed at cost · <strong>$2,500 – $4,000/mo</strong> remote management</div>
-        <ul class="price-list">
-          <li><strong>What this means:</strong> We travel to your office, procure and rack the hardware, install and configure the full sovereign stack, and leave you with a running system. Data never leaves your building — ever.</li>
-          <li><strong>Hardware (billed at cost, separate):</strong> Typically a dual-GPU workstation (2× NVIDIA RTX 4090 or 1× A100) with dual NVMe RAID, 256GB RAM, 10GbE network card. Approximate cost $25,000–$60,000 depending on configuration. We source and procure — you pay vendor invoice directly.</li>
-          <li><strong>Setup fee covers:</strong> Racking and cabling, OS and driver configuration, full RusticAgentic deployment, vault migration, staff training (full day), and documentation package. Travel, hotel, and meals are separate — booked and paid by the firm in advance.</li>
-          <li><strong>Monthly remote management:</strong> Remote monitoring, security patches, model upgrades, backup verification, and priority support with approx. 2-hour response target. No remote access to document content — we manage the system layer only.</li>
-          <li><strong>Appropriate for:</strong> Firms with on-premise mandates, conservative bar ethics opinions on cloud residency, or matters requiring air-gap capability.</li>
-          <li><strong>On-site travel policy:</strong> Any on-site engagement requires the firm to book and cover travel, hotel, and meals in advance before scheduling is confirmed. A flat on-site day rate applies depending on scope — quoted per engagement. No retainer-included site visits.</li>
-        </ul>
-      </div>
-
-      <!-- Tier 4 — Custom Build -->
+      <!-- Tier 3 — Custom Build -->
       <div class="price-card" style="border-color:var(--gold);background:linear-gradient(160deg,rgba(200,168,75,0.07) 0%,var(--bg3) 60%);">
         <div class="price-tier gold">Custom Build</div>
-        <div class="price-name">Multi-Lawyer Distributed Mesh<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">Enterprise · Multi-GPU · Multi-Site</span></div>
+        <div class="price-name">Multi-Node Distributed Mesh<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">Enterprise · Multi-A100 · High Concurrency</span></div>
         <div class="price-amount" style="color:var(--gold);">From $75,000 <span>· scoped per engagement</span></div>
-        <div class="price-recur">Architecture designed per firm · hardware billed at cost · <strong style="color:var(--gold)">$8,000 – $15,000/mo</strong> managed retainer</div>
+        <div class="price-recur">Architecture designed per firm · GCP infra billed to your account · <strong style="color:var(--gold)">$8,000 – $15,000/mo</strong> managed retainer</div>
         <p style="font-size:0.875rem;color:var(--text-dim);margin:16px 0 20px;">
-          For large firms, multi-office deployments, or practices with high concurrent query volume — we design and build
-          a distributed lvm_node GPU worker mesh tailored to your infrastructure. Each GPU worker is a sovereign CUDA peer:
-          no master node, no single point of failure. The mesh scales horizontally as your firm grows. Your data never moves.
+          For large firms or practices with high concurrent query volume — we design and deploy
+          a multi-node A100 mesh on GCP. Each node is a sovereign CUDA peer: no master node, no single point of failure.
+          Add a node and it joins the mesh automatically. The mesh scales horizontally as your attorney headcount grows.
+          Subject to GCP A100 availability per region.
         </p>
         <ul class="price-list">
           <li>
             <div>
-              <strong>lvm_node distributed GPU worker mesh:</strong>
+              <strong>Multi-node A100 mesh on GCP:</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                Multiple sovereign CUDA embedding workers deployed across your server room or across GCP regions.
-                Each lvm_node processes embedding jobs independently — the gateway coordinates but does not own.
-                If any worker goes offline, the others continue processing. Masterless by design.
-                Add a GPU node and it joins the mesh automatically — no configuration changes required on existing nodes.
+                Multiple A100 80GB sole-tenant nodes deployed in GCP, each running the full sovereign stack.
+                Each node processes queries independently — the gateway coordinates but does not own.
+                If any node goes offline, the others continue. Masterless by design.
+                Add a node and it joins the mesh automatically — no configuration changes required on existing nodes.
               </p>
             </div>
           </li>
@@ -1302,21 +1268,20 @@
             <div>
               <strong>Horizontal scale — licenses never bottleneck you:</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                As your document corpus and attorney headcount grows, you add hardware — not seats, not tier upgrades.
-                A 10-attorney boutique and a 200-attorney firm run the same stack.
-                Embedding throughput scales linearly with GPU workers.
-                Query capacity scales with GPU count. No artificial limits.
+                As your attorney headcount grows, you add A100 nodes — not seat licenses, not tier upgrades.
+                Each additional node adds an estimated 6–8 concurrent users to your capacity.
+                A boutique firm and a large regional firm run the same stack — just a different node count.
+                No artificial software limits — hardware is the only ceiling.
               </p>
             </div>
           </li>
           <li>
             <div>
-              <strong>Multi-office / multi-site:</strong>
+              <strong>Multi-region GCP deployment:</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                Workers can be deployed at multiple physical locations simultaneously.
-                Each site handles local document traffic — latency stays near-local for every office.
-                The vault index remains synchronized across sites via encrypted GCS.
-                A New York associate and a Dallas partner query the same corpus with the same latency profile.
+                Nodes can be deployed across GCP regions — us-central1, us-east1, europe-west1 — for latency optimization.
+                Each region handles local attorney traffic. The encrypted vault index stays synchronized across regions via GCS.
+                A New York associate and a Dallas partner query the same corpus at the same performance profile.
               </p>
             </div>
           </li>
@@ -1343,11 +1308,11 @@
           </li>
           <li>
             <div>
-              <strong>Air-gap capable:</strong>
+              <strong>Dedicated GCP project isolation:</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                The full mesh can operate with zero external network connectivity — no GCS, no cloud, no callbacks.
-                Appropriate for classified matter environments, government contractor work,
-                or jurisdictions with conservative bar ethics opinions on any external data contact.
+                Each client deployment runs in a dedicated GCP project billed to the firm's account.
+                No shared infrastructure, no cross-client data paths, no multi-tenancy at any layer.
+                VPC firewall rules lock every node to your IP ranges only. Your GCP console, your visibility.
               </p>
             </div>
           </li>
@@ -1447,7 +1412,7 @@
     <div class="footer-logo">Rustic<span>Agentic</span> · rusticagentic.agency</div>
     <div class="footer-right">
       Sovereign AI document intelligence for law firms · Post-Quantum Encrypted · NIST FIPS 203/204<br>
-      Your documents never leave your infrastructure.
+      Your documents never leave your private GCP node.
     </div>
   </div>
   <div style="width:min(1320px,100% - clamp(24px,4vw,80px)*2);margin:16px auto 0;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
