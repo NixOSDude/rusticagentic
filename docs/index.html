@@ -1154,10 +1154,13 @@
     <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:28px;">
       <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">Deployment Model</div>
       <div>
-        <div style="font-weight:700;color:var(--white);margin-bottom:4px;">☁ Cloud Sovereign — GCP A100 Sole-Tenant Node</div>
-        <div style="font-size:0.85rem;color:var(--text-dim);">Your data runs on a GCP A100 80GB sole-tenant node billed directly to <em>your</em> GCP account. Physically isolated hardware — no hypervisor sharing, no multi-tenancy. We deploy and manage the full stack. You own the compute. Need more capacity? Add a node — each additional A100 joins the query mesh automatically and expands your concurrent user capacity.</div>
+        <div style="font-weight:700;color:var(--white);margin-bottom:4px;">☁ Cloud Sovereign — GCP NVIDIA GPU Sole-Tenant Node</div>
+        <div style="font-size:0.85rem;color:var(--text-dim);">Your data runs on a GCP NVIDIA GPU sole-tenant node billed directly to <em>your</em> GCP account. Physically isolated hardware — no hypervisor sharing, no multi-tenancy. We deploy and manage the full stack. You own the compute. Need more capacity? Add a node — each additional GPU node joins the query mesh automatically.</div>
         <div style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;padding:8px;background:rgba(200,121,65,0.05);border-radius:4px;border-left:2px solid var(--rust-dim);">
-          <strong>Important note:</strong> GCP sole-tenancy provides physical hardware isolation within Google's infrastructure. It satisfies most law firm IT security and bar ethics requirements. However, a small number of jurisdictions have issued ethics opinions requiring data to reside on <em>firm-controlled</em> hardware. Confirm compliance with your state bar before proceeding. A100 availability subject to GCP regional quota.
+          <strong>GPU availability &amp; performance:</strong> GCP sole-tenancy provides physical hardware isolation within Google's infrastructure. It satisfies most law firm IT security and bar ethics requirements. However, a small number of jurisdictions have issued ethics opinions requiring data to reside on <em>firm-controlled</em> hardware — confirm compliance with your state bar before proceeding.
+          NVIDIA GPU-enabled VMs (A100, L4, T4, and others) are in high demand across GCP regions — availability is not guaranteed and quota increases are often required before provisioning.
+          Performance scales with GPU tier: an A100 80GB delivers the fastest inference; an L4 or T4 is a capable fallback if A100 quota is unavailable in your region.
+          We assess available quota, recommend the optimal GPU tier for your workload, and initiate any necessary quota increase requests as part of the scoping process — before any engagement begins.
         </div>
       </div>
     </div>
@@ -1171,7 +1174,7 @@
         <div class="price-amount">$15,000 <span>– $22,000</span></div>
         <div class="price-recur">Setup fee + <strong>$3,500 – $5,000/mo</strong> managed hosting · GCP infra billed separately to your account</div>
         <ul class="price-list">
-          <li><strong>Infrastructure:</strong> GCP sole-tenant A100 80GB node billed directly to your GCP account (est. ~$2.50–$3.50/hr on committed use, ~$22k–$31k/yr per node). You own the compute; we manage the stack. Need more capacity? Add a node — flat managed fee per node, same stack.</li>
+          <li><strong>Infrastructure:</strong> GCP sole-tenant NVIDIA GPU node billed directly to your GCP account. Target GPU is the A100 80GB (est. ~$2.50–$3.50/hr on committed use); L4 and T4 are available fallbacks if A100 quota is constrained in your region — performance and cost are tiered accordingly. You own the compute; we manage the stack. Need more capacity? Add a node — flat managed fee per node, same stack.</li>
           <li><strong>Setup includes:</strong> Full RusticAgentic deployment, vault configuration, document migration, SSL, custom domain, staff onboarding session (half-day), and 30 days of hypercare support.</li>
           <li><strong>Monthly retainer includes:</strong> Unlimited queries, continuous document ingest (new files searchable within 60 seconds), model upgrades quarterly, security patch management, uptime monitoring, and email support with 4-hour SLA.</li>
           <li><strong>Document capacity:</strong> Unlimited. Index scales with storage. Tested to 500,000 documents.</li>
@@ -1184,21 +1187,24 @@
       <!-- Tier 3 — Custom Build -->
       <div class="price-card" style="border-color:var(--gold);background:linear-gradient(160deg,rgba(200,168,75,0.07) 0%,var(--bg3) 60%);">
         <div class="price-tier gold">Custom Build</div>
-        <div class="price-name">Multi-Node Distributed Mesh<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">Enterprise · Multi-A100 · High Concurrency</span></div>
+        <div class="price-name">Multi-Node Distributed Mesh<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">Enterprise · Multi-GPU · High Concurrency</span></div>
         <div class="price-amount" style="color:var(--gold);">From $75,000 <span>· scoped per engagement</span></div>
         <div class="price-recur">Architecture designed per firm · GCP infra billed to your account · <strong style="color:var(--gold)">$8,000 – $15,000/mo</strong> managed retainer</div>
         <p style="font-size:0.875rem;color:var(--text-dim);margin:16px 0 20px;">
           For large firms or practices with high concurrent query volume — we design and deploy
           a multi-node NVIDIA GPU mesh on GCP. Each node is a sovereign CUDA peer: no master node, no single point of failure.
+          GPU tier (A100, L4, T4) is selected based on regional availability and workload requirements.
           Add a node and it joins the mesh automatically. The mesh scales horizontally as your attorney headcount grows.
         </p>
         <div style="background:rgba(200,168,75,0.07);border:1px solid rgba(200,168,75,0.3);border-radius:6px;padding:12px 14px;margin-bottom:18px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
-          <strong style="color:var(--gold);">GPU availability notice:</strong>
-          This tier requires NVIDIA A100 or equivalent GPU-enabled VMs (GCP <code style="font-size:0.78rem;color:var(--text);">a2-ultragpu</code> / <code style="font-size:0.78rem;color:var(--text);">a2-highgpu</code> family).
-          GPU quota is allocated by GCP per region and is not guaranteed on demand — large deployments require a quota increase request,
-          which GCP typically processes within 2–5 business days. We scope GPU requirements as part of the architecture proposal
-          and initiate quota requests on your behalf before any engagement begins.
-          Deployment timeline is contingent on quota approval.
+          <strong style="color:var(--gold);">GPU availability &amp; performance notice:</strong>
+          This tier runs on NVIDIA GPU-enabled VMs on GCP. A100 80GB nodes deliver peak inference performance;
+          L4 and T4 nodes are viable at reduced throughput and lower cost per node.
+          GPU demand on GCP is high — specific VM types are not always available in every region on demand.
+          Multi-node deployments almost always require a GCP quota increase request, typically processed within 2–5 business days
+          but not guaranteed. Node count, GPU tier, and region are scoped in the architecture proposal.
+          We initiate all quota requests on your behalf before any engagement begins.
+          Deployment timeline is contingent on quota approval and regional availability.
         </div>
         <ul class="price-list">
           <li>
