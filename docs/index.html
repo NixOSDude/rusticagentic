@@ -437,7 +437,7 @@
       <div class="problem-card good">
         <div class="card-tag rust">RusticAgentic</div>
         <h3>Sovereign AI on your private GCP node</h3>
-        <p>$15k–$22k one-time setup, then $3,500–$5,000/month flat managed hosting. Your documents run on a sole-tenant GCP A100 node billed directly to your account — physically isolated, never shared. Zero egress. Attorney-client privilege preserved. No per-user seats. No renewal leverage.</p>
+        <p>$15k–$22k one-time setup, then $3,500–$5,000/month flat managed hosting. Your documents run on a sole-tenant GCP NVIDIA GPU node billed directly to your account — physically isolated, never shared. Zero egress. Attorney-client privilege preserved. No per-user seats. No renewal leverage.</p>
       </div>
       <div class="problem-card bad">
         <div class="card-tag red">The Associate Tax</div>
@@ -534,7 +534,7 @@
     <p class="section-intro">
       No training. No fine-tuning. No IT project. Your documents are chunked,
       embedded, and stored in a private vector index on your sole-tenant GCP node.
-      Queries run on your private A100 against a 123B parameter language model — nothing touches shared infrastructure.
+      Queries run on your private NVIDIA GPU node against a 123B parameter language model — nothing touches shared infrastructure.
     </p>
     <div class="pipeline">
       <div class="pipe-step">
@@ -995,9 +995,11 @@
     <p class="section-intro">
       The 20 queries you just read were generated on an NVIDIA RTX 3060 — a consumer gaming card
       with 12GB of memory. That is the development environment. Client deployments run on a
-      GCP A100 80GB sole-tenant node that removes every constraint you saw: larger context windows,
+      GCP NVIDIA GPU sole-tenant node that removes every constraint you saw: larger context windows,
       faster responses, a significantly more capable model, and the ability to handle your entire
       firm's document library simultaneously.
+      The figures below reflect an A100 80GB deployment — the target and highest-performance tier.
+      Actual performance varies by GPU type provisioned; see the availability notice in the pricing section.
     </p>
 
     <div class="table-wrap" style="margin-top:36px;">
@@ -1006,7 +1008,7 @@
           <tr>
             <th>Capability</th>
             <th style="color:var(--text-dim)">Dev Demo (RTX 3060)</th>
-            <th style="color:var(--gold)">GCP A100 80GB<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Client Deployment — Cloud Sovereign</span></th>
+            <th style="color:var(--gold)">GCP NVIDIA GPU Node<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Client Deployment — A100 80GB target tier ¹</span></th>
           </tr>
         </thead>
         <tbody>
@@ -1058,7 +1060,7 @@
           <tr>
             <td><strong>Embedding Model</strong></td>
             <td class="vendor">gte-large-en-v1.5 · 1024-dim · CUDA</td>
-            <td style="color:var(--gold)">gte-large-en-v1.5 · 1024-dim · A100 CUDA</td>
+            <td style="color:var(--gold)">gte-large-en-v1.5 · 1024-dim · NVIDIA CUDA</td>
           </tr>
           <tr>
             <td><strong>PQ Signing</strong></td>
@@ -1076,9 +1078,9 @@
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px;margin-top:28px;">
       <div style="background:rgba(200,168,75,0.06);border:1px solid var(--gold-dim);border-radius:8px;padding:22px;">
-        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:12px;">A100 — What changes for your attorneys</div>
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:12px;">GPU Node — What changes for your attorneys</div>
         <ul style="list-style:none;font-size:0.875rem;color:var(--text);">
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Query latency drops from the 4–15s measured on dev hardware to an estimated <strong>2–6 seconds</strong></li>
+          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Query latency drops from the 4–15s measured on dev hardware to an estimated <strong>2–6 seconds</strong> (A100 tier)</li>
           <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Entire deal room of contracts fits in one query — no keyword prefiltering needed</li>
           <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Mistral Large 2 (123B) reasons at near-GPT-4 level — significantly sharper clause interpretation</li>
           <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Est. 6–8 attorneys querying simultaneously on a single node without queuing</li>
@@ -1087,16 +1089,23 @@
       </div>
       <div style="background:rgba(200,121,65,0.05);border:1px solid var(--rust-dim);border-radius:8px;padding:22px;">
         <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:12px;">Add a Node — Scale Without Limits</div>
-        <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:12px;">Each A100 node handles an estimated 6–8 simultaneous users. When your firm grows, you add a node — not a seat license. New nodes join the mesh automatically and begin sharing query load immediately.</p>
+        <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:12px;">Each GPU node handles an estimated 6–8 simultaneous users. When your firm grows, you add a node — not a seat license. New nodes join the mesh automatically and begin sharing query load immediately.</p>
         <ul style="list-style:none;font-size:0.875rem;color:var(--text);">
           <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">1 node → est. 6–8 concurrent users</li>
           <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">2 nodes → est. 12–16 concurrent users</li>
           <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Scale to any size — same flat managed fee per node</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Subject to GCP A100 availability per region</li>
+          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Subject to NVIDIA GPU availability and GCP regional quota — see pricing section</li>
           <li style="padding:5px 0;">No artificial software limits — hardware is the only constraint</li>
         </ul>
       </div>
     </div>
+
+    <p style="font-size:0.78rem;color:var(--text-dim);margin-top:18px;line-height:1.6;">
+      ¹ <strong>GPU availability notice:</strong> Performance figures above reflect an A100 80GB deployment.
+      NVIDIA GPU-enabled VMs are in high demand across GCP regions — the A100 is the target tier but is not guaranteed available on demand.
+      Deployments may provision on L4 or T4 nodes depending on regional availability and quota;
+      performance scales with GPU tier. We assess available quota and recommend the right hardware as part of every scoping engagement.
+    </p>
 
     <p style="font-size:0.8rem;color:var(--text-dim);margin-top:18px;text-align:center;">
       GCP A100 80GB pricing: est. ~$2.50–$3.50/hr on 1-year committed use, billed directly to your GCP account.
@@ -1275,6 +1284,68 @@
         </ul>
       </div>
 
+      <!-- Tier 4 — On-Premises -->
+      <div class="price-card" style="border-color:var(--copper);background:linear-gradient(160deg,rgba(176,141,87,0.07) 0%,var(--bg3) 60%);grid-column:1/-1;">
+        <div class="price-tier" style="background:rgba(176,141,87,0.15);color:var(--copper);">On-Premises</div>
+        <div class="price-name">Sovereign On-Premises Build<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">Firm-Controlled Hardware · No Cloud Dependency · Complete Air-Gap Option</span></div>
+        <div class="price-amount" style="color:var(--copper);">Price varies <span>· scoped per engagement</span></div>
+        <div class="price-recur">Fixed-price architecture proposal · hardware, travel, and deployment costs included · ongoing managed retainer quoted separately</div>
+
+        <p style="font-size:0.875rem;color:var(--text-dim);margin:16px 0 20px;line-height:1.65;">
+          For firms that require data to reside exclusively on hardware they own and control — no cloud, no GCP, no third-party infrastructure of any kind.
+          We design, procure, configure, and deploy the full RusticAgentic stack on your on-premises server hardware.
+          The system runs identically to the cloud deployment: same sovereign vault encryption, same post-quantum audit chain, same CUDA-accelerated inference —
+          the only difference is the hardware sits in your server room.
+          This option satisfies the strictest state bar ethics opinions on data residency and any jurisdiction requiring firm-controlled hardware.
+        </p>
+
+        <div style="background:rgba(176,141,87,0.07);border:1px solid rgba(176,141,87,0.25);border-radius:6px;padding:12px 14px;margin-bottom:20px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+          <strong style="color:var(--copper);">GPU availability note:</strong>
+          On-premises inference performance is determined by the NVIDIA GPU installed in your server hardware.
+          We recommend and specify the appropriate GPU (A100, L4, RTX 4090, or equivalent) based on your concurrent user count and document volume.
+          Hardware procurement timelines vary — GPU availability from server vendors is subject to the same supply constraints as cloud providers.
+          All hardware specifications and lead times are confirmed before the engagement letter is signed.
+        </div>
+
+        <ul class="price-list">
+          <li>
+            <div>
+              <strong>What's included:</strong>
+              <ul style="list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:4px;">
+                <li style="padding:0;border:none;">— Hardware specification and procurement assistance (we specify; you purchase through your preferred vendor or we procure on your behalf)</li>
+                <li style="padding:0;border:none;">— Full on-site deployment: OS configuration, CUDA stack, RusticAgentic installation, vault setup, SSL, custom domain, and network integration</li>
+                <li style="padding:0;border:none;">— Staff onboarding session (half-day, on-site)</li>
+                <li style="padding:0;border:none;">— 30-day hypercare support period post-deployment</li>
+                <li style="padding:0;border:none;">— All travel, lodging, and meals for the deployment team — see travel requirements below</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Ongoing managed retainer (optional):</strong>
+              <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
+                Remote management, security patches, model upgrades, and monitoring are available as an ongoing retainer after deployment.
+                Quoted separately based on system complexity and desired SLA tier.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Travel &amp; accommodation requirements:</strong>
+              <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
+                On-site deployments require the presence of our deployment team at your facility.
+                The team travels as two persons. Travel, lodging, and meals for both team members are included in the fixed engagement fee — there are no separate per-diem or expense billings.
+              </p>
+              <ul style="list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;font-size:0.82rem;color:var(--text-dim);">
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Accommodation:</strong> One room for two persons, located within reasonable proximity to your facility. We will confirm the specific lodging requirement during the scoping call.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Ground transportation:</strong> Pickup and drop-off between lodging and your facility must be provided or arranged by the client. The lead engineer does not drive; a car service, firm vehicle, or equivalent arrangement is required for each travel day on-site.</li>
+                <li style="padding:4px 0;">— <strong style="color:var(--text);">Flight and transfers:</strong> We arrange and book our own flights. Airport-to-lodging transfers are included in our travel costs.</li>
+              </ul>
+            </div>
+          </li>
+          <li><strong>How we scope it:</strong> Free architecture call. We assess your existing server infrastructure, network topology, concurrent user requirements, and data residency constraints. Fixed-price proposal delivered within 5 business days. No retainer required to receive a proposal.</li>
+        </ul>
+      </div>
 
     </div>
 
