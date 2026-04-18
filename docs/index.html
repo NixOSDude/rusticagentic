@@ -1164,66 +1164,6 @@
 
     <div class="price-grid">
 
-      <!-- Tier 1 -->
-      <div class="price-card">
-        <div class="price-tier gold">Rapid Delivery</div>
-        <div class="price-name">48-Hour Due Diligence Pulse</div>
-        <div class="price-amount">$10,000 <span>– $15,000</span></div>
-        <div class="price-recur">Fixed fee · one-time · quoted per engagement</div>
-
-        <div style="background:rgba(224,85,85,0.07);border:1px solid rgba(224,85,85,0.25);border-radius:6px;padding:12px 14px;margin:12px 0 18px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
-          <strong style="color:var(--red);">Important:</strong> This service involves transferring your documents to our isolated processing hardware. It is <em>not</em> a sovereign deployment — your documents temporarily leave your possession. This service is not appropriate for matters where document egress is prohibited. Confirm with your ethics counsel before proceeding.
-        </div>
-
-        <ul class="price-list">
-          <li>
-            <div>
-              <strong>What you must provide before work begins:</strong>
-              <ul style="list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:4px;">
-                <li style="padding:0;border:none;">— Executed mutual NDA / confidentiality agreement (we provide our standard form, or use yours)</li>
-                <li style="padding:0;border:none;">— Signed engagement letter specifying scope, fee, and document handling terms</li>
-                <li style="padding:0;border:none;">— Written list of 5–15 specific, answerable questions (not open-ended instructions)</li>
-                <li style="padding:0;border:none;">— Documents uploaded via a password-protected <strong style="color:var(--text);">Proton Drive</strong> share link — end-to-end encrypted, generated per engagement, expires within 14 days. No email attachments accepted under any circumstances.</li>
-                <li style="padding:0;border:none;">— Clear identification of which documents are privileged, confidential, or under protective order</li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <div>
-              <strong>What we do with your documents:</strong>
-              <ul style="list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:4px;">
-                <li style="padding:0;border:none;">— Documents are processed on isolated, offline hardware — not uploaded to any cloud service or third-party API</li>
-                <li style="padding:0;border:none;">— No OpenAI, Anthropic, or external LLM API is used at any point</li>
-                <li style="padding:0;border:none;">— All documents are permanently deleted from our systems within 24 hours of report delivery — we provide written deletion confirmation</li>
-                <li style="padding:0;border:none;">— We do not retain copies, indexes, embeddings, or any derivative of your documents after deletion</li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <div>
-              <strong>What you receive:</strong>
-              <ul style="list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:4px;">
-                <li style="padding:0;border:none;">— HTML + PDF report delivered via a separate password-protected <strong style="color:var(--text);">Proton Drive</strong> link, answering each question with citations to source document, section number, and verbatim clause where applicable</li>
-                <li style="padding:0;border:none;">— ML-DSA-65 post-quantum signature on every deliverable (.sig.json sidecar file) — proves the report has not been altered since delivery</li>
-                <li style="padding:0;border:none;">— Written confirmation of document deletion upon completion</li>
-              </ul>
-            </div>
-          </li>
-          <li><strong>Signature verification:</strong> Our ML-DSA-65 public key is published at <a href="assets/rusticagentic-mldsa65.pub.pem" download style="color:var(--rust);">rusticagentic.agency/assets/rusticagentic-mldsa65.pub.pem</a>. Anyone — including opposing counsel — can independently verify that a report was signed by us and has not been altered since delivery. The public key is safe to share and distribute freely.</li>
-          <li><strong>48-hour clock starts when:</strong> NDA is executed <em>and</em> engagement letter is signed <em>and</em> all documents and written questions are received in full. Incomplete submissions pause the clock.</li>
-          <li><strong>Volume:</strong> Up to 5,000 pages / ~500 documents included. Additional volume quoted in advance — not assumed. Engagements exceeding scope are re-quoted before work continues.</li>
-          <li><strong>Rush (24-hour) turnaround:</strong> Available at 1.5× the quoted fee. Must be confirmed and paid before work begins.</li>
-          <li>
-            <div>
-              <strong style="color:var(--text-dim);">Disclaimer — read before engaging:</strong>
-              <p style="font-size:0.82rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                Output is AI-generated analysis, not legal advice. It does not constitute the work product of a licensed attorney and should not be relied upon without independent attorney review. We do not verify document authenticity, completeness, or chain of custody. OCR accuracy varies with scan quality — we flag where OCR was used. Citations are to the documents provided — we make no representation as to their accuracy or legal effect.
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
       <!-- Tier 2 -->
       <div class="price-card featured">
         <div class="price-tier rust">Cloud Sovereign</div>
@@ -1403,16 +1343,18 @@
       <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:28px;">
         <div style="font-size:2rem;font-weight:900;color:var(--rust-dim);line-height:1;margin-bottom:14px;">03</div>
         <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">Delivery &amp; Sensitivity</div>
-        <div style="font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:10px;">24 hrs before · Non-sensitive</div>
+        <div style="font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:10px;">24 hrs before · GCS upload link</div>
         <p style="font-size:0.875rem;color:var(--text);line-height:1.65;margin-bottom:10px;">
-          Send documents via <strong style="color:var(--text-bright);">Proton Drive</strong> or any
-          secure file share at least 24 hours before your scheduled session. We ingest, index,
-          and verify the system before the call — zero setup time on your clock.
+          Once your demo is confirmed, we provision a dedicated
+          <strong style="color:var(--text-bright);">Google Cloud Storage bucket</strong>
+          scoped to your session and send you a signed upload link. Drop your documents in —
+          no account required, no third-party service. We ingest, index, and verify the
+          system before the call — zero setup time on your clock.
         </p>
-        <p style="font-size:0.8rem;color:var(--text-dim);">
-          Use non-sensitive or publicly available analogues — executed contracts from
-          closed matters, template agreements, or redacted versions. Do not send
-          documents from active privileged matters.
+        <p style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+          The bucket is isolated to your demo session.
+          All documents and derived indexes are permanently deleted immediately after the session ends —
+          we confirm deletion in writing. No copies, no embeddings, no residual data retained.
         </p>
       </div>
 
