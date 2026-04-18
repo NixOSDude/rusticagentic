@@ -1189,10 +1189,17 @@
         <div class="price-recur">Architecture designed per firm · GCP infra billed to your account · <strong style="color:var(--gold)">$8,000 – $15,000/mo</strong> managed retainer</div>
         <p style="font-size:0.875rem;color:var(--text-dim);margin:16px 0 20px;">
           For large firms or practices with high concurrent query volume — we design and deploy
-          a multi-node A100 mesh on GCP. Each node is a sovereign CUDA peer: no master node, no single point of failure.
+          a multi-node NVIDIA GPU mesh on GCP. Each node is a sovereign CUDA peer: no master node, no single point of failure.
           Add a node and it joins the mesh automatically. The mesh scales horizontally as your attorney headcount grows.
-          Subject to GCP A100 availability per region.
         </p>
+        <div style="background:rgba(200,168,75,0.07);border:1px solid rgba(200,168,75,0.3);border-radius:6px;padding:12px 14px;margin-bottom:18px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+          <strong style="color:var(--gold);">GPU availability notice:</strong>
+          This tier requires NVIDIA A100 or equivalent GPU-enabled VMs (GCP <code style="font-size:0.78rem;color:var(--text);">a2-ultragpu</code> / <code style="font-size:0.78rem;color:var(--text);">a2-highgpu</code> family).
+          GPU quota is allocated by GCP per region and is not guaranteed on demand — large deployments require a quota increase request,
+          which GCP typically processes within 2–5 business days. We scope GPU requirements as part of the architecture proposal
+          and initiate quota requests on your behalf before any engagement begins.
+          Deployment timeline is contingent on quota approval.
+        </div>
         <ul class="price-list">
           <li>
             <div>
