@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Structure | RusticAgentic</title>
+  <meta name="description" content="RusticAgentic engagement payment structure — wire transfer only, milestone-based billing, on-premises and cloud sovereign terms.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <style>
+    :root {
+      --bg:         #0a0806;
+      --bg2:        #100d0a;
+      --bg3:        #181210;
+      --border:     #2e2218;
+      --rust:       #c87941;
+      --rust-bright:#e8924a;
+      --rust-dim:   #7a4a28;
+      --copper:     #b87333;
+      --gold:       #c8a84b;
+      --gold-dim:   #8a7032;
+      --red:        #e05555;
+      --text:       #c8b89a;
+      --text-dim:   #7a6a58;
+      --white:      #f0e8d8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,8,6,0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      width: min(1320px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo img { height: 38px; width: auto; display: block; }
+    .nav-links { display: flex; gap: clamp(16px,2.5vw,36px); align-items: center; }
+    .nav-links a { font-size: 0.875rem; color: var(--text-dim); font-weight: 500; text-decoration: none; }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-cta {
+      background: var(--rust); color: #000 !important;
+      padding: 7px 18px; border-radius: 4px; font-weight: 700; font-size: 0.875rem;
+    }
+    .nav-cta:hover { background: var(--rust-bright); }
+    @media(max-width:768px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+    /* ─── PAGE ─── */
+    .page {
+      width: min(860px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto;
+      padding: 56px 0 100px;
+    }
+
+    /* ─── HEADER ─── */
+    .page-header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header .label {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--rust); font-weight: 700; margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--white);
+      letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 1rem; color: var(--text-dim); line-height: 1.7; max-width: 640px;
+    }
+
+    /* ─── SECTION HEADINGS ─── */
+    h2 {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--rust); margin: 48px 0 20px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1rem; font-weight: 700;
+      color: var(--white); margin-bottom: 8px;
+    }
+
+    p { color: var(--text-dim); line-height: 1.7; margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ─── NOTICE BLOCK ─── */
+    .notice {
+      background: rgba(200,121,65,0.06);
+      border: 1px solid var(--rust-dim);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+    .notice strong { color: var(--rust); }
+
+    /* ─── PAYMENT METHOD BLOCK ─── */
+    .method-block {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+    .method-block .method-label {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--rust); font-weight: 700; margin-bottom: 10px;
+    }
+    .method-block .method-title {
+      font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 8px;
+    }
+
+    /* ─── MILESTONE TABLE ─── */
+    .milestone-table {
+      width: 100%; border-collapse: collapse;
+      margin: 16px 0 28px; font-size: 0.9rem;
+    }
+    .milestone-table thead tr {
+      border-bottom: 2px solid var(--border);
+    }
+    .milestone-table th {
+      text-align: left; padding: 10px 14px;
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-dim); font-weight: 700;
+    }
+    .milestone-table td {
+      padding: 14px 14px; vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      color: var(--text); line-height: 1.6;
+    }
+    .milestone-table td:first-child { color: var(--white); font-weight: 600; }
+    .milestone-table td em { color: var(--rust); font-style: normal; font-weight: 700; }
+    .milestone-table tr:last-child td { border-bottom: none; }
+
+    /* ─── TIER CARD ─── */
+    .tier-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .tier-card-header {
+      background: var(--bg3);
+      padding: 18px 24px;
+      display: flex; align-items: center; gap: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tier-badge {
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em;
+      font-weight: 700; padding: 4px 10px; border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .tier-badge.cloud { background: rgba(200,121,65,0.15); color: var(--rust); }
+    .tier-badge.onprem { background: rgba(176,141,87,0.15); color: var(--copper); }
+    .tier-card-header h3 { margin: 0; font-size: 0.95rem; }
+    .tier-card-body { padding: 24px; }
+
+    /* ─── PASS-THROUGH ─── */
+    .passthrough-list {
+      list-style: none; display: flex; flex-direction: column; gap: 12px;
+      margin-top: 12px;
+    }
+    .passthrough-list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: 0.875rem; color: var(--text-dim); line-height: 1.6;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .passthrough-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .passthrough-list li strong { color: var(--text); min-width: 160px; flex-shrink: 0; }
+
+    /* ─── LATE PAYMENT ─── */
+    .terms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+      gap: 16px; margin-top: 4px;
+    }
+    .term-block {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 20px 22px;
+    }
+    .term-block .term-label {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.09em;
+      color: var(--text-dim); font-weight: 700; margin-bottom: 8px;
+    }
+    .term-block p { font-size: 0.875rem; margin: 0; line-height: 1.65; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    footer a { color: var(--rust); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo-icon.png" alt="RusticAgentic" height="38">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#demo-prep">Request a Demo</a>
+      <a href="resume.html">Scott Baker</a>
+      <a href="index.html#pubkey" style="color:var(--copper)">Public Key</a>
+      <a href="index.html#contact" class="nav-cta">Request a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="page-header">
+    <div class="label">Engagement Terms</div>
+    <h1>Payment Structure</h1>
+    <p>
+      All engagements are milestone-based, billed by bank wire transfer.
+      No credit cards. No third-party processors. No surprises.
+      Every fee, wire instruction, and milestone definition is specified in the
+      signed engagement letter before any work begins.
+    </p>
+  </div>
+
+  <!-- ── PAYMENT METHOD ── -->
+  <h2>Payment Method</h2>
+
+  <div class="notice">
+    <strong>Bank wire transfer only.</strong> Credit cards, PayPal, Venmo, Stripe, and all
+    third-party payment processors are not accepted. Payment is not considered received until
+    funds clear — not when initiated.
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin-bottom:8px;">
+    <div class="method-block">
+      <div class="method-label">Domestic (US)</div>
+      <div class="method-title">ACH or Domestic Wire</div>
+      <p style="font-size:0.875rem;">Routing and account number provided in the signed engagement letter.</p>
+    </div>
+    <div class="method-block">
+      <div class="method-label">International</div>
+      <div class="method-title">SWIFT Wire Transfer</div>
+      <p style="font-size:0.875rem;">SWIFT/BIC and IBAN provided in the signed engagement letter. Sender is responsible for all wire fees.</p>
+    </div>
+  </div>
+
+  <!-- ── CLOUD SOVEREIGN & MULTI-NODE ── -->
+  <h2>Cloud Sovereign &amp; Multi-Node Distributed Mesh</h2>
+
+  <div class="tier-card">
+    <div class="tier-card-header">
+      <span class="tier-badge cloud">Cloud</span>
+      <h3>Two-Payment Split — 50% / 50%</h3>
+    </div>
+    <div class="tier-card-body">
+      <table class="milestone-table">
+        <thead>
+          <tr>
+            <th>Milestone</th>
+            <th>Amount</th>
+            <th>Trigger</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Engagement letter signed</td>
+            <td><em>50%</em> of total fee</td>
+            <td>Due upon signing — before any work begins</td>
+          </tr>
+          <tr>
+            <td>Deployment complete</td>
+            <td><em>50%</em> of total fee</td>
+            <td>Due upon system live and written client sign-off</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.82rem;color:var(--text-dim);line-height:1.6;">
+        <strong style="color:var(--text);">Definition of "deployment complete":</strong>
+        All services passing health checks, client has successfully run at least one query against their
+        document corpus, and written sign-off is received from the client's designated representative.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── ON-PREMISES ── -->
+  <h2>On-Premises Custom Build</h2>
+
+  <div class="tier-card">
+    <div class="tier-card-header">
+      <span class="tier-badge onprem">On-Premises</span>
+      <h3>Three-Payment Split — 40% / 30% / 30%</h3>
+    </div>
+    <div class="tier-card-body">
+      <p style="font-size:0.875rem;margin-bottom:18px;">
+        The three-way split reflects the hardware procurement and travel cost exposure inherent in
+        on-premises engagements. Hardware is not ordered and travel is not booked until the first
+        payment clears.
+      </p>
+      <table class="milestone-table">
+        <thead>
+          <tr>
+            <th>Milestone</th>
+            <th>Amount</th>
+            <th>Trigger</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Engagement letter signed</td>
+            <td><em>40%</em> of total fee</td>
+            <td>Due upon signing — hardware ordered and travel booked only after this payment clears</td>
+          </tr>
+          <tr>
+            <td>Hardware delivered + team on-site</td>
+            <td><em>30%</em> of total fee</td>
+            <td>Due upon confirmed hardware delivery at client facility and deployment team arrival</td>
+          </tr>
+          <tr>
+            <td>Deployment complete</td>
+            <td><em>30%</em> of total fee</td>
+            <td>Due upon system live, onboarding session complete, and written client sign-off</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.82rem;color:var(--text-dim);line-height:1.6;">
+        <strong style="color:var(--text);">Definition of "deployment complete":</strong>
+        System fully operational on client hardware, all services passing health checks,
+        staff onboarding session completed on-site, and written sign-off received from the
+        client's designated representative.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── PASS-THROUGH COSTS ── -->
+  <h2>Pass-Through Costs — On-Premises Only</h2>
+
+  <p>The following costs are billed to the client at cost with no markup, invoiced separately from the engagement fee. All estimates are confirmed during the scoping call and itemized in the engagement letter.</p>
+
+  <ul class="passthrough-list">
+    <li>
+      <strong>Airfare</strong>
+      Round-trip airfare for two persons, billed at actual fare. We book our own flights and invoice the exact cost — no markup. Flights are not booked until the first payment (40%) clears. Airfare estimate is provided during the scoping call.
+    </li>
+    <li>
+      <strong>Hardware Shipping</strong>
+      All freight, insurance, and customs or handling fees to ship hardware to the client facility. Shipping method and carrier confirmed during scoping. Final invoice reflects actual cost.
+    </li>
+    <li>
+      <strong>Lodging &amp; Meals</strong>
+      Lodging (one room, two persons, within reasonable proximity to client facility) and meals for both team members throughout the on-site engagement. Included in the fixed engagement fee — not billed separately.
+    </li>
+    <li>
+      <strong>Ground Transportation</strong>
+      Pickup and drop-off between lodging and client facility must be provided or arranged by the client. The lead engineer does not drive. A car service, firm vehicle, or equivalent arrangement is required for each on-site travel day.
+    </li>
+  </ul>
+
+  <!-- ── LATE PAYMENT ── -->
+  <h2>Late Payment &amp; Default</h2>
+
+  <div class="terms-grid">
+    <div class="term-block">
+      <div class="term-label">Payment Due Date</div>
+      <p>All invoices are due within <strong style="color:var(--text);">10 business days</strong> of the triggering milestone.</p>
+    </div>
+    <div class="term-block">
+      <div class="term-label">Late Interest</div>
+      <p>Late payments accrue interest at <strong style="color:var(--text);">1.5% per month</strong> (18% annually) on the outstanding balance, from the due date.</p>
+    </div>
+    <div class="term-block">
+      <div class="term-label">Work Suspension</div>
+      <p>Work is suspended if any payment milestone is missed by more than 10 business days. Work resumes when payment clears — project timeline adjusts accordingly with no penalty to RusticAgentic.</p>
+    </div>
+    <div class="term-block">
+      <div class="term-label">Material Breach</div>
+      <p>A second missed payment milestone constitutes a material breach of the engagement letter and may result in termination. Payments already received are non-refundable.</p>
+    </div>
+  </div>
+
+  <!-- ── REFUND POLICY ── -->
+  <h2>Refund Policy</h2>
+
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:18px 22px;font-size:0.875rem;color:var(--text-dim);line-height:1.65;">
+      The initial payment (50% or 40%) is <strong style="color:var(--text);">non-refundable</strong> once work has begun or hardware has been ordered.
+    </div>
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:18px 22px;font-size:0.875rem;color:var(--text-dim);line-height:1.65;">
+      If RusticAgentic terminates an engagement for cause (client material breach), all payments received are retained.
+    </div>
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:18px 22px;font-size:0.875rem;color:var(--text-dim);line-height:1.65;">
+      If RusticAgentic is unable to complete the engagement through no fault of the client, fees will be prorated to work completed and any unearned balance refunded.
+    </div>
+  </div>
+
+  <!-- ── GENERAL NOTES ── -->
+  <h2>General Terms</h2>
+
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
+    <div style="display:flex;gap:14px;align-items:flex-start;font-size:0.875rem;color:var(--text-dim);padding-bottom:10px;border-bottom:1px solid var(--border);">
+      <span style="color:var(--rust);font-weight:700;flex-shrink:0;">Controlling document</span>
+      <span>All payment terms, wire instructions, milestone definitions, and total fees are specified in the signed engagement letter. Verbal agreements, email confirmations, and quotes do not constitute a binding payment obligation.</span>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;font-size:0.875rem;color:var(--text-dim);padding-bottom:10px;border-bottom:1px solid var(--border);">
+      <span style="color:var(--rust);font-weight:700;flex-shrink:0;">Quote validity</span>
+      <span>Quotes are valid for <strong style="color:var(--text);">30 days</strong> from the date of issue. After 30 days, re-scoping may be required before an engagement letter is issued.</span>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;font-size:0.875rem;color:var(--text-dim);">
+      <span style="color:var(--rust);font-weight:700;flex-shrink:0;">Questions</span>
+      <span>Contact <a href="mailto:scottbaker@rusticagentic.agency" style="color:var(--rust);">scottbaker@rusticagentic.agency</a> with any questions before signing.</span>
+    </div>
+  </div>
+
+</div><!-- /.page -->
+
+<footer>
+  <div style="width:min(860px,100% - clamp(24px,4vw,80px)*2);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <span>© 2026 RusticAgentic · <a href="index.html">Home</a> · <a href="index.html#pricing">Pricing</a> · <a href="resume.html">Scott Baker</a></span>
+    <span><a href="mailto:scottbaker@rusticagentic.agency">scottbaker@rusticagentic.agency</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
