@@ -1487,8 +1487,12 @@
         <div style="display:flex;flex-direction:column;gap:8px;font-size:0.875rem;color:var(--text);">
           <div><span style="color:var(--rust);font-weight:600;">PDF</span> — text-searchable preferred; scanned PDFs supported via OCR</div>
           <div><span style="color:var(--rust);font-weight:600;">DOCX / DOC</span> — Microsoft Word, any version</div>
-          <div><span style="color:var(--rust);font-weight:600;">TXT / MD</span> — plain text and Markdown, natively supported</div>
+          <div><span style="color:var(--rust);font-weight:600;">TXT / MD / RST / CSV / HTML</span> — native text, no extraction required</div>
+          <div><span style="color:var(--rust);font-weight:600;">PNG / JPG / JPEG / TIFF / BMP / WEBP</span> — full image OCR via tesseract</div>
           <div style="margin-top:4px;font-size:0.8rem;color:var(--text-dim);">Mixed formats in a single corpus are fine — and preferred.</div>
+        </div>
+        <div style="margin-top:14px;padding:12px 14px;background:rgba(200,168,75,0.07);border:1px solid rgba(200,168,75,0.2);border-radius:6px;font-size:0.78rem;color:var(--text-dim);line-height:1.65;">
+          <strong style="color:var(--gold);">OCR disclaimer:</strong> Optical character recognition is applied to scanned PDFs, images, and handwritten documents. OCR output is an approximation — accuracy depends on scan quality, resolution, handwriting legibility, and document condition. Handwritten notes in particular may be partially or incorrectly transcribed and may not fully or accurately reflect the source document. Faded text, low-resolution scans, skewed pages, stamps, and redactions can all reduce accuracy. Always verify OCR-extracted content against the original source document before relying on it for any legal, factual, or evidentiary purpose.
         </div>
       </div>
 
