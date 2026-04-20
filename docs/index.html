@@ -404,8 +404,8 @@
         <div class="proof-label">203/204 — ML-KEM + ML-DSA · only legal AI with PQC</div>
       </div>
       <div class="proof-stat">
-        <div class="proof-num">&lt;<span>15s</span></div>
-        <div class="proof-label">query across your entire vault (measured)</div>
+        <div class="proof-num">~<span>15s</span></div>
+        <div class="proof-label">est. query across your entire vault (dev hardware)</div>
       </div>
       <div class="proof-stat">
         <div class="proof-num"><span>0</span></div>
@@ -637,7 +637,7 @@
       against a 150-document legal corpus — NDAs, Employment Agreements, Settlement Agreements, MSAs,
       Deposition Transcripts, IP Assignments, Demand Letters, and Engagement Letters. Every filename,
       every clause quote, every dollar amount, and every latency figure is real — copied verbatim from
-      the system's live output. No internet connection. No API calls. No hallucinations.
+      the system's live output. No internet connection. No API calls. All outputs should be independently verified against source documents.
     </p>
 
     <div style="display:grid;gap:18px;margin-top:36px;">
@@ -1124,11 +1124,11 @@
     <div class="proof-grid">
       <div class="proof-item">
         <div class="proof-big">&lt;10s</div>
-        <div class="proof-desc">Query latency across<br>50,000 documents</div>
+        <div class="proof-desc">Est. query latency across<br>50,000 documents (A100 tier)</div>
       </div>
       <div class="proof-item">
         <div class="proof-big">60s</div>
-        <div class="proof-desc">New document available<br>for Q&amp;A after drop</div>
+        <div class="proof-desc">Typical time for new document<br>to be available for Q&amp;A after drop</div>
       </div>
       <div class="proof-item">
         <div class="proof-big">3-tier</div>
@@ -1144,9 +1144,10 @@
       </div>
       <div class="proof-item">
         <div class="proof-big">10×</div>
-        <div class="proof-desc">Fewer associate review<br>hours per transaction</div>
+        <div class="proof-desc">Est. reduction in first-pass<br>review time per transaction†</div>
       </div>
     </div>
+    <p style="font-size:0.75rem;color:var(--text-dim);margin-top:14px;">† Estimated reduction in first-pass document review time based on internal benchmarks. Actual results vary by corpus size, document type, matter complexity, and attorney workflow. Not a guarantee of any specific outcome.</p>
   </div>
 </section>
 
