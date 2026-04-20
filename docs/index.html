@@ -438,7 +438,7 @@
       <div class="problem-card good">
         <div class="card-tag rust">RusticAgentic</div>
         <h3>Sovereign AI on your private GCP node</h3>
-        <p>$15k–$22k one-time setup, then $3,500–$5,000/month flat managed hosting. Your documents run on a sole-tenant GCP NVIDIA GPU node billed directly to your account — physically isolated, never shared. Zero egress. Attorney-client privilege preserved. No per-user seats. No renewal leverage.</p>
+        <p>$100,000 flat — one engagement, no monthly retainer. Your documents run on a sole-tenant GCP NVIDIA GPU node billed directly to your account — physically isolated, never shared. Multi-node mesh included: add a node as your firm grows, no seat licenses, no tier upgrades. Zero egress. Attorney-client privilege preserved.</p>
       </div>
       <div class="problem-card bad">
         <div class="card-tag red">The Associate Tax</div>
@@ -522,7 +522,7 @@
       </table>
     </div>
     <p style="font-size:0.78rem;color:var(--text-dim);margin-top:12px;">
-      * RusticAgentic yr 1 = $15k–$22k setup + $3,500–$5,000/mo × 12 months. Ongoing = managed hosting only. GCP infrastructure (~$22k–$31k/yr) billed directly to your account — not included in our fee. Competitor figures from published pricing and industry surveys.
+      * RusticAgentic = $100,000 flat engagement (GCP) or $125,000 flat (on-premises). No monthly retainer. No recurring fees. GCP infrastructure (~$22k–$31k/yr) billed directly to your account — not included in our fee. Competitor figures from published pricing and industry surveys.
     </p>
   </div>
 </section>
@@ -1177,65 +1177,41 @@
 
     <div class="price-grid">
 
-      <!-- Tier 2 -->
-      <div class="price-card featured">
-        <div class="price-tier rust">Cloud Sovereign</div>
-        <div class="price-name">Sovereign Document Vault<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">(GCP Sole-Tenant)</span></div>
-        <div class="price-amount">$15,000 <span>– $22,000</span></div>
-        <div class="price-recur">Setup fee + <strong>$3,500 – $5,000/mo</strong> managed hosting · GCP infra billed separately to your account</div>
-        <ul class="price-list">
-          <li><strong>Infrastructure:</strong> GCP sole-tenant NVIDIA GPU node billed directly to your GCP account. Target GPU is the A100 80GB (est. ~$2.50–$3.50/hr on committed use); L4 and T4 are available fallbacks if A100 quota is constrained in your region — performance and cost are tiered accordingly. You own the compute; we manage the stack. Need more capacity? Add a node — flat managed fee per node, same stack.</li>
-          <li><strong>Setup includes:</strong> Full RusticAgentic deployment, vault configuration, document migration, SSL, custom domain, staff onboarding session (half-day), and 30 days of hypercare support.</li>
-          <li><strong>Monthly retainer includes:</strong> Unlimited queries, continuous document ingest (new files searchable within 60 seconds), model upgrades quarterly, security patch management, uptime monitoring, and email support with 4-hour SLA.</li>
-          <li><strong>Document capacity:</strong> Unlimited. Index scales with storage. Tested to 500,000 documents.</li>
-          <li><strong>Every answer:</strong> Cites source document filename, section number, and verbatim clause. Full audit log of every query and answer stored encrypted on your node.</li>
-          <li><strong>Signing:</strong> ML-DSA-65 signed audit trail on every query/response pair. Tamper-evident chain of custody for every document interaction.</li>
-          <li><strong>Access:</strong> Web UI (HTTPS, IP whitelisting available) + REST API for integration with your existing practice management software.</li>
-        </ul>
-      </div>
+      <!-- GCP Sovereign — single product -->
+      <div class="price-card featured" style="grid-column:1/-1;">
+        <div class="price-tier rust">GCP Sovereign</div>
+        <div class="price-name">Sovereign Document Vault + AI Chat<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">GCP Sole-Tenant · Multi-Node Mesh · Build &amp; Handoff</span></div>
+        <div class="price-amount">$100,000 <span>· flat</span></div>
+        <div class="price-recur"><strong>One engagement. No monthly retainer. No recurring fees.</strong> · GCP infrastructure billed separately and directly to your account</div>
 
-      <!-- Tier 3 — Custom Build -->
-      <div class="price-card" style="border-color:var(--gold);background:linear-gradient(160deg,rgba(200,168,75,0.07) 0%,var(--bg3) 60%);">
-        <div class="price-tier gold">Custom Build</div>
-        <div class="price-name">Multi-Node Distributed Mesh<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">Enterprise · Multi-GPU · High Concurrency</span></div>
-        <div class="price-amount" style="color:var(--gold);">From $75,000 <span>· scoped per engagement</span></div>
-        <div class="price-recur">Architecture designed per firm · GCP infra billed to your account · <strong style="color:var(--gold)">$8,000 – $15,000/mo</strong> managed retainer</div>
-        <p style="font-size:0.875rem;color:var(--text-dim);margin:16px 0 20px;">
-          For large firms or practices with high concurrent query volume — we design and deploy
-          a multi-node NVIDIA GPU mesh on GCP. Each node is a sovereign CUDA peer: no master node, no single point of failure.
-          GPU tier (A100, L4, T4) is selected based on regional availability and workload requirements.
-          Add a node and it joins the mesh automatically. The mesh scales horizontally as your attorney headcount grows.
+        <p style="font-size:0.875rem;color:var(--text-dim);margin:16px 0 20px;line-height:1.65;">
+          One product. One price. Everything included. We design, deploy, and hand off the full RusticAgentic stack —
+          encrypted document vault, GPU-accelerated AI chat, and a multi-node mesh that scales as your firm grows.
+          Your IT team takes ownership at handoff. No ongoing retainer. No ticket queue. No vendor dependency.
         </p>
-        <div style="background:rgba(200,168,75,0.07);border:1px solid rgba(200,168,75,0.3);border-radius:6px;padding:12px 14px;margin-bottom:18px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
-          <strong style="color:var(--gold);">GPU availability &amp; performance notice:</strong>
-          This tier runs on NVIDIA GPU-enabled VMs on GCP. A100 80GB nodes deliver peak inference performance;
-          L4 and T4 nodes are viable at reduced throughput and lower cost per node.
+
+        <div style="background:rgba(200,121,65,0.07);border:1px solid rgba(200,121,65,0.3);border-radius:6px;padding:12px 14px;margin-bottom:18px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+          <strong style="color:var(--rust);">GPU availability &amp; performance notice:</strong>
+          Target GPU is the A100 80GB. L4 and T4 are available fallbacks if A100 quota is constrained in your region.
           GPU demand on GCP is high — specific VM types are not always available in every region on demand.
-          Multi-node deployments almost always require a GCP quota increase request, typically processed within 2–5 business days
-          but not guaranteed. Node count, GPU tier, and region are scoped in the architecture proposal.
+          Multi-node deployments require a GCP quota increase request, typically processed within 2–5 business days but not guaranteed.
           We initiate all quota requests on your behalf before any engagement begins.
           Deployment timeline is contingent on quota approval and regional availability.
         </div>
+
         <ul class="price-list">
+          <li><strong>Infrastructure:</strong> GCP sole-tenant NVIDIA GPU node billed directly to your GCP account. Target GPU is the A100 80GB (est. ~$2.50–$3.50/hr on committed use); L4 and T4 are available fallbacks if A100 quota is constrained in your region. You own the compute. Your GCP console, your visibility.</li>
+          <li><strong>Setup includes:</strong> Full RusticAgentic deployment, vault configuration, document migration, SSL, custom domain, staff onboarding session (half-day), and 30 days of hypercare support.</li>
           <li>
             <div>
-              <strong>Multi-node A100 mesh on GCP:</strong>
+              <strong>Multi-node mesh — scale without seat licenses:</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
                 Multiple A100 80GB sole-tenant nodes deployed in GCP, each running the full sovereign stack.
                 Each node processes queries independently — the gateway coordinates but does not own.
                 If any node goes offline, the others continue. Masterless by design.
-                Add a node and it joins the mesh automatically — no configuration changes required on existing nodes.
-              </p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <strong>Horizontal scale — licenses never bottleneck you:</strong>
-              <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                As your attorney headcount grows, you add A100 nodes — not seat licenses, not tier upgrades.
+                As your attorney headcount grows, you add nodes — not seat licenses, not tier upgrades.
                 Each additional node adds an estimated 6–8 concurrent users to your capacity.
-                A boutique firm and a large regional firm run the same stack — just a different node count.
-                No artificial software limits — hardware is the only ceiling.
+                Add a node and it joins the mesh automatically — no configuration changes required on existing nodes.
               </p>
             </div>
           </li>
@@ -1270,18 +1246,20 @@
               </p>
             </div>
           </li>
+          <li><strong>Document capacity:</strong> Unlimited. Index scales with storage. Tested to 500,000 documents.</li>
+          <li><strong>Every answer:</strong> Cites source document filename, section number, and verbatim clause. Full audit log of every query and answer stored encrypted on your node.</li>
+          <li><strong>Signing:</strong> ML-DSA-65 signed audit trail on every query/response pair. Tamper-evident chain of custody for every document interaction.</li>
+          <li><strong>Access:</strong> Web UI (HTTPS, IP whitelisting available) + REST API for integration with your existing practice management software.</li>
           <li>
             <div>
-              <strong>Dedicated GCP project isolation:</strong>
+              <strong>Post-deployment operations — your IT team owns it:</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                Each client deployment runs in a dedicated GCP project billed to the firm's account.
-                No shared infrastructure, no cross-client data paths, no multi-tenancy at any layer.
-                VPC firewall rules lock every node to your IP ranges only. Your GCP console, your visibility.
+                After handoff, your firm's IT department manages day-to-day operations through the GCP console — the same way they manage any other server infrastructure.
+                There is no ongoing retainer and no ticket queue. If an issue arises, see Post-Deployment Support below.
               </p>
             </div>
           </li>
-          <li><strong>Custom SLA &amp; dedicated support:</strong> Dedicated support channel, custom uptime SLA tier, quarterly architecture reviews, and a named engineer on your account. Priority escalation path for production incidents — not a ticket queue.</li>
-          <li><strong>How we scope it:</strong> Free architecture call. We map your firm structure, office locations, document volume, concurrent user count, and DMS environment. We produce a fixed-price architecture proposal within 5 business days. No retainer required to receive a proposal.</li>
+          <li><strong>How we scope it:</strong> Free architecture call. We map your firm structure, office locations, document volume, concurrent user count, and DMS environment. Fixed-price proposal delivered within 5 business days. No retainer required to receive a proposal.</li>
         </ul>
       </div>
 
@@ -1289,8 +1267,8 @@
       <div class="price-card" style="border-color:var(--copper);background:linear-gradient(160deg,rgba(176,141,87,0.07) 0%,var(--bg3) 60%);grid-column:1/-1;">
         <div class="price-tier" style="background:rgba(176,141,87,0.15);color:var(--copper);">On-Premises</div>
         <div class="price-name">Sovereign On-Premises Build<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">Firm-Controlled Hardware · No Cloud Dependency · Complete Air-Gap Option</span></div>
-        <div class="price-amount" style="color:var(--copper);">Price varies <span>· scoped per engagement</span></div>
-        <div class="price-recur">Fixed-price architecture proposal · hardware, travel, and deployment costs included · ongoing managed retainer quoted separately</div>
+        <div class="price-amount" style="color:var(--copper);">$125,000 <span>· flat</span></div>
+        <div class="price-recur"><strong style="color:var(--copper)">One engagement. No monthly retainer. No recurring fees.</strong> · Hardware, travel, and deployment included</div>
 
         <div style="display:inline-block;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;color:var(--copper);background:rgba(176,141,87,0.1);border:1px solid rgba(176,141,87,0.35);border-radius:4px;padding:4px 10px;margin-bottom:14px;">
           Most Secure Deployment Option — Full Data Sovereignty
@@ -1334,10 +1312,11 @@
           </li>
           <li>
             <div>
-              <strong>Ongoing managed retainer (optional):</strong>
+              <strong>Post-deployment operations — your IT team owns it:</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                Remote management, security patches, model upgrades, and monitoring are available as an ongoing retainer after deployment.
-                Quoted separately based on system complexity and desired SLA tier.
+                After handoff, day-to-day operations are managed by your firm's IT department. There is no ongoing retainer and no managed service.
+                Your IT team handles GCP console access, network configuration, and routine operations — the same way they manage any other server on your network.
+                If an issue arises, see the Post-Deployment Support terms below.
               </p>
             </div>
           </li>
@@ -1362,7 +1341,102 @@
 
     </div>
 
+    <!-- Post-Deployment Support & Fee Schedule -->
     <div style="margin-top:36px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:24px 28px;">
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:6px;">Post-Deployment Support</div>
+      <p style="font-size:0.875rem;color:var(--text-dim);margin-bottom:20px;line-height:1.65;">
+        We build and hand off. Your IT team manages operations. If an issue arises, we diagnose it —
+        and the fee structure is designed to be fair: if it's our code, we fix it at no further charge.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:20px;">
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">Remote Diagnostics</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$2,500</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Retainer held to initiate analysis. <strong style="color:var(--text);">Only charged if fault is determined to be GCP infrastructure or user/IT error.</strong>
+            If the fault is ours, the retainer is returned and the fix is at no charge.
+            Remediation fee quoted separately if applicable.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">On-Site Diagnostics</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$7,500 <span style="font-size:0.85rem;font-weight:400;color:var(--text-dim);">+ travel</span></div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Same fault-determination model as remote diagnostics. Retainer only charged if fault is GCP or user/IT error — returned if ours.
+            Additional on-site days billed at $2,500/day. <strong style="color:var(--text);">Travel and accommodation expenses are billed to the client regardless of fault determination</strong> — per the travel requirements in the on-premises card above.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">GCP Migration (Remote)</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$15,000</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Migrate your deployment to a new GCP project, region, or node configuration. Includes re-issuance of PQC hardware-bound license tokens for the new infrastructure.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">On-Prem Migration (Remote)</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$20,000</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Migrate your on-premises deployment to new hardware. Includes PQC token re-issuance bound to new MAC addresses.
+            On-site migration available — add travel at on-site diagnostic rates.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">GCP Add-a-Node (Existing Client)</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$10,000</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Add a new GCP node to your existing mesh. Remote engagement — node is provisioned from a pre-baked image, tokens issued, and the node joins your mesh automatically.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">On-Prem Add-a-Node — New Office <span style="color:var(--gold);font-size:0.7rem;margin-left:4px;">Existing Client</span></div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$100,000 <span style="font-size:0.75rem;font-weight:400;color:var(--gold);">$25,000 loyalty discount applied</span></div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Full on-premises deployment at a new office location for existing clients. Same stack, same sovereign build. Travel and accommodation billed per the standard on-premises travel requirements.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">PQC Key Rotation (Remote)</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$3,500</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Annual security best practice. Re-encapsulates your vault's ML-KEM master key, rotates AES-256-GCM shard keys, and re-signs the audit chain under new ML-DSA credentials. Clients who decline key rotation sign a waiver.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">Major Version Upgrade (Remote)</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$5,000</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            When we ship a significant release, we re-bake, redeploy, and re-issue PQC-bound binaries to your node. Your IT team does not need to coordinate the upgrade — we handle it remotely and confirm deployment.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">Additional Onboarding Session</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$2,500 <span style="font-size:0.85rem;font-weight:400;color:var(--text-dim);">/ half-day · remote</span></div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            For new staff cohorts, practice group expansions, or any firm that wants a refresher session beyond what was included in the original deployment.
+          </div>
+        </div>
+
+      </div>
+
+      <div style="font-size:0.78rem;color:var(--text-dim);padding:12px 14px;background:rgba(200,121,65,0.04);border:1px solid rgba(200,121,65,0.15);border-radius:6px;line-height:1.65;">
+        <strong style="color:var(--rust);">Hardware licensing:</strong>
+        All deployed binaries are PQC-bound to the MAC address of the licensed hardware. Binaries will not execute on unauthorized hardware.
+        Any hardware change — new servers, new GCP project, replacement nodes — requires a migration engagement to re-issue tokens.
+        This is a security feature, not a restriction: your sovereign deployment cannot be copied or run on uncontrolled infrastructure.
+      </div>
+    </div>
+
+    <div style="margin-top:24px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:24px 28px;">
       <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:14px;">Included in Every Engagement</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
         <div style="font-size:0.875rem;color:var(--text);">✓ Free 30-minute scoping call before any commitment</div>
