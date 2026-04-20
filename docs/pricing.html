@@ -45,7 +45,7 @@
       <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">Deployment Model</div>
       <div>
         <div style="font-weight:700;color:var(--white);margin-bottom:4px;">☁ Cloud Sovereign — GCP NVIDIA GPU Sole-Tenant Node</div>
-        <div style="font-size:0.85rem;color:var(--text-dim);">Your data runs on a GCP NVIDIA GPU sole-tenant node billed directly to <em>your</em> GCP account. Physically isolated hardware — no hypervisor sharing, no multi-tenancy. We deploy and manage the full stack. You own the compute. Need more capacity? Add a node — each additional GPU node joins the query mesh automatically.</div>
+        <div style="font-size:0.85rem;color:var(--text-dim);">Your data runs on a GCP NVIDIA GPU sole-tenant node billed directly to <em>your</em> GCP account. Physically isolated hardware — no hypervisor sharing, no multi-tenancy. We deploy and manage the full stack. You own the compute. Need more capacity? Additional A100 query nodes are available as a separate engagement — see <strong style="color:var(--rust)">Add a GCP Query Node</strong> in Post-Deployment Support below.</div>
         <div style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;padding:8px;background:rgba(200,121,65,0.05);border-radius:4px;border-left:2px solid var(--rust-dim);">
           <strong>GPU availability &amp; performance:</strong> GCP sole-tenancy provides physical hardware isolation within Google's infrastructure. It satisfies most law firm IT security and bar ethics requirements. However, a small number of jurisdictions have issued ethics opinions requiring data to reside on <em>firm-controlled</em> hardware — confirm compliance with your state bar before proceeding.
           NVIDIA GPU-enabled VMs (A100, L4, T4, and others) are in high demand across GCP regions — availability is not guaranteed and quota increases are often required before provisioning.
@@ -91,7 +91,8 @@
                 If any node goes offline, the others continue. Masterless by design.
                 As your attorney headcount grows, you add nodes — not seat licenses, not tier upgrades.
                 Each additional node adds an estimated 6–8 concurrent users to your capacity.
-                Add a node and it joins the mesh automatically — no configuration changes required on existing nodes.
+                Additional nodes are provisioned by us as a separate engagement — no changes required to existing nodes.
+                See <strong>Add a GCP Query Node</strong> in Post-Deployment Support below.
               </p>
             </div>
           </li>
@@ -258,6 +259,14 @@
           <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$100,000 <span style="font-size:0.75rem;font-weight:400;color:var(--gold);">$25,000 loyalty discount applied</span></div>
           <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
             Full on-premises deployment at a new office location for existing clients. Same stack, same sovereign build. Client procures all travel and accommodation per the standard on-premises travel requirements.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">Add a GCP Query Node (Remote) <span style="color:var(--gold);font-size:0.7rem;margin-left:4px;">Existing Client</span></div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$75,000 <span style="font-size:0.85rem;font-weight:400;color:var(--text-dim);">· flat</span></div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Provision an additional A100 80GB query node on your GCP account. We build from our pre-baked sovereign image, distribute vault keys, verify all services, and confirm the node is integrated into your mesh. <strong style="color:var(--text);">Remote only — no travel required.</strong> Includes PQC hardware-bound license token issuance for the new node. Existing nodes are not touched — no downtime, no configuration changes on your current infrastructure.
           </div>
         </div>
 
