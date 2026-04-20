@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RusticAgentic — How it works. Seven-step sovereign RAG pipeline with post-quantum vault encryption, CUDA-accelerated embeddings, and ML-DSA-65 signed output.">
+  <title>Product — RusticAgentic</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo-icon.png" alt="RusticAgentic" height="38">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html" class="active">Product</a>
+      <a href="demo.html">Demo</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="payment.html">Payment</a>
+      <a href="resume.html">Scott Baker</a>
+      <a href="mailto:scottbaker@rusticagentic.agency?subject=Demo%20Request%20—%20RusticAgentic&body=Firm%3A%0ADocument%20count%20(approx)%3A%0ADocument%20types%3A%0AAvailability%3A" class="nav-cta">Request a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HOW IT WORKS ═══════════════════════════ -->
+<section id="how">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2>Drop files in. Ask questions.<br>Get cited answers.</h2>
+    <p class="section-intro">
+      No training. No fine-tuning. No IT project. Your documents are chunked,
+      embedded, and stored in a private vector index on your sole-tenant GCP node.
+      Queries run on your private NVIDIA GPU node against a 123B parameter language model — nothing touches shared infrastructure.
+    </p>
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div class="pipe-num">Step 01</div>
+        <h4>Drop Documents</h4>
+        <p>PDF, DOC, DOCX, TXT, MD, RST, CSV, HTML, and images (PNG, JPG, JPEG, TIFF, BMP, WEBP). Drop into a watched folder or GCS bucket. Three-tier PDF extraction: native text → poppler → OCR. Images and scanned documents go directly to tesseract OCR.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">Step 02</div>
+        <h4>Automatic Ingest</h4>
+        <p>The ra-watch daemon detects new files within seconds. Legal-aware chunker splits at section boundaries — not arbitrary character counts.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">Step 03</div>
+        <h4>Private Embedding</h4>
+        <p>1024-dimension embeddings computed on-device by gte-large-en-v1.5 via ONNX Runtime with CUDA acceleration. Zero API calls.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">Step 04</div>
+        <h4>Post-Quantum Vault Encryption</h4>
+        <p>Every document shard encrypted with AES-256-GCM. Keys wrapped with ML-KEM Kyber-768 (NIST FIPS 203). Data is decrypted only for the duration of a query — never written to disk in plaintext. No competitor does this.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">Step 05</div>
+        <h4>HNSW Vector Index</h4>
+        <p>Vectors stored in a bare-metal HNSW index (usearch). Sub-millisecond approximate nearest-neighbor retrieval at any scale.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">Step 06</div>
+        <h4>Ask Your Vault</h4>
+        <p>Natural language query → top-K retrieved chunks → Mistral Large 2 (123B) generates a cited answer. Every response shows the source document and paragraph.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">Step 07</div>
+        <h4>ML-DSA-65 Signed Output</h4>
+        <p>Every answer and audit log entry is signed with ML-DSA-65 (NIST FIPS 204) — a quantum-resistant lattice signature. Tamper-evident chain of custody. Verifiable by anyone with our public key.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CAPABILITIES ═══════════════════════════ -->
+<section id="capabilities">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <h2>Built for the questions<br>lawyers actually ask.</h2>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <div class="cap-icon">⚖</div>
+        <h3>Contract Intelligence</h3>
+        <p>"Find all MSAs with automatic renewal clauses and less than 60 days notice." Searches thousands of contracts in seconds. Returns the clause, the document, and the page number.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">🔍</div>
+        <h3>Jurisdiction &amp; Governing Law</h3>
+        <p>"Which contracts are not governed by Delaware law?" Cross-reference governing law clauses across your entire portfolio instantly. Essential for M&amp;A due diligence.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">🛡</div>
+        <h3>Liability Cap Analysis</h3>
+        <p>"List all vendor agreements with liability caps below $500,000." Extracts, normalizes, and ranks contracts by exposure. No spreadsheet, no associate review hours.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">📋</div>
+        <h3>Deposition &amp; Transcript Search</h3>
+        <p>Search deposition transcripts for specific testimony, contradictions, or witness statements. Cite the exact page and line. Works across hundreds of depositions simultaneously.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">📁</div>
+        <h3>e-Discovery Support</h3>
+        <p>Rapid first-pass review of discovery productions. Identify responsive documents, flag privilege issues, and surface key facts before associate review begins.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">🔒</div>
+        <h3>Privilege-Safe Architecture</h3>
+        <p>Attorney-client privileged documents stay on hardware you control. No vendor has access. No multi-tenant server processes your matter. Provably sovereign by design.</p>
+      </div>
+      <div class="cap-card" style="border-color:var(--rust-dim);background:rgba(200,121,65,0.04);">
+        <div class="cap-icon">⚛</div>
+        <h3>Post-Quantum Vault — NIST FIPS 203/204</h3>
+        <p>Every document encrypted with AES-256-GCM + ML-KEM Kyber-768 key encapsulation. Every answer signed with ML-DSA-65 Dilithium — quantum-resistant by NIST standard. No legal AI competitor offers post-quantum encryption. We do. Every deployment, every tier.</p>
+      </div>
+      <div class="cap-card" style="border-color:var(--rust-dim);background:rgba(200,121,65,0.04);">
+        <div class="cap-icon">🔑</div>
+        <h3>Verifiable Chain of Custody</h3>
+        <p>Every query, every answer, every document access is signed with ML-DSA-65 and written to a tamper-evident audit chain. Our public key is published — opposing counsel, auditors, or bar ethics reviewers can independently verify any output we have ever delivered. <a href="pricing.html#pubkey" style="color:var(--rust);">Download our public key →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CTA ═══════════════════════════ -->
+<section id="contact">
+  <div class="container" style="text-align:center;max-width:680px;">
+    <div class="section-label" style="text-align:center">Get Started</div>
+    <h2>The demo is the pitch.<br>Bring your documents. We run the queries live.</h2>
+    <p style="font-size:1rem;color:var(--text);line-height:1.7;margin:0 auto 32px;">
+      No slide deck. No canned script. You upload your sample corpus, you run your 10 pre-formulated queries,
+      and you watch the system answer them — with source citations — in real time.
+      If it doesn't impress you in 30 minutes, there's nothing more to discuss.
+    </p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+      <a href="mailto:scottbaker@rusticagentic.agency?subject=Demo%20Request%20—%20RusticAgentic&body=Firm%3A%0ADocument%20count%20(approx)%3A%0ADocument%20types%3A%0AAvailability%3A" class="btn-primary" style="font-size:1rem;padding:14px 36px;">
+        Request a Live Demo →
+      </a>
+      <span style="font-size:0.82rem;color:var(--text-dim);">
+        We'll confirm within one business day and send your GCS upload link.
+      </span>
+    </div>
+    <p class="contact-note" style="margin-top:28px;">
+      Questions before committing to a demo?
+      <a href="mailto:scottbaker@rusticagentic.agency">scottbaker@rusticagentic.agency</a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Rustic<span>Agentic</span> · rusticagentic.agency</div>
+    <div class="footer-right">
+      Sovereign AI document intelligence for law firms · Post-Quantum Encrypted · NIST FIPS 203/204<br>
+      Your documents never leave your private GCP node.
+    </div>
+  </div>
+  <div style="width:min(1320px,100% - clamp(24px,4vw,80px)*2);margin:16px auto 0;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+    <div style="font-size:0.78rem;color:var(--text-dim);">
+      All deliverables post-quantum signed · <strong style="color:var(--text);">ML-DSA-65 (NIST FIPS 204)</strong> · ML-KEM Kyber-768 vault encryption (NIST FIPS 203)
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="assets/rusticagentic-mldsa65.pub.pem" download style="font-size:0.8rem;color:var(--rust);border:1px solid var(--border);padding:5px 12px;border-radius:4px;text-decoration:none;white-space:nowrap;">↓ Public Key (.pem)</a>
+      <a href="assets/rusticagentic-mldsa65.pub.hex" download style="font-size:0.8rem;color:var(--text-dim);border:1px solid var(--border);padding:5px 12px;border-radius:4px;text-decoration:none;white-space:nowrap;">↓ Public Key (.hex)</a>
+    </div>
+  </div>
+  <div style="width:min(1320px,100% - clamp(24px,4vw,80px)*2);margin:12px auto 0;padding-top:12px;border-top:1px solid var(--border);font-size:0.75rem;color:var(--text-dim);">
+    &copy; 2026 Scott Baker. RusticAgentic is a trademark and copyright of Scott Baker. All rights reserved.
+    · <a href="disclaimers.html" style="color:var(--text-dim);">Legal Disclaimers</a>
+  </div>
+</footer>
+
+</body>
+</html>

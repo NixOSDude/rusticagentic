@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RusticAgentic pricing — $100k GCP Sovereign, $125k On-Premises. Flat fee, no monthly retainer, no seat fees. Full fee schedule and demo prep.">
+  <title>Pricing — RusticAgentic</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo-icon.png" alt="RusticAgentic" height="38">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="demo.html">Demo</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="payment.html">Payment</a>
+      <a href="resume.html">Scott Baker</a>
+      <a href="mailto:scottbaker@rusticagentic.agency?subject=Demo%20Request%20—%20RusticAgentic&body=Firm%3A%0ADocument%20count%20(approx)%3A%0ADocument%20types%3A%0AAvailability%3A" class="nav-cta">Request a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ PRICING ═══════════════════════════ -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-label">Pricing</div>
+    <h2>Transparent. Flat. No seat fees.<br>No renewal leverage. No surprises.</h2>
+    <p class="section-intro">
+      Every engagement starts with a free 30-minute scoping call. We tell you exactly what
+      we will build, what it will cost, and what you will get. No RFP process, no procurement committee,
+      no six-month implementation timeline.
+    </p>
+
+    <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:28px;">
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">Deployment Model</div>
+      <div>
+        <div style="font-weight:700;color:var(--white);margin-bottom:4px;">☁ Cloud Sovereign — GCP NVIDIA GPU Sole-Tenant Node</div>
+        <div style="font-size:0.85rem;color:var(--text-dim);">Your data runs on a GCP NVIDIA GPU sole-tenant node billed directly to <em>your</em> GCP account. Physically isolated hardware — no hypervisor sharing, no multi-tenancy. We deploy and manage the full stack. You own the compute. Need more capacity? Add a node — each additional GPU node joins the query mesh automatically.</div>
+        <div style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;padding:8px;background:rgba(200,121,65,0.05);border-radius:4px;border-left:2px solid var(--rust-dim);">
+          <strong>GPU availability &amp; performance:</strong> GCP sole-tenancy provides physical hardware isolation within Google's infrastructure. It satisfies most law firm IT security and bar ethics requirements. However, a small number of jurisdictions have issued ethics opinions requiring data to reside on <em>firm-controlled</em> hardware — confirm compliance with your state bar before proceeding.
+          NVIDIA GPU-enabled VMs (A100, L4, T4, and others) are in high demand across GCP regions — availability is not guaranteed and quota increases are often required before provisioning.
+          Performance scales with GPU tier: an A100 80GB delivers the fastest inference; an L4 or T4 is a capable fallback if A100 quota is unavailable in your region.
+          We assess available quota, recommend the optimal GPU tier for your workload, and initiate any necessary quota increase requests as part of the scoping process — before any engagement begins.
+        </div>
+      </div>
+    </div>
+
+    <div class="price-grid">
+
+      <!-- GCP Sovereign -->
+      <div class="price-card featured" style="grid-column:1/-1;">
+        <div class="price-tier rust">GCP Sovereign</div>
+        <div class="price-name">Sovereign Document Vault + AI Chat<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">GCP Sole-Tenant · Multi-Node Mesh · Build &amp; Handoff</span></div>
+        <div class="price-amount">$100,000 <span>· flat</span></div>
+        <div class="price-recur"><strong>One engagement. No monthly retainer. No recurring fees.</strong> · GCP infrastructure billed separately and directly to your account</div>
+
+        <p style="font-size:0.875rem;color:var(--text-dim);margin:16px 0 20px;line-height:1.65;">
+          One product. One price. Everything included. We design, deploy, and hand off the full RusticAgentic stack —
+          encrypted document vault, GPU-accelerated AI chat, and a multi-node mesh that scales as your firm grows.
+          Your IT team takes ownership at handoff. No ongoing retainer. No ticket queue. No vendor dependency.
+        </p>
+
+        <div style="background:rgba(200,121,65,0.07);border:1px solid rgba(200,121,65,0.3);border-radius:6px;padding:12px 14px;margin-bottom:18px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+          <strong style="color:var(--rust);">GPU availability &amp; performance notice:</strong>
+          Target GPU is the A100 80GB. L4 and T4 are available fallbacks if A100 quota is constrained in your region.
+          GPU demand on GCP is high — specific VM types are not always available in every region on demand.
+          Multi-node deployments require a GCP quota increase request, typically processed within 2–5 business days but not guaranteed.
+          We initiate all quota requests on your behalf before any engagement begins.
+          Deployment timeline is contingent on quota approval and regional availability.
+        </div>
+
+        <ul class="price-list">
+          <li><strong>Infrastructure:</strong> GCP sole-tenant NVIDIA GPU node billed directly to your GCP account. Target GPU is the A100 80GB (est. ~$2.50–$3.50/hr on committed use); L4 and T4 are available fallbacks if A100 quota is constrained in your region. You own the compute. Your GCP console, your visibility.</li>
+          <li><strong>Setup includes:</strong> Full RusticAgentic deployment, vault configuration, document migration, SSL, and custom domain. Your IT team manages day-to-day operations. Attorneys onboard through the built-in UI guide — no onboarding sessions required.</li>
+          <li>
+            <div>
+              <strong>Multi-node mesh — scale without seat licenses:</strong>
+              <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
+                Multiple A100 80GB sole-tenant nodes deployed in GCP, each running the full sovereign stack.
+                Each node processes queries independently — the gateway coordinates but does not own.
+                If any node goes offline, the others continue. Masterless by design.
+                As your attorney headcount grows, you add nodes — not seat licenses, not tier upgrades.
+                Each additional node adds an estimated 6–8 concurrent users to your capacity.
+                Add a node and it joins the mesh automatically — no configuration changes required on existing nodes.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Multi-region GCP deployment:</strong>
+              <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
+                Nodes can be deployed across GCP regions — us-central1, us-east1, europe-west1 — for latency optimization.
+                Each region handles local attorney traffic. The encrypted vault index stays synchronized across regions via GCS.
+                A New York associate and a Dallas partner query the same corpus at the same performance profile.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>DMS integration (iManage, NetDocuments, SharePoint):</strong>
+              <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
+                Custom ingest connectors built for your document management system.
+                New matters filed in iManage or NetDocuments are automatically ingested and searchable within minutes —
+                no manual upload step, no associate responsible for remembering to sync.
+                ra-watch daemon polls your DMS and your GCS bucket continuously.
+              </p>
+            </div>
+          </li>
+          <li><strong>Document capacity:</strong> Unlimited. Index scales with storage. Tested to 500,000 documents.</li>
+          <li><strong>Every answer:</strong> Cites source document filename, section number, and verbatim clause. Full audit log of every query and answer stored encrypted on your node.</li>
+          <li><strong>Signing:</strong> ML-DSA-65 signed audit trail on every query/response pair. Tamper-evident chain of custody for every document interaction.</li>
+          <li><strong>Access:</strong> Web UI (HTTPS, IP whitelisting available) + REST API for integration with your existing practice management software.</li>
+          <li>
+            <div>
+              <strong>Post-deployment operations — your IT team owns it:</strong>
+              <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
+                After handoff, your firm's IT department manages day-to-day operations through the GCP console — the same way they manage any other server infrastructure.
+                There is no ongoing retainer and no ticket queue. If an issue arises, see Post-Deployment Support below.
+              </p>
+            </div>
+          </li>
+          <li><strong>How we scope it:</strong> Free architecture call. We map your firm structure, office locations, document volume, concurrent user count, and DMS environment. Fixed-price proposal delivered within 5 business days. No retainer required to receive a proposal.</li>
+        </ul>
+      </div>
+
+      <!-- On-Premises -->
+      <div class="price-card" style="border-color:var(--copper);background:linear-gradient(160deg,rgba(176,141,87,0.07) 0%,var(--bg3) 60%);grid-column:1/-1;">
+        <div class="price-tier" style="background:rgba(176,141,87,0.15);color:var(--copper);">On-Premises</div>
+        <div class="price-name">Sovereign On-Premises Build<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">Firm-Controlled Hardware · No Cloud Dependency · Complete Air-Gap Option</span></div>
+        <div class="price-amount" style="color:var(--copper);">$125,000 <span>· flat</span></div>
+        <div class="price-recur"><strong style="color:var(--copper)">One engagement. No monthly retainer. No recurring fees.</strong> · You procure hardware · we configure, ship, and train</div>
+
+        <div style="display:inline-block;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;color:var(--copper);background:rgba(176,141,87,0.1);border:1px solid rgba(176,141,87,0.35);border-radius:4px;padding:4px 10px;margin-bottom:14px;">
+          Most Secure Deployment Option — Full Data Sovereignty
+        </div>
+
+        <p style="font-size:0.875rem;color:var(--text-dim);margin:0 0 20px;line-height:1.65;">
+          This is the highest-security deployment we offer. Your data never leaves your building.
+          No cloud provider, no GCP, no third-party infrastructure of any kind — the hardware is yours,
+          the network is yours, and every byte of your document vault remains under your physical and legal control at all times.
+          There is no egress path. There is no shared infrastructure. There is no external API.
+          Your documents, your queries, and your answers exist only on hardware that sits in your server room.
+        </p>
+        <p style="font-size:0.875rem;color:var(--text-dim);margin:0 0 20px;line-height:1.65;">
+          The system runs identically to the cloud deployment: same post-quantum vault encryption, same ML-DSA signed audit chain, same CUDA-accelerated inference.
+          This option satisfies the strictest state bar ethics opinions on data residency, any jurisdiction requiring firm-controlled hardware,
+          and any client confidentiality or regulatory requirement that prohibits cloud storage of privileged documents.
+        </p>
+
+        <div style="background:rgba(176,141,87,0.07);border:1px solid rgba(176,141,87,0.25);border-radius:6px;padding:12px 14px;margin-bottom:20px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+          <strong style="color:var(--copper);">GPU availability note:</strong>
+          On-premises inference performance is determined by the NVIDIA GPU installed in your server hardware.
+          We recommend and specify the appropriate GPU (A100, L4, RTX 4090, or equivalent) based on your concurrent user count and document volume.
+          Hardware procurement timelines vary — GPU availability from server vendors is subject to the same supply constraints as cloud providers.
+          All hardware specifications and lead times are confirmed before the engagement letter is signed.
+        </div>
+
+        <ul class="price-list">
+          <li>
+            <div>
+              <strong>How it works — our process:</strong>
+              <ul style="list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;font-size:0.85rem;color:var(--text-dim);">
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 1 — Hardware ships to us.</strong> We specify the hardware; you procure through your preferred vendor and ship to our facility. We configure the full RusticAgentic stack — OS, CUDA, vault setup, SSL, custom domain, PQC license tokens bound to the hardware MAC address. The system is fully built and tested here before it leaves our hands.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 2 — We ship to your site.</strong> We provide the shipping label. Client schedules pickup or drops off at their UPS, FedEx, or DHL account — all freight costs run through the client's carrier account directly. We do not handle payment.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 3 — Your IT team racks and connects it.</strong> Physical rack placement, MDF/IDF work, structured cabling, and VLAN configuration are performed by your firm's IT team. We are not on-site for this step — your IT team places and connects the hardware.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 4 — We SSH in remotely and bring the system up.</strong> Once your IT team confirms the hardware is on your network, we SSH in, verify all services, and bring up the UI. No on-site presence required for system bring-up.</li>
+                <li style="padding:4px 0;">— <strong style="color:var(--text);">Step 5 — We travel to site for training.</strong> We visit your office to train attorneys and IT staff on the system. We walk through the UI, query workflows, document ingest, and admin operations. When training is complete, we hand off and the engagement is done.</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Post-handoff — your IT team owns it:</strong>
+              <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
+                After handoff, your firm's IT department manages day-to-day operations — the same way they manage any other server on your network.
+                No ongoing retainer. No managed service. No ticket queue. If an issue arises, see Post-Deployment Support below.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Travel &amp; accommodation requirements (training visit):</strong>
+              <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
+                The training visit requires the presence of our team at your facility.
+                The team travels as two persons. Our lead engineer is disabled and travels with a caregiver and assistant — he is ambulatory with arm braces but does not drive. These requirements are non-negotiable and must be accommodated as a condition of any on-premises engagement.
+              </p>
+              <ul style="list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;font-size:0.82rem;color:var(--text-dim);">
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Accommodation:</strong> Client procures and arranges lodging directly. One room for two persons at a standard business-class property (Marriott, Hilton, Hyatt, or equivalent) in a safe area near your facility. Due to our lead engineer's disability, budget or roadside properties cannot be accommodated. Property confirmed with our team before booking.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Ground transportation:</strong> Client arranges pickup and drop-off between lodging and your facility each travel day. Our lead engineer does not drive — a car service, firm vehicle, or equivalent is required.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Airfare:</strong> Client procures round-trip airfare for two persons. Travel details confirmed in the engagement letter before any booking is made.</li>
+                <li style="padding:4px 0;">— <strong style="color:var(--text);">Hardware shipping:</strong> Client arranges and pays all freight, insurance, and handling in both directions.</li>
+              </ul>
+            </div>
+          </li>
+          <li><strong>How we scope it:</strong> Free architecture call. We assess your hardware requirements, network topology, concurrent user count, and data residency constraints. Fixed-price proposal delivered within 5 business days. No retainer required to receive a proposal.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Post-Deployment Support & Fee Schedule -->
+    <div style="margin-top:36px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:24px 28px;">
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:6px;">Post-Deployment Support</div>
+      <p style="font-size:0.875rem;color:var(--text-dim);margin-bottom:20px;line-height:1.65;">
+        We build and hand off. Your IT team manages operations. If an issue arises, we diagnose it —
+        and the fee structure is designed to be fair: if it's our code, we fix it at no further charge.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:20px;">
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">Remote Diagnostics</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$2,500</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Retainer held to initiate analysis. <strong style="color:var(--text);">Only charged if fault is determined to be GCP infrastructure or user/IT error.</strong>
+            If the fault is ours, the retainer is returned and the fix is at no charge.
+            Remediation fee quoted separately if applicable.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">On-Site Diagnostics</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$7,500 <span style="font-size:0.85rem;font-weight:400;color:var(--text-dim);">+ travel</span></div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Same fault-determination model as remote diagnostics. Retainer only charged if fault is GCP or user/IT error — returned if ours.
+            Additional on-site days billed at $2,500/day. <strong style="color:var(--text);">Travel and accommodation are procured and paid directly by the client regardless of fault determination</strong> — per the travel requirements in the on-premises card above.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">GCP Migration (Remote)</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$15,000</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Migrate your deployment to a new GCP project, region, or node configuration. Includes re-issuance of PQC hardware-bound license tokens for the new infrastructure.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">On-Prem Migration (Remote)</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$20,000</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Migrate your on-premises deployment to new hardware. Includes PQC token re-issuance bound to new MAC addresses.
+            On-site migration available — add travel at on-site diagnostic rates.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">On-Prem Add-a-Node — New Office <span style="color:var(--gold);font-size:0.7rem;margin-left:4px;">Existing Client</span></div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$100,000 <span style="font-size:0.75rem;font-weight:400;color:var(--gold);">$25,000 loyalty discount applied</span></div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Full on-premises deployment at a new office location for existing clients. Same stack, same sovereign build. Client procures all travel and accommodation per the standard on-premises travel requirements.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">PQC Key Rotation (Remote)</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$3,500</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            Annual security best practice. Re-encapsulates your vault's ML-KEM master key, rotates AES-256-GCM shard keys, and re-signs the audit chain under new ML-DSA credentials. Clients who decline key rotation sign a waiver.
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">Major Version Upgrade (Remote)</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$5,000</div>
+          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+            When we ship a significant release, we re-bake, redeploy, and re-issue PQC-bound binaries to your node. Your IT team does not need to coordinate the upgrade — we handle it remotely and confirm deployment.
+          </div>
+        </div>
+
+      </div>
+
+      <div style="font-size:0.78rem;color:var(--text-dim);padding:12px 14px;background:rgba(200,121,65,0.04);border:1px solid rgba(200,121,65,0.15);border-radius:6px;line-height:1.65;">
+        <strong style="color:var(--rust);">Hardware licensing:</strong>
+        All deployed binaries are PQC-bound to the MAC address of the licensed hardware. Binaries will not execute on unauthorized hardware.
+        Any hardware change — new servers, new GCP project, replacement nodes — requires a migration engagement to re-issue tokens.
+        This is a security feature, not a restriction: your sovereign deployment cannot be copied or run on uncontrolled infrastructure.
+      </div>
+    </div>
+
+    <div style="margin-top:24px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:24px 28px;">
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:14px;">Included in Every Engagement</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+        <div style="font-size:0.875rem;color:var(--text);">✓ Free 30-minute scoping call before any commitment</div>
+        <div style="font-size:0.875rem;color:var(--text);">✓ Plain-English engagement letter (no 40-page MSA required)</div>
+        <div style="font-size:0.875rem;color:var(--text);">✓ ML-DSA-65 post-quantum signing on all deliverables</div>
+        <div style="font-size:0.875rem;color:var(--text);">✓ No per-user seat fees — unlimited users at your firm</div>
+        <div style="font-size:0.875rem;color:var(--text);">✓ No data egress to OpenAI, Anthropic, or any shared cloud</div>
+        <div style="font-size:0.875rem;color:var(--text);">✓ Source citations on every answer — no hallucination without a flag</div>
+        <div style="font-size:0.875rem;color:var(--text);">✓ Ingest PDF, DOC, DOCX, TXT, MD, RST, CSV, HTML, PNG, JPG, JPEG, TIFF, BMP, WEBP — three-tier PDF extraction + full image OCR</div>
+        <div style="font-size:0.875rem;color:var(--text);">✓ Continuous ingest — new documents searchable within minutes of upload</div>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:20px;font-size:0.82rem;color:var(--text-dim);">
+      All fees USD. Bank wire transfer only — no credit cards, no payment processors.
+      Full milestone schedule, late payment terms, and refund policy:
+      <a href="payment.html" style="color:var(--rust);">Payment Structure →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ DEMO PREP ═══════════════════════════ -->
+<section id="demo-prep">
+  <div class="container">
+    <div class="section-label">Before Your Live Demo</div>
+    <h2>We run the demo on <em>your</em> documents.<br>Not ours. That's the point.</h2>
+    <p class="section-intro">
+      The most compelling demonstration is the one where you recognize the documents.
+      To make every minute count — and to protect your time and ours — we ask that you
+      prepare the following before booking your session.
+    </p>
+
+    <!-- Ethics / confidentiality notice -->
+    <div style="margin-top:28px;padding:18px 22px;background:rgba(200,121,65,0.05);border:1px solid var(--rust-dim);border-radius:8px;display:flex;gap:16px;align-items:flex-start;">
+      <div style="font-size:1.4rem;flex-shrink:0;line-height:1;margin-top:2px;">&#9888;</div>
+      <div>
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:8px;">Use Sample or Redacted Documents Only</div>
+        <p style="font-size:0.875rem;color:var(--text);line-height:1.65;margin:0;">
+          Do <strong style="color:var(--text-bright);">not</strong> submit live client files, privileged matter documents,
+          or any materials covered by attorney-client privilege or confidentiality obligations.
+          Use sanitized, redacted, or synthetic versions of representative documents.
+          A demo corpus of anonymized contracts — party names replaced, deal terms generalized —
+          is entirely sufficient to demonstrate the system's capabilities and does not implicate
+          your professional responsibility obligations or BAR ethics rules.
+          If you are unsure whether a document is appropriate to share, it is not.
+        </p>
+      </div>
+    </div>
+
+    <!-- Three-step prep -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;margin-top:36px;">
+
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:28px;position:relative;">
+        <div style="font-size:2rem;font-weight:900;color:var(--rust-dim);line-height:1;margin-bottom:14px;">01</div>
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">Document Volume</div>
+        <div style="font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:10px;">50 to 150 documents</div>
+        <p style="font-size:0.875rem;color:var(--text);line-height:1.65;">
+          Enough to make retrieval non-trivial — answers that cite four different contracts
+          from four different counterparties are far more convincing than a single-document lookup.
+          More than 200 documents adds ingest time without adding demo impact.
+          The sweet spot is <strong style="color:var(--text-bright);">75–120 documents</strong> across three or more document types.
+        </p>
+      </div>
+
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:28px;">
+        <div style="font-size:2rem;font-weight:900;color:var(--rust-dim);line-height:1;margin-bottom:14px;">02</div>
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">File Formats Accepted</div>
+        <div style="font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:10px;">PDF · DOC · DOCX · TXT · MD · RST · CSV · HTML · PNG · JPG · JPEG · TIFF · BMP · WEBP</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:0.875rem;color:var(--text);">
+          <div><span style="color:var(--rust);font-weight:600;">PDF</span> — text-searchable preferred; scanned PDFs supported via OCR</div>
+          <div><span style="color:var(--rust);font-weight:600;">DOCX / DOC</span> — Microsoft Word, any version</div>
+          <div><span style="color:var(--rust);font-weight:600;">TXT / MD / RST / CSV / HTML</span> — native text, no extraction required</div>
+          <div><span style="color:var(--rust);font-weight:600;">PNG / JPG / JPEG / TIFF / BMP / WEBP</span> — full image OCR via tesseract</div>
+          <div style="margin-top:4px;font-size:0.8rem;color:var(--text-dim);">Mixed formats in a single corpus are fine — and preferred.</div>
+        </div>
+        <div style="margin-top:14px;padding:12px 14px;background:rgba(200,168,75,0.07);border:1px solid rgba(200,168,75,0.2);border-radius:6px;font-size:0.78rem;color:var(--text-dim);line-height:1.65;">
+          <strong style="color:var(--gold);">OCR disclaimer:</strong> Optical character recognition is applied to scanned PDFs, images, and handwritten documents. OCR output is an approximation — accuracy depends on scan quality, resolution, handwriting legibility, and document condition. Handwritten notes in particular may be partially or incorrectly transcribed and may not fully or accurately reflect the source document. Faded text, low-resolution scans, skewed pages, stamps, and redactions can all reduce accuracy. Always verify OCR-extracted content against the original source document before relying on it for any legal, factual, or evidentiary purpose.
+        </div>
+      </div>
+
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:28px;">
+        <div style="font-size:2rem;font-weight:900;color:var(--rust-dim);line-height:1;margin-bottom:14px;">03</div>
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">Delivery &amp; Sensitivity</div>
+        <div style="font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:10px;">24 hrs before · GCS upload link</div>
+        <p style="font-size:0.875rem;color:var(--text);line-height:1.65;margin-bottom:10px;">
+          Once your demo is confirmed, we provision a dedicated
+          <strong style="color:var(--text-bright);">Google Cloud Storage bucket</strong>
+          scoped to your session and send you a signed upload link. Drop your documents in —
+          no account required, no third-party service. We ingest, index, and verify the
+          system before the call — zero setup time on your clock.
+        </p>
+        <p style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
+          The bucket is isolated to your demo session.
+          All documents and derived indexes are permanently deleted immediately after the session ends —
+          we confirm deletion in writing. No copies, no embeddings, no residual data retained.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Document type recommendations -->
+    <div style="margin-top:40px;">
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);font-weight:700;margin-bottom:18px;">Document Types That Produce the Most Compelling Queries</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:12px;">
+
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.8rem;font-weight:700;color:var(--text-bright);margin-bottom:6px;">Contracts &amp; MSAs</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.6;">Auto-renewal clauses, liability caps, indemnification, limitation periods</div>
+        </div>
+
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.8rem;font-weight:700;color:var(--text-bright);margin-bottom:6px;">Non-Disclosure Agreements</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.6;">Disclosure carve-outs, affiliate scope, return-of-information obligations, term length</div>
+        </div>
+
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.8rem;font-weight:700;color:var(--text-bright);margin-bottom:6px;">Employment Agreements</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.6;">Non-competes, equity grants, vesting schedules, severance triggers, IP assignment</div>
+        </div>
+
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.8rem;font-weight:700;color:var(--text-bright);margin-bottom:6px;">Settlement Agreements</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.6;">Payment schedules, confidentiality provisions, release scope, clawback triggers</div>
+        </div>
+
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.8rem;font-weight:700;color:var(--text-bright);margin-bottom:6px;">Due Diligence Materials</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.6;">IP representations, change-of-control triggers, consent requirements, material contracts</div>
+        </div>
+
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+          <div style="font-size:0.8rem;font-weight:700;color:var(--text-bright);margin-bottom:6px;">Lease &amp; Real Estate</div>
+          <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.6;">Renewal options, assignment restrictions, maintenance obligations, force majeure</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bring your own questions callout -->
+    <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+      <div style="background:rgba(200,121,65,0.06);border:1px solid var(--rust-dim);border-radius:8px;padding:24px;">
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:12px;">Prepare Exactly 10 Queries</div>
+        <p style="font-size:0.875rem;color:var(--text);line-height:1.65;">
+          The questions your associates have actually spent hours researching — the ones where
+          you pulled every contract in a matter to find one clause. Bring those 10.
+          We run them live against your documents and return an answer with source citations
+          in seconds. The closer they are to real work, the more compelling the result.
+          Ten queries is the right number — enough variety to be definitive, focused enough
+          to stay within 30 minutes.
+        </p>
+        <div style="margin-top:16px;padding:14px 16px;background:rgba(200,121,65,0.08);border-left:3px solid var(--rust);border-radius:0 6px 6px 0;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">Formulate for the Answer You Want to See</div>
+          <p style="font-size:0.82rem;color:var(--text-dim);line-height:1.6;margin:0;">
+            Don't ask <em style="color:var(--text);">"What do the NDAs say?"</em> — ask
+            <em style="color:var(--text);">"Which NDAs permit disclosure to affiliates, and under what conditions?"</em>
+            Specific questions produce specific, citable answers. Think about the exact outcome
+            you want to demonstrate to your partners — then work backwards to the question that
+            surfaces it. The system is only as compelling as the queries you bring.
+          </p>
+        </div>
+      </div>
+
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:24px;">
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);font-weight:700;margin-bottom:12px;">What the 30 Minutes Looks Like</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:0.875rem;color:var(--text);">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--rust);font-weight:700;flex-shrink:0;">0–5 min</span>
+            <span>Live ingest of your documents — watch the chunk count climb in real time</span>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--rust);font-weight:700;flex-shrink:0;">5–25 min</span>
+            <span>Your 10 queries run live — each answered in seconds with source document, section, and verbatim clause</span>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--rust);font-weight:700;flex-shrink:0;">25–30 min</span>
+            <span>Pricing, deployment timeline, and next steps if you want to move forward</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ PQC / PUBLIC KEY ═══════════════════════════ -->
+<section id="pubkey" style="background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label" style="color:var(--rust)">Post-Quantum Cryptography — Industry First</div>
+    <h2>The only legal AI platform<br>with NIST FIPS 203/204 encryption.</h2>
+    <p class="section-intro">
+      Relativity, Kira, Luminance, and every LLM API wrapper encrypt data with standard TLS —
+      the same encryption that quantum computers will break within the decade. RusticAgentic uses
+      post-quantum cryptography by default on every deployment, every tier, every query.
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;margin-top:36px;">
+
+      <div style="background:var(--bg2);border:1px solid var(--rust-dim);border-radius:8px;padding:24px;">
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:12px;">Vault Encryption — NIST FIPS 203</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:8px;">ML-KEM Kyber-768</div>
+        <p style="font-size:0.875rem;color:var(--text);">Every document shard encrypted with AES-256-GCM. The encryption key for each shard is wrapped with ML-KEM Kyber-768 — a lattice-based key encapsulation mechanism standardized by NIST in August 2024. A quantum computer cannot decrypt your vault.</p>
+        <div style="margin-top:14px;font-size:0.78rem;color:var(--text-dim);">Competitors: TLS 1.3 only · <span style="color:var(--red);">broken by quantum</span></div>
+      </div>
+
+      <div style="background:var(--bg2);border:1px solid var(--rust-dim);border-radius:8px;padding:24px;">
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:12px;">Audit Signatures — NIST FIPS 204</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:8px;">ML-DSA-65 Dilithium</div>
+        <p style="font-size:0.875rem;color:var(--text);">Every answer, every document access, every deliverable signed with ML-DSA-65 — a lattice-based digital signature standardized by NIST in August 2024. The signature is verifiable by anyone with our public key. Tamper-evident chain of custody that survives quantum computing.</p>
+        <div style="margin-top:14px;font-size:0.78rem;color:var(--text-dim);">Competitors: No audit signing · <span style="color:var(--red);">no chain of custody</span></div>
+      </div>
+
+      <div style="background:var(--bg2);border:1px solid var(--gold-dim);border-radius:8px;padding:24px;">
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:12px;">Public Key — Verify Anything We've Signed</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:8px;">Download Our ML-DSA-65 Public Key</div>
+        <p style="font-size:0.875rem;color:var(--text);">Every report we deliver includes a <code style="font-size:0.8em;color:var(--rust);">.sig.json</code> sidecar. Use our public key to verify the signature independently — in court, in due diligence, or for bar ethics compliance. Opposing counsel can verify. Auditors can verify. Anyone can verify.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;">
+          <a href="assets/rusticagentic-mldsa65.pub.pem" download style="display:inline-flex;align-items:center;gap:6px;background:var(--rust);color:#fff;font-size:0.85rem;font-weight:600;padding:9px 18px;border-radius:5px;text-decoration:none;">↓ Public Key (.pem)</a>
+          <a href="assets/rusticagentic-mldsa65.pub.hex" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--text-dim);font-size:0.85rem;padding:9px 18px;border-radius:5px;text-decoration:none;">↓ Public Key (.hex)</a>
+        </div>
+        <div style="margin-top:12px;font-size:0.75rem;color:var(--text-dim);">The public key is safe to share and distribute freely. It proves authenticity — not access.</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:28px;padding:18px 24px;background:rgba(200,121,65,0.07);border:1px solid var(--rust-dim);border-radius:8px;font-size:0.875rem;color:var(--text);">
+      <strong style="color:var(--rust);">Why this matters for law firms:</strong> State bar ethics opinions increasingly require demonstrable data security for AI tools handling privileged matter. Post-quantum encryption is the only cryptographic standard that will remain secure against both classical and quantum adversaries. When your client asks how their privileged communications are protected — you have a NIST-certified answer.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Rustic<span>Agentic</span> · rusticagentic.agency</div>
+    <div class="footer-right">
+      Sovereign AI document intelligence for law firms · Post-Quantum Encrypted · NIST FIPS 203/204<br>
+      Your documents never leave your private GCP node.
+    </div>
+  </div>
+  <div style="width:min(1320px,100% - clamp(24px,4vw,80px)*2);margin:16px auto 0;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+    <div style="font-size:0.78rem;color:var(--text-dim);">
+      All deliverables post-quantum signed · <strong style="color:var(--text);">ML-DSA-65 (NIST FIPS 204)</strong> · ML-KEM Kyber-768 vault encryption (NIST FIPS 203)
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="assets/rusticagentic-mldsa65.pub.pem" download style="font-size:0.8rem;color:var(--rust);border:1px solid var(--border);padding:5px 12px;border-radius:4px;text-decoration:none;white-space:nowrap;">↓ Public Key (.pem)</a>
+      <a href="assets/rusticagentic-mldsa65.pub.hex" download style="font-size:0.8rem;color:var(--text-dim);border:1px solid var(--border);padding:5px 12px;border-radius:4px;text-decoration:none;white-space:nowrap;">↓ Public Key (.hex)</a>
+    </div>
+  </div>
+  <div style="width:min(1320px,100% - clamp(24px,4vw,80px)*2);margin:12px auto 0;padding-top:12px;border-top:1px solid var(--border);font-size:0.75rem;color:var(--text-dim);">
+    &copy; 2026 Scott Baker. RusticAgentic is a trademark and copyright of Scott Baker. All rights reserved.
+    · <a href="disclaimers.html" style="color:var(--text-dim);">Legal Disclaimers</a>
+  </div>
+</footer>
+
+</body>
+</html>
