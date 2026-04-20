@@ -1272,7 +1272,13 @@
           Your documents, your queries, and your answers exist only on hardware that sits in your server room.
         </p>
         <p style="font-size:0.875rem;color:var(--text-dim);margin:0 0 20px;line-height:1.65;">
-          We design, procure, configure, and deploy the full RusticAgentic stack on your on-premises hardware.
+          This is the highest-security deployment we offer. Your data never leaves your building.
+          No cloud provider, no GCP, no third-party infrastructure of any kind — the hardware is yours,
+          the network is yours, and every byte of your document vault remains under your physical and legal control at all times.
+          There is no egress path. There is no shared infrastructure. There is no external API.
+          Your documents, your queries, and your answers exist only on hardware that sits in your server room.
+        </p>
+        <p style="font-size:0.875rem;color:var(--text-dim);margin:0 0 20px;line-height:1.65;">
           The system runs identically to the cloud deployment: same post-quantum vault encryption, same ML-DSA signed audit chain, same CUDA-accelerated inference.
           This option satisfies the strictest state bar ethics opinions on data residency, any jurisdiction requiring firm-controlled hardware,
           and any client confidentiality or regulatory requirement that prohibits cloud storage of privileged documents.
@@ -1289,43 +1295,41 @@
         <ul class="price-list">
           <li>
             <div>
-              <strong>What's included:</strong>
-              <ul style="list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:4px;">
-                <li style="padding:0;border:none;">— Hardware specification and procurement assistance (we specify; you purchase through your preferred vendor or we procure on your behalf)</li>
-                <li style="padding:0;border:none;">— Full on-site deployment: OS configuration, CUDA stack, RusticAgentic installation, vault setup, SSL, and custom domain configuration</li>
-                <li style="padding:0;border:none;">— <strong style="color:var(--text-dim);">Scope boundary:</strong> We build and provision the system on the hardware. Physical rack placement, MDF/IDF work, structured cabling, VLAN configuration, and all network infrastructure integration is performed by your firm's IT team or a designated network contractor. We coordinate with your IT team to ensure the system is reachable on your network — we do not perform physical network infrastructure work.</li>
-                <li style="padding:0;border:none;">— Staff onboarding session (half-day, on-site)</li>
-                <li style="padding:0;border:none;">— 30-day hypercare support period post-deployment</li>
-                <li style="padding:0;border:none;">— All travel, lodging, and meals for the deployment team — see travel requirements below</li>
+              <strong>How it works — our process:</strong>
+              <ul style="list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;font-size:0.85rem;color:var(--text-dim);">
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 1 — Hardware ships to us.</strong> We specify the hardware; you procure through your preferred vendor and ship to our facility. We configure the full RusticAgentic stack — OS, CUDA, vault setup, SSL, custom domain, PQC license tokens bound to the hardware MAC address. The system is fully built and tested here before it leaves our hands.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 2 — We ship to your site.</strong> All freight, insurance, and handling fees are billed to you at cost. No markup. Shipping method and carrier confirmed in the engagement letter.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 3 — Your IT team racks and connects it.</strong> Physical rack placement, MDF/IDF work, structured cabling, and VLAN configuration are performed by your firm's IT team. We are not on-site for this step — your IT team places and connects the hardware.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 4 — We SSH in remotely and bring the system up.</strong> Once your IT team confirms the hardware is on your network, we SSH in, verify all services, and bring up the UI. No on-site presence required for system bring-up.</li>
+                <li style="padding:4px 0;">— <strong style="color:var(--text);">Step 5 — We travel to site for training.</strong> We visit your office to train attorneys and IT staff on the system. We walk through the UI, query workflows, document ingest, and admin operations. When training is complete, we hand off and the engagement is done.</li>
               </ul>
             </div>
           </li>
           <li>
             <div>
-              <strong>Post-deployment operations — your IT team owns it:</strong>
+              <strong>Post-handoff — your IT team owns it:</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                After handoff, day-to-day operations are managed by your firm's IT department. There is no ongoing retainer and no managed service.
-                Your IT team handles GCP console access, network configuration, and routine operations — the same way they manage any other server on your network.
-                If an issue arises, see the Post-Deployment Support terms below.
+                After handoff, your firm's IT department manages day-to-day operations — the same way they manage any other server on your network.
+                No ongoing retainer. No managed service. No ticket queue. If an issue arises, see Post-Deployment Support below.
               </p>
             </div>
           </li>
           <li>
             <div>
-              <strong>Travel &amp; accommodation requirements:</strong>
+              <strong>Travel &amp; accommodation requirements (training visit):</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                On-site deployments require the presence of our deployment team at your facility.
-                The team travels as two persons. Our lead engineer is disabled and travels with a caregiver and assistant — he is ambulatory with arm braces but does not drive. These requirements are non-negotiable and must be accommodated as a condition of any on-premises engagement. Travel, lodging, and meals for both team members are included in the fixed engagement fee — there are no separate per-diem or expense billings.
+                The training visit requires the presence of our team at your facility.
+                The team travels as two persons. Our lead engineer is disabled and travels with a caregiver and assistant — he is ambulatory with arm braces but does not drive. These requirements are non-negotiable and must be accommodated as a condition of any on-premises engagement.
               </p>
               <ul style="list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;font-size:0.82rem;color:var(--text-dim);">
-                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Accommodation:</strong> One room for two persons, located within reasonable proximity to your facility. We will confirm the specific lodging requirement during the scoping call.</li>
-                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Ground transportation:</strong> Pickup and drop-off between lodging and your facility must be provided or arranged by the client. The lead engineer does not drive; a car service, firm vehicle, or equivalent arrangement is required for each travel day on-site.</li>
-                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Airfare:</strong> Round-trip airfare for two persons is billed to the client at cost. We book our own flights and invoice actual fare — no markup. Airfare costs are confirmed in the engagement letter before any travel is booked.</li>
-                <li style="padding:4px 0;">— <strong style="color:var(--text);">Hardware shipping:</strong> All costs to ship hardware to your facility — freight, insurance, and any customs or handling fees — are billed to the client at cost. Shipping method and carrier are agreed upon during the scoping call. We do not mark up shipping costs.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Accommodation:</strong> One room for two persons, within reasonable proximity to your facility. Confirmed during scoping call.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Ground transportation:</strong> Pickup and drop-off between lodging and your facility must be provided or arranged by the client. The lead engineer does not drive — a car service, firm vehicle, or equivalent is required each travel day.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Airfare:</strong> Round-trip airfare for two persons billed to client at cost. No markup. Confirmed in engagement letter before any travel is booked.</li>
+                <li style="padding:4px 0;">— <strong style="color:var(--text);">Hardware shipping:</strong> All freight, insurance, and handling fees billed at cost in both directions. No markup.</li>
               </ul>
             </div>
           </li>
-          <li><strong>How we scope it:</strong> Free architecture call. We assess your existing server infrastructure, network topology, concurrent user requirements, and data residency constraints. Fixed-price proposal delivered within 5 business days. No retainer required to receive a proposal.</li>
+          <li><strong>How we scope it:</strong> Free architecture call. We assess your hardware requirements, network topology, concurrent user count, and data residency constraints. Fixed-price proposal delivered within 5 business days. No retainer required to receive a proposal.</li>
         </ul>
       </div>
 
