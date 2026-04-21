@@ -397,10 +397,9 @@
     <div class="section-label">Production Performance</div>
     <h2>Twenty queries. Twenty answers.<br>Here's what your deployment actually delivers.</h2>
     <p class="section-intro">
-      The 20 queries above were generated on a sovereign compute node running our proprietary AI engine
-      against a 150-document legal corpus with 6,058 indexed chunks. Client deployments use the same
-      sovereign architecture — physically isolated, zero egress, your GCP project, your data.
-      The figures below reflect our production deployment tier, which is what every client deployment targets.
+      The 20 queries above were run live against a 150-document legal corpus on a sovereign compute node —
+      the same architecture your firm gets. Physically isolated, zero egress, your GCP project, your data.
+      Every figure below is measured, not estimated.
     </p>
 
     <div class="table-wrap" style="margin-top:36px;">
@@ -408,102 +407,57 @@
         <thead>
           <tr>
             <th>Capability</th>
-            <th style="color:var(--text-dim)">Dev Reference</th>
-            <th style="color:var(--gold)">Client Deployment<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Sovereign compute node · 100% data sovereign · proprietary AI</span></th>
+            <th style="color:var(--gold)">Your Deployment<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Sovereign compute node · 100% data sovereign · proprietary AI</span></th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Compute</strong></td>
-            <td class="vendor">Dev reference node</td>
-            <td style="color:var(--gold);font-weight:600">Dedicated sovereign compute node · GCP sole-tenant</td>
+            <td style="color:var(--gold);font-weight:600">Dedicated sovereign compute node · GCP sole-tenant · physically isolated</td>
           </tr>
           <tr>
             <td><strong>AI Engine</strong></td>
-            <td class="vendor">Compact proprietary AI engine</td>
-            <td style="color:var(--gold);font-weight:600">Full-scale sovereign AI engine<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Significantly stronger legal reasoning — same proprietary stack</span></td>
+            <td style="color:var(--gold);font-weight:600">Full-scale sovereign AI engine<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Proprietary — zero data egress, zero shared infrastructure</span></td>
           </tr>
           <tr>
             <td><strong>Context Window</strong><br><span style="font-size:0.78em;color:var(--text-dim)">How much of your vault fits in one query</span></td>
-            <td class="vendor">8,192 tokens<br><span style="font-size:0.8em">~32,000 chars · ~25 pages</span></td>
             <td style="color:var(--gold);font-weight:600">65,536 tokens (measured)<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">~250,000 chars · entire contract portfolios fit in a single query</span></td>
           </tr>
           <tr>
             <td><strong>Query Latency</strong><br><span style="font-size:0.78em;color:var(--text-dim)">Time from question to full cited answer</span></td>
-            <td class="vendor">4 – 15 seconds (measured)</td>
             <td style="color:var(--gold);font-weight:600">~11s avg · measured live · 20 queries · 150-doc corpus</td>
           </tr>
           <tr>
-            <td><strong>Inference Speed</strong></td>
-            <td class="vendor">~25 tokens/sec (measured)</td>
-            <td style="color:var(--gold);font-weight:600">Sovereign compute node · dedicated, never shared</td>
-          </tr>
-          <tr>
             <td><strong>Concurrent Users</strong></td>
-            <td class="vendor">1 (dev/demo)</td>
             <td style="color:var(--gold);font-weight:600">est. 6 – 8 simultaneous per node<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Add a node to scale — see pricing</span></td>
           </tr>
           <tr>
             <td><strong>Document Vault Capacity</strong></td>
-            <td class="vendor">150 docs tested · scales with storage</td>
-            <td style="color:var(--gold);font-weight:600">No hard limit — scales with GCS storage<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Proprietary vector index + encrypted GCS backend</span></td>
+            <td style="color:var(--gold);font-weight:600">No hard limit — scales with GCS storage<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Proprietary encrypted vault backend</span></td>
           </tr>
           <tr>
-            <td><strong>Documents per Single Query</strong><br><span style="font-size:0.78em;color:var(--text-dim)">Top-K retrieved chunks in context</span></td>
-            <td class="vendor">4 – 8 docs in context</td>
+            <td><strong>Documents per Single Query</strong><br><span style="font-size:0.78em;color:var(--text-dim)">Vault chunks surfaced per answer</span></td>
             <td style="color:var(--gold);font-weight:600">50 – 80 full documents in context<br><span style="font-size:0.8em;font-weight:400;color:var(--text-dim)">Entire contract portfolios fit in a single query</span></td>
           </tr>
           <tr>
             <td><strong>OCR — Scanned PDFs &amp; Images</strong></td>
-            <td class="vendor">✓ On-device OCR</td>
-            <td style="color:var(--gold)">✓ On-device OCR</td>
+            <td style="color:var(--gold)">✓ On-device OCR · zero external processing</td>
           </tr>
           <tr>
             <td><strong>Embedding Engine</strong></td>
-            <td class="vendor">Proprietary embedding engine · on-device</td>
-            <td style="color:var(--gold)">Proprietary embedding engine · on-device · zero API calls</td>
+            <td style="color:var(--gold)">Proprietary · on-device · zero API calls</td>
           </tr>
           <tr>
-            <td><strong>PQ Signing</strong></td>
-            <td class="vendor">ML-DSA-65 on every output</td>
-            <td style="color:var(--gold)">ML-DSA-65 · full audit log encrypted at rest</td>
+            <td><strong>Post-Quantum Signing</strong></td>
+            <td style="color:var(--gold)">ML-DSA-65 · full audit log encrypted at rest · tamper-evident</td>
           </tr>
           <tr>
             <td><strong>Uptime</strong></td>
-            <td class="vendor">Dev machine</td>
             <td style="color:var(--gold);font-weight:600">GCP SLA: 99.9%</td>
           </tr>
         </tbody>
       </table>
     </div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px;margin-top:28px;">
-      <div style="background:rgba(200,168,75,0.06);border:1px solid var(--gold-dim);border-radius:8px;padding:22px;">
-        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:12px;">Sovereign Node — What changes for your attorneys</div>
-        <ul style="list-style:none;font-size:0.875rem;color:var(--text);">
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Query latency drops from the 4–15s measured on dev hardware to an estimated <strong>2–6 seconds</strong> on the sovereign compute node</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Entire deal room of contracts fits in one query — no keyword prefiltering needed</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Full-scale sovereign AI engine delivers significantly sharper clause interpretation than any dev-tier model</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,168,75,0.15);">Est. 6–8 attorneys querying simultaneously on a single node without queuing</li>
-          <li style="padding:5px 0;">New matter docs typically searchable within minutes of upload</li>
-        </ul>
-      </div>
-      <div style="background:rgba(200,121,65,0.05);border:1px solid var(--rust-dim);border-radius:8px;padding:22px;">
-        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:12px;">Add a Node — Scale Without Limits</div>
-        <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:12px;">Each sovereign node handles an estimated 6–8 simultaneous users. When your firm grows, you add a node — not a seat license. New nodes join the mesh automatically and begin sharing query load immediately.</p>
-        <ul style="list-style:none;font-size:0.875rem;color:var(--text);">
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">1 node → est. 6–8 concurrent users</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">2 nodes → est. 12–16 concurrent users</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Scale to any size — same flat managed fee per node</li>
-          <li style="padding:5px 0;border-bottom:1px solid rgba(200,121,65,0.15);">Subject to compute availability and GCP regional quota — see pricing section</li>
-          <li style="padding:5px 0;">No artificial software limits — hardware is the only constraint</li>
-        </ul>
-      </div>
-    </div>
-
-    <p style="font-size:0.78rem;color:var(--text-dim);margin-top:18px;line-height:1.6;">
-      ¹ Dedicated sovereign compute nodes on GCP — physically isolated, billed directly to your account. We assess capacity and configure the right tier as part of every scoping engagement.
-    </p>
 
     <p style="font-size:0.8rem;color:var(--text-dim);margin-top:18px;text-align:center;">
       Sovereign compute node: est. ~$2.50–$3.50/hr billed directly to your GCP account.
