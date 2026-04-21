@@ -44,13 +44,11 @@
     <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:28px;">
       <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);font-weight:700;margin-bottom:10px;">Deployment Model</div>
       <div>
-        <div style="font-weight:700;color:var(--white);margin-bottom:4px;">☁ Cloud Sovereign — GCP NVIDIA GPU Sole-Tenant Node</div>
-        <div style="font-size:0.85rem;color:var(--text-dim);">Your data runs on a GCP NVIDIA GPU sole-tenant node billed directly to <em>your</em> GCP account. Physically isolated hardware — no hypervisor sharing, no multi-tenancy. We deploy and manage the full stack. You own the compute. Need more capacity? Additional A100 query nodes are available as a separate engagement — see <strong style="color:var(--rust)">Add a GCP Query Node</strong> in Post-Deployment Support below.</div>
+        <div style="font-weight:700;color:var(--white);margin-bottom:4px;">☁ Cloud Sovereign — GCP Sole-Tenant Node · 100% Data Sovereign</div>
+        <div style="font-size:0.85rem;color:var(--text-dim);">Your data runs on a GCP sole-tenant node billed directly to <em>your</em> GCP account — physically isolated, never shared. Our proprietary AI technology is deployed entirely within your environment. No telemetry. No spying. We build it and walk away. Need more capacity? Additional query nodes are available as a separate engagement — see <strong style="color:var(--rust)">Add a GCP Query Node</strong> in Post-Deployment Support below.</div>
         <div style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;padding:8px;background:rgba(200,121,65,0.05);border-radius:4px;border-left:2px solid var(--rust-dim);">
-          <strong>GPU availability &amp; performance:</strong> GCP sole-tenancy provides physical hardware isolation within Google's infrastructure. It satisfies most law firm IT security and bar ethics requirements. However, a small number of jurisdictions have issued ethics opinions requiring data to reside on <em>firm-controlled</em> hardware — confirm compliance with your state bar before proceeding.
-          NVIDIA GPU-enabled VMs (A100, L4, T4, and others) are in high demand across GCP regions — availability is not guaranteed and quota increases are often required before provisioning.
-          Performance scales with GPU tier: an A100 80GB delivers the fastest inference; an L4 or T4 is a capable fallback if A100 quota is unavailable in your region.
-          We assess available quota, recommend the optimal GPU tier for your workload, and initiate any necessary quota increase requests as part of the scoping process — before any engagement begins.
+          <strong>GCP quota &amp; availability:</strong> All VM availability is dependent on GCP quotas. Sovereign compute capacity is in high demand across GCP regions — availability is not guaranteed and quota increases are often required before provisioning. We assess available quota and initiate any necessary quota increase requests as part of the scoping process — before any engagement begins.
+          GCP sole-tenancy provides physical hardware isolation within Google's infrastructure. It satisfies most law firm IT security and bar ethics requirements. However, a small number of jurisdictions have issued ethics opinions requiring data to reside on <em>firm-controlled</em> hardware — confirm compliance with your state bar before proceeding.
         </div>
       </div>
     </div>
@@ -66,27 +64,27 @@
 
         <p style="font-size:0.875rem;color:var(--text-dim);margin:16px 0 20px;line-height:1.65;">
           One product. One price. Everything included. We design, deploy, and hand off the full RusticAgentic stack —
-          encrypted document vault, GPU-accelerated AI chat, and a multi-node mesh that scales as your firm grows.
+          encrypted document vault, proprietary AI chat, and a multi-node mesh that scales as your firm grows.
           Your IT team takes ownership at handoff. No ongoing retainer. No ticket queue. No vendor dependency.
         </p>
 
         <div style="background:rgba(200,121,65,0.07);border:1px solid rgba(200,121,65,0.3);border-radius:6px;padding:12px 14px;margin-bottom:18px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
-          <strong style="color:var(--rust);">GPU availability &amp; performance notice:</strong>
-          Target GPU is the A100 80GB. L4 and T4 are available fallbacks if A100 quota is constrained in your region.
-          GPU demand on GCP is high — specific VM types are not always available in every region on demand.
+          <strong style="color:var(--rust);">Compute availability notice:</strong>
+          
+          Sovereign compute capacity is in high demand across GCP regions — availability is not guaranteed and quota increases may be required.
           Multi-node deployments require a GCP quota increase request, typically processed within 2–5 business days but not guaranteed.
           We initiate all quota requests on your behalf before any engagement begins.
           Deployment timeline is contingent on quota approval and regional availability.
         </div>
 
         <ul class="price-list">
-          <li><strong>Infrastructure:</strong> GCP sole-tenant NVIDIA GPU node billed directly to your GCP account. Target GPU is the A100 80GB (est. ~$2.50–$3.50/hr on committed use); L4 and T4 are available fallbacks if A100 quota is constrained in your region. You own the compute. Your GCP console, your visibility.</li>
+          <li><strong>Infrastructure:</strong> GCP sole-tenant sovereign compute node billed directly to your GCP account (est. ~$2.50–$3.50/hr on committed use). You own the compute. Your GCP console, your visibility.</li>
           <li><strong>Setup includes:</strong> Full RusticAgentic deployment, vault configuration, document migration, SSL, and custom domain. Your IT team manages day-to-day operations. Attorneys onboard through the built-in UI guide — no onboarding sessions required.</li>
           <li>
             <div>
               <strong>Multi-node mesh — scale without seat licenses:</strong>
               <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px;line-height:1.6;">
-                Multiple A100 80GB sole-tenant nodes deployed in GCP, each running the full sovereign stack.
+                Multiple sole-tenant sovereign compute nodes deployed in GCP, each running the full proprietary stack.
                 Each node processes queries independently — the gateway coordinates but does not own.
                 If any node goes offline, the others continue. Masterless by design.
                 As your attorney headcount grows, you add nodes — not seat licenses, not tier upgrades.
@@ -113,7 +111,7 @@
                 Custom ingest connectors built for your document management system.
                 New matters filed in iManage or NetDocuments are automatically ingested and searchable within minutes —
                 no manual upload step, no associate responsible for remembering to sync.
-                ra-watch daemon polls your DMS and your GCS bucket continuously.
+                Our ingest daemon polls your DMS and your GCS bucket continuously.
               </p>
             </div>
           </li>
@@ -153,16 +151,16 @@
           Your documents, your queries, and your answers exist only on hardware that sits in your server room.
         </p>
         <p style="font-size:0.875rem;color:var(--text-dim);margin:0 0 20px;line-height:1.65;">
-          The system runs identically to the cloud deployment: same post-quantum vault encryption, same ML-DSA signed audit chain, same CUDA-accelerated inference.
+          The system runs identically to the cloud deployment: same post-quantum vault encryption, same ML-DSA signed audit chain, same proprietary AI inference.
           This option satisfies the strictest state bar ethics opinions on data residency, any jurisdiction requiring firm-controlled hardware,
           and any client confidentiality or regulatory requirement that prohibits cloud storage of privileged documents.
         </p>
 
         <div style="background:rgba(176,141,87,0.07);border:1px solid rgba(176,141,87,0.25);border-radius:6px;padding:12px 14px;margin-bottom:20px;font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
-          <strong style="color:var(--copper);">GPU availability note:</strong>
-          On-premises inference performance is determined by the NVIDIA GPU installed in your server hardware.
-          We recommend and specify the appropriate GPU (A100, L4, RTX 4090, or equivalent) based on your concurrent user count and document volume.
-          Hardware procurement timelines vary — GPU availability from server vendors is subject to the same supply constraints as cloud providers.
+          <strong style="color:var(--copper);">Compute note:</strong>
+          On-premises performance is determined by the dedicated compute hardware installed in your server.
+          We specify the appropriate hardware configuration based on your concurrent user count and document volume.
+          Hardware procurement timelines vary — dedicated compute availability from server vendors is subject to supply constraints.
           All hardware specifications and lead times are confirmed before the engagement letter is signed.
         </div>
 
@@ -171,7 +169,7 @@
             <div>
               <strong>How it works — our process:</strong>
               <ul style="list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;font-size:0.85rem;color:var(--text-dim);">
-                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 1 — Hardware ships to us.</strong> We specify the hardware; you procure through your preferred vendor and ship to our facility. We configure the full RusticAgentic stack — OS, CUDA, vault setup, SSL, custom domain, PQC license tokens bound to the hardware MAC address. The system is fully built and tested here before it leaves our hands.</li>
+                <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 1 — Hardware ships to us.</strong> We specify the hardware; you procure through your preferred vendor and ship to our facility. We configure the full RusticAgentic stack — OS, system configuration, vault setup, SSL, custom domain, PQC license tokens bound to the hardware MAC address. The system is fully built and tested here before it leaves our hands.</li>
                 <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 2 — We ship to your site.</strong> We provide the shipping label. Client schedules pickup or drops off at their UPS, FedEx, or DHL account — all freight costs run through the client's carrier account directly. We do not handle payment.</li>
                 <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 3 — Your IT team racks and connects it.</strong> Physical rack placement, MDF/IDF work, structured cabling, and VLAN configuration are performed by your firm's IT team. We are not on-site for this step — your IT team places and connects the hardware.</li>
                 <li style="padding:4px 0;border-bottom:1px solid var(--border);">— <strong style="color:var(--text);">Step 4 — We SSH in remotely and bring the system up.</strong> Once your IT team confirms the hardware is on your network, we SSH in, verify all services, and bring up the UI. No on-site presence required for system bring-up.</li>
@@ -266,12 +264,12 @@
           <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">Add a GCP Query Node (Remote) <span style="color:var(--gold);font-size:0.7rem;margin-left:4px;">Existing Client</span></div>
           <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$75,000 <span style="font-size:0.85rem;font-weight:400;color:var(--text-dim);">· flat</span></div>
           <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
-            Provision an additional A100 80GB query node on your GCP account. We build from our pre-baked sovereign image, distribute vault keys, verify all services, and confirm the node is operational. <strong style="color:var(--text);">Remote only — no travel required.</strong> Includes PQC hardware-bound license token issuance for the new node. Existing nodes are not touched — no downtime, no configuration changes on your current infrastructure.
+            Provision an additional sovereign compute node on your GCP account. We build from our pre-baked sovereign image, distribute vault keys, verify all services, and confirm the node is operational. <strong style="color:var(--text);">Remote only — no travel required.</strong> Includes PQC hardware-bound license token issuance for the new node. Existing nodes are not touched — no downtime, no configuration changes on your current infrastructure.
           </div>
           <div style="margin-top:10px;font-size:0.76rem;color:var(--text-dim);padding:8px 10px;background:rgba(200,121,65,0.05);border-left:2px solid var(--rust-dim);border-radius:0 4px 4px 0;line-height:1.6;">
-            <strong style="color:var(--rust);">GPU availability notice:</strong>
-            Target GPU is the A100 80GB. GCP sole-tenant GPU capacity is in high demand — availability is not guaranteed and additional quota is typically required before a second node can be provisioned.
-            We initiate the quota increase request on your behalf as part of this engagement and assess available fallback GPU tiers (L4, T4) if A100 quota cannot be obtained in your region within an acceptable timeline.
+            <strong style="color:var(--rust);">Capacity notice:</strong>
+            Sovereign compute capacity on GCP is in high demand — availability is not guaranteed and additional quota may be required before a second node can be provisioned.
+            We initiate the quota increase request on your behalf and assess available capacity tiers if the primary configuration is unavailable in your region.
             Provisioning timeline is contingent on GCP quota approval and regional availability — not guaranteed.
           </div>
         </div>
@@ -375,7 +373,7 @@
           <div><span style="color:var(--rust);font-weight:600;">PDF</span> — text-searchable preferred; scanned PDFs supported via OCR</div>
           <div><span style="color:var(--rust);font-weight:600;">DOCX / DOC</span> — Microsoft Word, any version</div>
           <div><span style="color:var(--rust);font-weight:600;">TXT / MD / RST / CSV / HTML</span> — native text, no extraction required</div>
-          <div><span style="color:var(--rust);font-weight:600;">PNG / JPG / JPEG / TIFF / BMP / WEBP</span> — full image OCR via tesseract</div>
+          <div><span style="color:var(--rust);font-weight:600;">PNG / JPG / JPEG / TIFF / BMP / WEBP</span> — full image OCR</div>
           <div style="margin-top:4px;font-size:0.8rem;color:var(--text-dim);">Mixed formats in a single corpus are fine — and preferred.</div>
         </div>
         <div style="margin-top:14px;padding:12px 14px;background:rgba(200,168,75,0.07);border:1px solid rgba(200,168,75,0.2);border-radius:6px;font-size:0.78rem;color:var(--text-dim);line-height:1.65;">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RusticAgentic — How it works. Seven-step sovereign RAG pipeline with post-quantum vault encryption, CUDA-accelerated embeddings, and ML-DSA-65 signed output.">
+  <meta name="description" content="RusticAgentic — How it works. Seven-step sovereign AI pipeline with post-quantum vault encryption, on-device embeddings, and ML-DSA-65 signed output.">
   <title>Product — RusticAgentic</title>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
@@ -38,23 +38,23 @@
     <p class="section-intro">
       No training. No fine-tuning. No IT project. Your documents are chunked,
       embedded, and stored in a private vector index on your sole-tenant GCP node.
-      Queries run on your private NVIDIA GPU node against a 123B parameter language model — nothing touches shared infrastructure.
+      Queries run on your sovereign compute node through our proprietary AI engine — nothing touches shared infrastructure.
     </p>
     <div class="pipeline">
       <div class="pipe-step">
         <div class="pipe-num">Step 01</div>
         <h4>Drop Documents</h4>
-        <p>PDF, DOC, DOCX, TXT, MD, RST, CSV, HTML, and images (PNG, JPG, JPEG, TIFF, BMP, WEBP). Drop into a watched folder or GCS bucket. Three-tier PDF extraction: native text → poppler → OCR. Images and scanned documents go directly to tesseract OCR.</p>
+        <p>PDF, DOC, DOCX, TXT, MD, RST, CSV, HTML, and images (PNG, JPG, JPEG, TIFF, BMP, WEBP). Drop into a watched folder or GCS bucket. Three-tier PDF extraction: native text → layout parsing → OCR. Images and scanned documents processed through our on-device OCR engine.</p>
       </div>
       <div class="pipe-step">
         <div class="pipe-num">Step 02</div>
         <h4>Automatic Ingest</h4>
-        <p>The ra-watch daemon detects new files within seconds. Legal-aware chunker splits at section boundaries — not arbitrary character counts.</p>
+        <p>Our ingest daemon detects new files within seconds. Legal-aware chunker splits at section boundaries — not arbitrary character counts.</p>
       </div>
       <div class="pipe-step">
         <div class="pipe-num">Step 03</div>
         <h4>Private Embedding</h4>
-        <p>1024-dimension embeddings computed on-device by gte-large-en-v1.5 via ONNX Runtime with CUDA acceleration. Zero API calls.</p>
+        <p>High-dimensional semantic embeddings computed entirely on-device by our proprietary embedding engine. Hardware-accelerated. Zero API calls. Your documents never leave your node.</p>
       </div>
       <div class="pipe-step">
         <div class="pipe-num">Step 04</div>
@@ -63,13 +63,13 @@
       </div>
       <div class="pipe-step">
         <div class="pipe-num">Step 05</div>
-        <h4>HNSW Vector Index</h4>
-        <p>Vectors stored in a bare-metal HNSW index (usearch). Sub-millisecond approximate nearest-neighbor retrieval at any scale.</p>
+        <h4>Sovereign Vector Index</h4>
+        <p>Embeddings stored in a proprietary in-memory vector index built from scratch. Sub-millisecond retrieval at any scale. No cloud vector database. No third-party service.</p>
       </div>
       <div class="pipe-step">
         <div class="pipe-num">Step 06</div>
         <h4>Ask Your Vault</h4>
-        <p>Natural language query → top-K retrieved chunks → Mistral Large 2 (123B) generates a cited answer. Every response shows the source document and paragraph.</p>
+        <p>Natural language query → relevant chunks retrieved → our proprietary AI engine generates a cited answer. Every response shows the source document and paragraph.</p>
       </div>
       <div class="pipe-step">
         <div class="pipe-num">Step 07</div>
