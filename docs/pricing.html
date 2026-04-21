@@ -252,25 +252,52 @@
           </div>
         </div>
 
-        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
-          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">On-Prem Add-a-Node — New Office <span style="color:var(--gold);font-size:0.7rem;margin-left:4px;">Existing Client</span></div>
-          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$100,000 <span style="font-size:0.75rem;font-weight:400;color:var(--gold);">$25,000 loyalty discount applied</span></div>
-          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
-            Full on-premises deployment at a new office location for existing clients. Same stack, same sovereign build. Client procures all travel and accommodation per the standard on-premises travel requirements.
+        <div style="background:var(--bg2);border:1px solid var(--rust-dim);border-radius:6px;padding:16px 18px;grid-column:1/-1;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:12px;">GCP Query Nodes — Remote · Any Client · Bulk Pricing Available</div>
+          <p style="font-size:0.82rem;color:var(--text-dim);line-height:1.6;margin-bottom:14px;">
+            Provision additional sovereign compute nodes on your GCP account — at signing or any time after. Each node is built from our pre-baked sovereign image, vault keys distributed, all services verified, and the node confirmed operational. <strong style="color:var(--text);">Remote only — no travel required.</strong> Includes PQC hardware-bound license token issuance. Existing nodes are untouched — no downtime, no reconfiguration.
+          </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:14px;">
+            <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:12px 14px;text-align:center;">
+              <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">1 Node</div>
+              <div style="font-size:1.4rem;font-weight:700;color:var(--white);">$75,000</div>
+            </div>
+            <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:12px 14px;text-align:center;">
+              <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">2–4 Nodes</div>
+              <div style="font-size:1.4rem;font-weight:700;color:var(--white);">$65,000<span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">/node</span></div>
+              <div style="font-size:0.72rem;color:var(--rust);margin-top:4px;">save $10k per node</div>
+            </div>
+            <div style="background:var(--bg3);border:1px solid var(--rust-dim);border-radius:6px;padding:12px 14px;text-align:center;">
+              <div style="font-size:0.72rem;color:var(--rust);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:6px;">5+ Nodes</div>
+              <div style="font-size:1.4rem;font-weight:700;color:var(--rust);">$55,000<span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">/node</span></div>
+              <div style="font-size:0.72rem;color:var(--rust);margin-top:4px;">save $20k per node</div>
+            </div>
+          </div>
+          <div style="font-size:0.76rem;color:var(--text-dim);padding:8px 10px;background:rgba(200,121,65,0.05);border-left:2px solid var(--rust-dim);border-radius:0 4px 4px 0;line-height:1.6;">
+            <strong style="color:var(--rust);">GCP quota notice:</strong> All VM availability is dependent on GCP quotas. We initiate quota increase requests on your behalf before provisioning begins. Timeline contingent on GCP approval and regional availability.
           </div>
         </div>
 
-        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
-          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:8px;">Add a GCP Query Node (Remote) <span style="color:var(--gold);font-size:0.7rem;margin-left:4px;">Existing Client</span></div>
-          <div style="font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:4px;">$75,000 <span style="font-size:0.85rem;font-weight:400;color:var(--text-dim);">· flat</span></div>
-          <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;">
-            Provision an additional sovereign compute node on your GCP account. We build from our pre-baked sovereign image, distribute vault keys, verify all services, and confirm the node is operational. <strong style="color:var(--text);">Remote only — no travel required.</strong> Includes PQC hardware-bound license token issuance for the new node. Existing nodes are not touched — no downtime, no configuration changes on your current infrastructure.
-          </div>
-          <div style="margin-top:10px;font-size:0.76rem;color:var(--text-dim);padding:8px 10px;background:rgba(200,121,65,0.05);border-left:2px solid var(--rust-dim);border-radius:0 4px 4px 0;line-height:1.6;">
-            <strong style="color:var(--rust);">Capacity notice:</strong>
-            Sovereign compute capacity on GCP is in high demand — availability is not guaranteed and additional quota may be required before a second node can be provisioned.
-            We initiate the quota increase request on your behalf and assess available capacity tiers if the primary configuration is unavailable in your region.
-            Provisioning timeline is contingent on GCP quota approval and regional availability — not guaranteed.
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;grid-column:1/-1;">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rust);font-weight:700;margin-bottom:12px;">On-Premises Nodes — Any Client · Bulk Pricing Available</div>
+          <p style="font-size:0.82rem;color:var(--text-dim);line-height:1.6;margin-bottom:14px;">
+            Full on-premises sovereign deployment — additional office locations or expanded capacity. Same proprietary stack, same post-quantum vault, same build process. Client procures all travel and accommodation per the standard on-premises travel requirements.
+          </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
+            <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:12px 14px;text-align:center;">
+              <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">1 Node</div>
+              <div style="font-size:1.4rem;font-weight:700;color:var(--white);">$100,000</div>
+            </div>
+            <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:12px 14px;text-align:center;">
+              <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">2–4 Nodes</div>
+              <div style="font-size:1.4rem;font-weight:700;color:var(--white);">$85,000<span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">/node</span></div>
+              <div style="font-size:0.72rem;color:var(--rust);margin-top:4px;">save $15k per node</div>
+            </div>
+            <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:12px 14px;text-align:center;">
+              <div style="font-size:0.72rem;color:var(--rust);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:6px;">5+ Nodes</div>
+              <div style="font-size:1.4rem;font-weight:700;color:var(--rust);">$70,000<span style="font-size:0.8rem;font-weight:400;color:var(--text-dim)">/node</span></div>
+              <div style="font-size:0.72rem;color:var(--rust);margin-top:4px;">save $30k per node</div>
+            </div>
           </div>
         </div>
 
