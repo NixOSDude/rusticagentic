@@ -1,0 +1,76 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2476 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+(MASTER SERVICES AGREEMENT) Tj
+0 -13 Td () Tj
+0 -13 Td (This Master Services Agreement \("Agreement"\) is entered into as of 2020-03-22, between) Tj
+0 -13 Td (Meridian Insurance Group Inc. \("Vendor"\) and Quantum Analytics Inc. \("Client"\).) Tj
+0 -13 Td () Tj
+0 -13 Td (Section 1. Services) Tj
+0 -13 Td (Vendor shall provide services as described in statements of work \("SOW"\) executed) Tj
+0 -13 Td (by the parties from time to time. Each SOW shall be incorporated herein by reference.) Tj
+0 -13 Td () Tj
+0 -13 Td (Section 2. Payment Terms) Tj
+0 -13 Td (Client shall pay Vendor's invoices within 60 days of receipt. Invoices) Tj
+0 -13 Td (not paid within 60 days shall accrue interest at 1.5% per month.) Tj
+0 -13 Td () Tj
+0 -13 Td (Section 3. Limitation of Liability) Tj
+0 -13 Td (Section 3.1. IN NO EVENT SHALL EITHER PARTY'S AGGREGATE LIABILITY UNDER THIS) Tj
+0 -13 Td (AGREEMENT EXCEED $450,000. NEITHER PARTY SHALL BE LIABLE FOR ANY INDIRECT,) Tj
+0 -13 Td (INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.) Tj
+0 -13 Td () Tj
+0 -13 Td (Section 4. Term and Termination) Tj
+0 -13 Td (This Agreement commences on 2020-03-22 and continues for one year, renewing automatically) Tj
+0 -13 Td (unless either party provides 60 days' written notice of non-renewal. Either party) Tj
+0 -13 Td (may terminate for cause upon 30 days' written notice if the other party materially) Tj
+0 -13 Td (breaches this Agreement and fails to cure within such period.) Tj
+0 -13 Td () Tj
+0 -13 Td (Section 5. HIPAA Compliance and Business Associate Obligations) Tj
+0 -13 Td (To the extent Vendor receives, maintains, transmits, or otherwise processes Protected) Tj
+0 -13 Td (Health Information \(PHI\), Vendor agrees to: \(a\) not use or disclose PHI other than as) Tj
+0 -13 Td (permitted by this Agreement; \(b\) implement appropriate administrative, physical, and) Tj
+0 -13 Td (technical safeguards; \(c\) report any breach of unsecured PHI without unreasonable delay.) Tj
+0 -13 Td (The Parties shall execute a Business Associate Agreement \(BAA\) contemporaneously with this) Tj
+0 -13 Td (Agreement.) Tj
+0 -13 Td () Tj
+0 -13 Td (Section 6. Governing Law) Tj
+0 -13 Td (This Agreement shall be governed by the laws of the State of Delaware.) Tj
+0 -13 Td () Tj
+0 -13 Td (Meridian Insurance Group Inc.) Tj
+0 -13 Td (By: _______________________________) Tj
+0 -13 Td () Tj
+0 -13 Td (Quantum Analytics Inc.) Tj
+0 -13 Td (By: _______________________________) Tj
+0 -13 Td () Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000002769 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2839
+%%EOF
