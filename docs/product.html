@@ -131,6 +131,109 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════ COMPLIANCE ═══════════════════════════ -->
+<section id="compliance">
+  <div class="container">
+    <div class="section-label">Compliance &amp; Regulatory Alignment</div>
+    <h2>Physical isolation.<br>Certified infrastructure.<br>Your keys.</h2>
+    <p class="section-intro">
+      RusticAgentic deploys onto a <strong>GCP Sole Tenant Node</strong> inside your own Google Cloud account —
+      dedicated physical hardware that no other organization shares, ever.
+      This is not VM-level isolation. No other customer's workload has ever run on the same physical machine as your documents.
+      Combined with our application-layer post-quantum encryption, your deployment inherits Google's compliance
+      certifications directly — not through a vendor intermediary.
+    </p>
+
+    <div style="background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:8px;padding:20px 24px;margin-bottom:40px;max-width:860px;">
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;">What Sole Tenancy Means</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.75;margin:0;">
+        Standard cloud deployments run your VMs on physical servers shared with other customers — isolated by software, not physics.
+        A Sole Tenant Node is a physical Compute Engine server dedicated exclusively to your organization.
+        Your documents, your inference, your encryption keys — on hardware that is yours alone.
+        For HIPAA, CJIS, ITAR, and FedRAMP High workloads, physical isolation is not optional.
+        For client confidentiality, it is the answer to the question "who else is on that machine?" — nobody.
+      </p>
+    </div>
+
+    <div class="cap-grid">
+
+      <div class="cap-card">
+        <div class="cap-icon">🏥</div>
+        <h3>HIPAA</h3>
+        <p>GCP signs a Business Associate Agreement (BAA). Sole Tenant Node provides the physical isolation HIPAA recommends for ePHI workloads. Our application-layer AES-256-GCM encryption + access audit log satisfies HIPAA's technical safeguard and audit control requirements.</p>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Relevant for: healthcare law, medical malpractice, hospital general counsel.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">🔐</div>
+        <h3>SOC 2 Type II</h3>
+        <p>GCP infrastructure holds SOC 2 Type II certification covering security, availability, processing integrity, and confidentiality. Because the deployment runs in your GCP account, you inherit this directly — not through a vendor's attestation.</p>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Relevant for: enterprise clients requiring vendor SOC 2 evidence, insurance requirements.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">🌐</div>
+        <h3>ISO 27001 / 27017 / 27018</h3>
+        <p>GCP is certified to ISO 27001 (information security management), ISO 27017 (cloud security controls), and ISO 27018 (protection of personally identifiable information in cloud). Direct inheritance via your own GCP account.</p>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Relevant for: international firms, EU clients, cross-border matters.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">💳</div>
+        <h3>PCI DSS Level 1</h3>
+        <p>GCP holds PCI DSS Level 1 Service Provider certification — the highest tier. Relevant for firms handling financial services clients, payment data in commercial transactions, or M&amp;A due diligence on payment processors.</p>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Relevant for: financial services clients, fintech M&amp;A, banking litigation.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">🏛</div>
+        <h3>FedRAMP High</h3>
+        <p>GCP holds FedRAMP High authorization — the highest federal authorization level. Enables law firms and contractors handling Controlled Unclassified Information (CUI) to deploy on compliant infrastructure without a separate FedRAMP assessment.</p>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Relevant for: government contractors, national security practice, federal litigation.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">🚔</div>
+        <h3>CJIS</h3>
+        <p>GCP meets Criminal Justice Information Services (CJIS) Security Policy requirements. One of the most stringent data handling standards in the US — very few cloud providers qualify. Sole Tenant Node satisfies CJIS physical isolation requirements.</p>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Relevant for: criminal defense, DA offices, public defenders, law enforcement litigation.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">✈️</div>
+        <h3>ITAR</h3>
+        <p>GCP supports International Traffic in Arms Regulations (ITAR) workloads with data residency controls and Sole Tenant Nodes. Physical isolation satisfies ITAR's requirements that controlled technical data not be accessible to foreign nationals sharing infrastructure.</p>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Relevant for: defense contractors, IP firms with defense clients, aerospace litigation.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">🇪🇺</div>
+        <h3>GDPR / CCPA</h3>
+        <p>GCP acts as a GDPR data processor with standard contractual clauses and data processing addenda. Data residency controls keep EU client data within specified regions. CCPA compliance supported through GCP's data handling agreements.</p>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Relevant for: EU-facing practice, California clients, cross-border transactions.</p>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">📈</div>
+        <h3>FINRA / SEC</h3>
+        <p>GCP's SOC 2 Type II, data residency controls, and immutable audit logging support FINRA and SEC recordkeeping requirements. Our append-only ML-DSA-65 signed audit chain satisfies electronic records integrity requirements.</p>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;">Relevant for: PE/VC funds, broker-dealer GCs, securities litigation.</p>
+      </div>
+
+    </div>
+
+    <div style="background:rgba(200,121,65,0.05);border:1px solid var(--rust-dim);border-radius:8px;padding:20px 24px;margin-top:32px;max-width:860px;">
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;color:var(--rust);text-transform:uppercase;margin-bottom:10px;">Important Note</div>
+      <p style="font-size:0.88rem;color:var(--text-dim);line-height:1.75;margin:0;">
+        GCP certification covers the infrastructure layer. A complete compliance posture for any standard also requires that the application layer — how data is stored, accessed, encrypted, and logged — meets the standard's controls.
+        RusticAgentic's application-layer post-quantum encryption, zero-plaintext storage, and ML-DSA-65 signed audit chain are designed to satisfy those application-layer requirements.
+        Clients should verify their specific compliance posture with qualified legal and compliance counsel before relying on any certification for regulatory purposes.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══════════════════════════ CTA ═══════════════════════════ -->
 <section id="contact">
   <div class="container" style="text-align:center;max-width:680px;">
