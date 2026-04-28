@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About RusticAgentic — the team, the story, and the expertise behind the only sovereign, post-quantum AI document intelligence platform built entirely in Rust.">
+  <meta name="description" content="About RusticAgentic — our mission, our story, and the values behind the only sovereign post-quantum AI document intelligence platform built for law firms.">
   <title>About Us — RusticAgentic</title>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
@@ -17,40 +17,30 @@
       --rust:       #c87941;
       --rust-bright:#e8924a;
       --rust-dim:   #7a4a28;
-      --copper:     #b87333;
       --gold:       #c8a84b;
-      --gold-dim:   #8a7032;
       --text:       #c8b89a;
       --text-dim:   #7a6a58;
       --white:      #f0e8d8;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      background: var(--bg);
-      color: var(--text);
+      background: var(--bg); color: var(--text);
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased;
     }
-
-    /* ─── NAV ─── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(10,8,6,0.93);
-      backdrop-filter: blur(12px);
+      background: rgba(10,8,6,0.93); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
       width: min(1320px, 100% - clamp(24px,4vw,80px) * 2);
-      margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
+      margin: 0 auto; display: flex; align-items: center;
+      justify-content: space-between; height: 60px;
     }
     .nav-logo img { height: 38px; width: auto; display: block; }
-    .nav-links { display: flex; gap: clamp(16px,2.5vw,36px); align-items: center; }
+    .nav-links { display: flex; gap: clamp(12px,2vw,28px); align-items: center; }
     .nav-links a { font-size: 0.875rem; color: var(--text-dim); font-weight: 500; text-decoration: none; }
     .nav-links a:hover { color: var(--rust); }
     .nav-links a.active { color: var(--rust); }
@@ -59,207 +49,74 @@
       padding: 7px 18px; border-radius: 4px; font-weight: 700; font-size: 0.875rem;
     }
     .nav-cta:hover { background: var(--rust-bright); }
-    @media(max-width:768px) {
-      .nav-links a:not(.nav-cta) { display: none; }
-    }
+    @media(max-width:768px) { .nav-links a:not(.nav-cta) { display: none; } }
 
-    /* ─── PAGE ─── */
     .page {
       width: min(960px, 100% - clamp(24px,4vw,80px) * 2);
-      margin: 0 auto;
-      padding: 64px 0 100px;
+      margin: 0 auto; padding: 64px 0 100px;
     }
-
-    /* ─── PAGE HERO ─── */
     .page-hero {
-      margin-bottom: 64px;
-      padding-bottom: 48px;
+      margin-bottom: 64px; padding-bottom: 48px;
       border-bottom: 1px solid var(--border);
     }
     .page-hero .eyebrow {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 14px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--rust); margin-bottom: 14px;
     }
     .page-hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 20px;
+      font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; color: var(--white);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px;
     }
     .page-hero p {
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      color: var(--text);
-      max-width: 680px;
-      line-height: 1.8;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: var(--text);
+      max-width: 680px; line-height: 1.8;
     }
-
-    /* ─── SECTION HEADINGS ─── */
     .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 28px;
-      padding-bottom: 10px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--rust);
+      margin-bottom: 28px; padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
     }
+    section.block { margin-bottom: 72px; }
 
-    section.block {
-      margin-bottom: 72px;
-    }
-
-    /* ─── TEAM CARD ─── */
-    .team-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 36px 40px;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0 36px;
-    }
-    @media(max-width: 640px) {
-      .team-card { grid-template-columns: 1fr; padding: 28px 24px; }
-    }
-    .team-avatar {
-      width: 96px; height: 96px;
-      border-radius: 50%;
-      background: var(--bg2);
-      border: 2px solid var(--rust-dim);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-size: 2.2rem;
-      color: var(--rust);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      user-select: none;
-    }
-    .team-info {}
-    .team-name {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.01em;
-      margin-bottom: 4px;
-    }
-    .team-title {
-      font-size: 0.88rem;
-      color: var(--rust);
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-    .team-bio {
-      font-size: 0.95rem;
-      color: var(--text);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-    .team-bio p + p { margin-top: 12px; }
-    .team-tags {
-      display: flex; flex-wrap: wrap; gap: 8px;
-    }
-    .tag {
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      background: var(--bg2);
-    }
-    .tag.highlight {
-      border-color: var(--rust-dim);
-      color: var(--rust);
-      background: rgba(200,121,65,0.08);
-    }
-
-    /* ─── ORIGIN STORY ─── */
     .story-box {
-      background: var(--bg3);
-      border-left: 3px solid var(--rust);
-      border-radius: 0 10px 10px 0;
-      padding: 28px 32px;
-      font-size: 0.95rem;
-      line-height: 1.85;
+      background: var(--bg3); border-left: 3px solid var(--rust);
+      border-radius: 0 10px 10px 0; padding: 28px 32px;
+      font-size: 0.95rem; line-height: 1.85;
     }
     .story-box p { color: var(--text); }
     .story-box p + p { margin-top: 14px; }
     .story-box strong { color: var(--white); }
+    .story-box a { color: var(--rust-bright); text-decoration: none; }
 
-    /* ─── EXPERTISE GRID ─── */
-    .expertise-grid {
+    .values-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
       gap: 14px;
     }
-    .expertise-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px 22px;
+    .value-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 10px; padding: 22px 24px;
       transition: border-color 0.2s;
     }
-    .expertise-card:hover { border-color: var(--rust-dim); }
-    .expertise-card .label {
-      font-weight: 700;
-      font-size: 0.78rem;
-      color: var(--rust);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      margin-bottom: 8px;
+    .value-card:hover { border-color: var(--rust-dim); }
+    .value-card .label {
+      font-weight: 700; font-size: 0.78rem; color: var(--rust);
+      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px;
     }
-    .expertise-card p {
-      font-size: 0.88rem;
-      color: var(--text-dim);
-      line-height: 1.65;
-    }
-    .expertise-card p strong { color: var(--text); }
+    .value-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.65; }
+    .value-card p strong { color: var(--text); }
 
-    /* ─── CERTS ─── */
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
-      gap: 14px;
-    }
-    .cert-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px 22px;
-      transition: border-color 0.2s;
-    }
-    .cert-card:hover { border-color: var(--rust); }
-    .cert-card .cert-name { font-weight: 700; color: var(--white); margin-bottom: 4px; font-size: 0.95rem; }
-    .cert-card .cert-issuer { color: var(--text-dim); font-size: 0.82rem; margin-bottom: 14px; }
-    .cert-card a {
-      font-size: 0.82rem; color: var(--rust); text-decoration: none;
-      border: 1px solid var(--border); padding: 5px 12px;
-      border-radius: 4px; display: inline-block; transition: border-color 0.15s;
-    }
-    .cert-card a:hover { border-color: var(--rust); }
-
-    /* ─── FOOTER ─── */
     .site-footer {
-      background: var(--bg3);
-      border-top: 1px solid var(--border);
-      margin-top: 48px;
-      padding: 20px 0;
+      background: var(--bg3); border-top: 1px solid var(--border);
+      margin-top: 48px; padding: 20px 0;
     }
     .footer-inner {
       width: min(960px, 100% - clamp(24px,4vw,80px) * 2);
-      margin: 0 auto;
-      display: flex; gap: 20px; flex-wrap: wrap;
+      margin: 0 auto; display: flex; gap: 20px; flex-wrap: wrap;
       align-items: center; justify-content: space-between;
     }
     .footer-inner p { font-size: 0.82rem; color: var(--text-dim); }
-    .footer-inner a { color: var(--rust); text-decoration: none; }
     .footer-key-links { display: flex; gap: 10px; flex-wrap: wrap; }
     .footer-key-links a {
       font-size: 0.82rem; color: var(--rust);
@@ -282,8 +139,8 @@
       <a href="demo.html">Demo</a>
       <a href="benchmark.html">Benchmark</a>
       <a href="pricing.html">Pricing</a>
-      <a href="payment.html">Payment</a>
-      <a href="about.html" class="active">Team</a>
+      <a href="about.html" class="active">About</a>
+      <a href="team.html">Team</a>
       <a href="mailto:scottbaker@rusticagentic.agency?subject=Demo%20Request%20—%20RusticAgentic&body=Firm%3A%0ADocument%20count%20(approx)%3A%0ADocument%20types%3A%0AAvailability%3A" class="nav-cta">Request a Demo</a>
     </div>
   </div>
@@ -291,14 +148,13 @@
 
 <div class="page">
 
-  <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="eyebrow">About RusticAgentic</div>
-    <h1>Built from the ground up.<br>By someone who had the time to do it right.</h1>
+    <h1>Built on a principle.<br>Sharpened over decades.</h1>
     <p>
-      RusticAgentic is a sovereign AI document intelligence platform built entirely from first
-      principles — no frameworks stitched together, no managed services, no data ever leaving
-      your infrastructure. This is the story of how it came to be.
+      RusticAgentic exists because law firms deserve AI that works for them —
+      not AI that works with their clients' secrets. Here is our mission,
+      our story, and the values we will not compromise.
     </p>
   </div>
 
@@ -318,7 +174,7 @@
       <p>
         Our mission is to give law firms the power of AI document intelligence without
         surrendering control of their data. Every query runs on infrastructure the firm
-        owns — a dedicated, private cloud node or on-premises hardware. Documents are
+        owns — a dedicated private cloud node or on-premises hardware. Documents are
         encrypted at rest with post-quantum cryptography. Every access is logged with a
         tamper-evident, cryptographically signed audit trail. Nothing leaves. Nothing is
         shared. Nothing is stored on our servers, because we don't have any.
@@ -332,84 +188,19 @@
         Beyond the technology, we are committed to our clients. We deliver enterprise-grade
         AI infrastructure that simplifies workflows, surfaces answers in seconds, and
         eliminates the friction that slows legal teams down. We stand behind every
-        deployment — fully available, fully accountable. When you trust us with your firm's
-        infrastructure, we take that seriously. Our goal is not to hand you a product and
-        disappear. It is to make your practice faster, more informed, and more capable than
-        it was before.
+        deployment — fully available, fully accountable. Our goal is not to hand you a
+        product and disappear. It is to make your practice faster, more informed, and more
+        capable than it was before.
       </p>
     </div>
   </section>
 
-  <!-- TEAM -->
+  <!-- OUR STORY -->
   <section class="block">
-    <div class="section-label">Our Team</div>
-    <div class="team-card">
-      <div class="team-avatar">SB</div>
-      <div class="team-info">
-        <div class="team-name">Scott Baker</div>
-        <div class="team-title">Founder &amp; Lead Engineer — Systems, Cryptography &amp; AI</div>
-        <div class="team-bio">
-          <p>
-            Scott is a systems engineer and data architect on long-term disability who has used
-            that time as most engineers never get the chance to — in uninterrupted, full-time
-            technical immersion. No commute, no meetings, no context switching. Just deep,
-            sustained study of the hardest problems in systems programming, AI infrastructure,
-            and applied cryptography.
-          </p>
-          <p>
-            He holds an <strong>AWS Certified Solutions Architect</strong> and a
-            <strong>Databricks Certified Associate Developer for Apache Spark</strong> (Scala track).
-            He completed an in-depth six-month Python RAG AI course — mastering retrieval-augmented
-            generation at the theory and implementation level — then chose to rebuild the entire
-            pipeline from scratch in Rust, without any Python framework, for production-grade
-            performance and sovereignty. He has also developed deep expertise in
-            <strong>prompt engineering</strong>: system prompt design, retrieval-aware context
-            construction, and instruction tuning for legal domain accuracy.
-          </p>
-          <p>
-            His roots are in web development — he began his career at
-            <strong>Endurance International Group</strong> and <strong>GoDaddy</strong>,
-            managing Linux servers, VPS environments, and high-traffic web hosting at scale.
-            That foundation informs everything: he understands the full stack from bare metal
-            to the browser. He has also invented <a href="https://skr8tr.online" target="_blank" style="color:var(--rust);">skr8tr</a>
-            — a sovereign, masterless UDP distributed mesh framework for web-scale workloads,
-            built in C23 with post-quantum authenticated command propagation and no single
-            point of failure.
-          </p>
-          <p>
-            He benchmarked a columnar analytics pipeline processing <strong>685 million rows at
-            171 million rows per second</strong> on a single node — no cluster, no JVM.
-            RusticAgentic is the culmination of that work: a production sovereign AI system
-            that runs entirely on client-controlled infrastructure with post-quantum encryption
-            at every layer.
-          </p>
-        </div>
-        <div class="team-tags">
-          <span class="tag highlight">Rust Systems Programming</span>
-          <span class="tag highlight">C / Low-Level Systems</span>
-          <span class="tag highlight">Post-Quantum Cryptography</span>
-          <span class="tag highlight">AWS Solutions Architect</span>
-          <span class="tag highlight">Databricks / Apache Spark</span>
-          <span class="tag highlight">RAG Pipeline Architecture</span>
-          <span class="tag highlight">Prompt Engineering</span>
-          <span class="tag">DuckDB</span>
-          <span class="tag">Kubernetes</span>
-          <span class="tag">skr8tr — UDP Mesh</span>
-          <span class="tag">Web Development</span>
-          <span class="tag">CUDA / GPU Computing</span>
-          <span class="tag">HIPAA / HITRUST</span>
-          <span class="tag">GCP Infrastructure</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ORIGIN STORY -->
-  <section class="block">
-    <div class="section-label">The Origin Story</div>
+    <div class="section-label">Our Story</div>
     <div class="story-box">
       <p>
-        Scott's relationship with computing started in the 1980s — summer school at
+        Scott Baker's relationship with computing started in the 1980s — summer school at
         <strong>Haverford Preparatory School</strong>, a Mac SE/30, and HyperCard. That
         early instinct for building interactive systems never left.
       </p>
@@ -421,36 +212,19 @@
         memory stayed with him.
       </p>
       <p>
-        When he began building a Rust-based RAG system and looked for the right market to
-        apply it, legal firms came immediately to mind. He knew the problem firsthand: lawyers
-        need fast, accurate document search across sensitive privileged material — and every
-        existing solution requires sending that material to someone else's servers. That gap
-        is what RusticAgentic was built to close.
+        When he began building a Rust-based RAG system years later and looked for the right
+        market to apply it, legal firms came immediately to mind. He knew the problem
+        firsthand: lawyers need fast, accurate document search across sensitive privileged
+        material — and every existing solution requires sending that material to someone
+        else's servers. That gap is what RusticAgentic was built to close.
       </p>
       <p>
         Since late 2022, long-term disability has ended Scott's ability to work onsite.
         Rather than stepping back from engineering, he stepped all the way in. With nothing
         but time and the discipline to use it, he has spent those years in a level of
-        technical immersion that a conventional career simply does not permit.
-      </p>
-      <p>
-        He mastered <strong>Rust</strong> systems programming, <strong>C23</strong>,
-        <strong>CUDA</strong> GPU kernels, <strong>DuckDB</strong>, and multi-node
-        <strong>Apache Spark</strong> in functional Scala. He earned his
-        <strong>AWS Certified Solutions Architect</strong> and
-        <strong>Databricks Certified Developer</strong> — both backed by production code.
-        He completed a six-month structured <strong>Python RAG AI course</strong>, then
-        discarded the frameworks entirely and rebuilt the full pipeline from scratch in Rust.
-        He studied <strong>Kubernetes</strong>, <strong>post-quantum cryptography</strong>
-        (NIST FIPS 203/204), and developed serious depth in <strong>prompt engineering</strong>
-        for legal domain accuracy.
-      </p>
-      <p>
-        Those years also produced <a href="https://skr8tr.online" target="_blank" style="color:var(--rust-bright);">skr8tr</a>
-        — a sovereign, masterless UDP distributed mesh framework. No certificate authorities,
-        no central broker, no single point of failure. Every packet post-quantum authenticated
-        with ML-DSA-65. Built in C23, rooted in the same web infrastructure foundation from
-        his years at <strong>Endurance International</strong> and <strong>GoDaddy</strong>.
+        technical immersion that a conventional career simply does not permit — mastering
+        Rust, C23, CUDA, post-quantum cryptography, distributed systems, cloud architecture,
+        and AI pipeline engineering from first principles.
       </p>
       <p>
         The result is RusticAgentic — a platform that could only be built by someone who
@@ -462,113 +236,48 @@
     </div>
   </section>
 
-  <!-- EXPERTISE -->
+  <!-- OUR VALUES -->
   <section class="block">
-    <div class="section-label">Technical Expertise</div>
-    <div class="expertise-grid">
+    <div class="section-label">Our Values</div>
+    <div class="values-grid">
 
-      <div class="expertise-card">
-        <div class="label">Rust Systems Engineering</div>
-        <p>Multi-year deep study of Rust — production-grade systems software, async runtimes,
-        memory-safe concurrent architecture. Every RusticAgentic crate is pure Rust,
-        zero garbage collection, zero JVM.</p>
+      <div class="value-card">
+        <div class="label">Sovereignty First</div>
+        <p>Your data never leaves your infrastructure — ever. We build systems where the
+        client holds every key, owns every byte, and can verify every claim independently.</p>
       </div>
 
-      <div class="expertise-card">
-        <div class="label">C &amp; Low-Level Systems</div>
-        <p>C23 systems programming — distributed mesh protocols, GPU worker nodes, UDP fabric
-        implementations. Sovereign compute at the metal.</p>
+      <div class="value-card">
+        <div class="label">No Compromise on Privacy</div>
+        <p>Attorney-client privilege extends to the tools attorneys use. We will never build
+        a feature that requires your documents to touch shared infrastructure.</p>
       </div>
 
-      <div class="expertise-card">
-        <div class="label">Cloud Architecture</div>
-        <p><strong>AWS Certified Solutions Architect</strong> (Associate). Production deployments
-        across AWS, Azure, and GCP — sole-tenant compute, managed secrets, encrypted storage,
-        private networking.</p>
+      <div class="value-card">
+        <div class="label">Transparency &amp; Accountability</div>
+        <p>Every access is logged. Every deliverable is cryptographically signed. Every
+        audit trail is tamper-evident. We build for verifiability, not trust-me.</p>
       </div>
 
-      <div class="expertise-card">
-        <div class="label">Data Engineering</div>
-        <p><strong>Databricks Certified Developer</strong> (Scala). Apache Spark 3.5 at scale,
-        functional programming patterns, multi-cloud ingestion pipelines. DuckDB analytics
-        at 171M rows/sec on a single node.</p>
+      <div class="value-card">
+        <div class="label">Engineering Depth</div>
+        <p>We own every layer — the cryptography, the embedding pipeline, the vector index,
+        the inference server. No wrappers, no SaaS dependencies, no black boxes.</p>
       </div>
 
-      <div class="expertise-card">
-        <div class="label">Post-Quantum Cryptography</div>
-        <p>ML-KEM-768 key encapsulation and ML-DSA-65 digital signatures — NIST FIPS 203/204.
-        Every RusticAgentic vault shard is AES-256-GCM encrypted with ML-KEM wrapped keys.
-        Every deliverable carries an ML-DSA-65 signature.</p>
+      <div class="value-card">
+        <div class="label">Client Commitment</div>
+        <p>We stand behind every deployment. Fully available, fully accountable. We are not
+        a product you buy and figure out alone — we are here for the long run.</p>
       </div>
 
-      <div class="expertise-card">
-        <div class="label">GPU &amp; Inference</div>
-        <p>CUDA kernel development, ONNX Runtime CUDA execution provider, llama.cpp GPU
-        offloading. Benchmarked on A100 80GB SXM — 1.7s average query latency across
-        150 legal documents.</p>
+      <div class="value-card">
+        <div class="label">Future-Proof Security</div>
+        <p>Post-quantum cryptography today, not when it becomes an emergency. ML-KEM +
+        ML-DSA — NIST FIPS 203/204 — built in from day one so your vault is safe against
+        the threats that are coming.</p>
       </div>
 
-      <div class="expertise-card">
-        <div class="label">Kubernetes &amp; Orchestration</div>
-        <p>Container orchestration, workload scheduling, resource isolation. Applied study
-        for multi-tenant sovereign deployment architectures.</p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="label">RAG Pipeline Architecture</div>
-        <p>Six months of structured Python RAG AI study — vector indexing, hybrid BM25/HNSW
-        retrieval, embedding models, context assembly, and LLM generation. Then rebuilt the
-        entire pipeline from scratch in Rust for production sovereignty, owning every layer
-        without framework dependency.</p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="label">Prompt Engineering</div>
-        <p>System prompt design, retrieval-aware context construction, and instruction tuning
-        for domain-specific accuracy. Developed through sustained study and applied directly
-        in RusticAgentic's legal RAG pipeline — shaping how the model reasons over
-        privileged documents without hallucination.</p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="label">Web Development &amp; Infrastructure</div>
-        <p>Career roots in web development — Linux server administration, VPS hosting, and
-        high-traffic web infrastructure at <strong>Endurance International</strong> and
-        <strong>GoDaddy</strong>. Full-stack understanding from bare metal to the browser,
-        applied to sovereign web-scale AI deployment.</p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="label">skr8tr — Distributed Mesh</div>
-        <p>Inventor of <a href="https://skr8tr.online" target="_blank" style="color:var(--rust);">skr8tr</a>
-        — a sovereign, masterless UDP mesh framework for web-scale workloads. C23, no central
-        broker, no single point of failure, ML-DSA-65 post-quantum authenticated packets.</p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="label">Security &amp; Compliance</div>
-        <p>HIPAA compliance engineering, HITRUST audit remediation, enterprise vulnerability
-        management (CrowdStrike, CyberArk, Qualys). Attorney-client privilege architecture
-        for legal document vaults.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section class="block">
-    <div class="section-label">Certifications</div>
-    <div class="cert-grid">
-      <div class="cert-card">
-        <div class="cert-name">Databricks Certified Associate Developer for Apache Spark</div>
-        <div class="cert-issuer">Databricks · Scala track</div>
-        <a href="https://credentials.databricks.com/embed/96e65e17-56d5-4682-a8f4-c9e77b2a7251" target="_blank">Verify Credential ↗</a>
-      </div>
-      <div class="cert-card">
-        <div class="cert-name">AWS Certified Solutions Architect</div>
-        <div class="cert-issuer">Associate — Amazon Web Services</div>
-        <a href="https://www.credly.com/badges/0957ca40-e7ba-4984-99b8-444E8DE58A18/public_url" target="_blank">Verify on Credly ↗</a>
-      </div>
     </div>
   </section>
 
@@ -578,8 +287,7 @@
   <div class="footer-inner">
     <p>
       All RusticAgentic deliverables are post-quantum signed with
-      <strong style="color:var(--text);">ML-DSA-65 (NIST FIPS 204)</strong>.
-      Download the public key to independently verify any signed report.
+      <strong style="color:var(--white);">ML-DSA-65 (NIST FIPS 204)</strong>.
     </p>
     <div class="footer-key-links">
       <a href="assets/rusticagentic-mldsa65.pub.pem" download>↓ Public Key (.pem)</a>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the team behind RusticAgentic — Scott Baker, founder and solo developer, sovereign AI systems engineer, and post-quantum cryptography architect.">
+  <title>Our Team — RusticAgentic</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <style>
+    :root {
+      --bg:         #0a0806;
+      --bg2:        #100d0a;
+      --bg3:        #181210;
+      --border:     #2e2218;
+      --rust:       #c87941;
+      --rust-bright:#e8924a;
+      --rust-dim:   #7a4a28;
+      --gold:       #c8a84b;
+      --text:       #c8b89a;
+      --text-dim:   #7a6a58;
+      --white:      #f0e8d8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,8,6,0.93); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      width: min(1320px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto; display: flex; align-items: center;
+      justify-content: space-between; height: 60px;
+    }
+    .nav-logo img { height: 38px; width: auto; display: block; }
+    .nav-links { display: flex; gap: clamp(12px,2vw,28px); align-items: center; }
+    .nav-links a { font-size: 0.875rem; color: var(--text-dim); font-weight: 500; text-decoration: none; }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-links a.active { color: var(--rust); }
+    .nav-cta {
+      background: var(--rust); color: #000 !important;
+      padding: 7px 18px; border-radius: 4px; font-weight: 700; font-size: 0.875rem;
+    }
+    .nav-cta:hover { background: var(--rust-bright); }
+    @media(max-width:768px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+    .page {
+      width: min(960px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto; padding: 64px 0 100px;
+    }
+    .page-hero {
+      margin-bottom: 64px; padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero .eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--rust); margin-bottom: 14px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; color: var(--white);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px;
+    }
+    .page-hero p {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: var(--text);
+      max-width: 680px; line-height: 1.8;
+    }
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--rust);
+      margin-bottom: 28px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    section.block { margin-bottom: 72px; }
+
+    /* ─── FOUNDER CARD ─── */
+    .founder-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 12px; padding: 36px 40px;
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 0 36px;
+    }
+    @media(max-width:640px) {
+      .founder-card { grid-template-columns: 1fr; padding: 28px 24px; }
+    }
+    .founder-avatar {
+      width: 96px; height: 96px; border-radius: 50%;
+      background: var(--bg2); border: 2px solid var(--rust-dim);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 2.2rem; color: var(--rust);
+      font-weight: 800; letter-spacing: -0.04em; user-select: none;
+    }
+    .founder-name {
+      font-size: 1.4rem; font-weight: 800; color: var(--white);
+      letter-spacing: -0.01em; margin-bottom: 4px;
+    }
+    .founder-title {
+      font-size: 0.88rem; color: var(--rust); font-weight: 600; margin-bottom: 16px;
+    }
+    .founder-bio { font-size: 0.95rem; color: var(--text); line-height: 1.8; margin-bottom: 20px; }
+    .founder-bio p + p { margin-top: 12px; }
+    .founder-bio strong { color: var(--white); }
+    .founder-bio a { color: var(--rust); text-decoration: none; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-size: 0.78rem; font-weight: 600; padding: 4px 12px;
+      border-radius: 20px; border: 1px solid var(--border);
+      color: var(--text-dim); background: var(--bg2);
+    }
+    .tag.hi {
+      border-color: var(--rust-dim); color: var(--rust);
+      background: rgba(200,121,65,0.08);
+    }
+
+    /* ─── EXPERTISE GRID ─── */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+      gap: 14px;
+    }
+    .expertise-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 22px; transition: border-color 0.2s;
+    }
+    .expertise-card:hover { border-color: var(--rust-dim); }
+    .expertise-card .label {
+      font-weight: 700; font-size: 0.78rem; color: var(--rust);
+      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px;
+    }
+    .expertise-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.65; }
+    .expertise-card p strong { color: var(--text); }
+    .expertise-card a { color: var(--rust); text-decoration: none; }
+
+    /* ─── CERTS ─── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+      gap: 14px;
+    }
+    .cert-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 22px; transition: border-color 0.2s;
+    }
+    .cert-card:hover { border-color: var(--rust); }
+    .cert-card .cert-name { font-weight: 700; color: var(--white); margin-bottom: 4px; font-size: 0.95rem; }
+    .cert-card .cert-issuer { color: var(--text-dim); font-size: 0.82rem; margin-bottom: 14px; }
+    .cert-card a {
+      font-size: 0.82rem; color: var(--rust); text-decoration: none;
+      border: 1px solid var(--border); padding: 5px 12px;
+      border-radius: 4px; display: inline-block; transition: border-color 0.15s;
+    }
+    .cert-card a:hover { border-color: var(--rust); }
+
+    .site-footer {
+      background: var(--bg3); border-top: 1px solid var(--border);
+      margin-top: 48px; padding: 20px 0;
+    }
+    .footer-inner {
+      width: min(960px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto; display: flex; gap: 20px; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+    }
+    .footer-inner p { font-size: 0.82rem; color: var(--text-dim); }
+    .footer-key-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .footer-key-links a {
+      font-size: 0.82rem; color: var(--rust);
+      border: 1px solid var(--border); padding: 6px 14px;
+      border-radius: 4px; text-decoration: none;
+    }
+    .footer-key-links a.dim { color: var(--text-dim); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo-icon.png" alt="RusticAgentic" height="38">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="demo.html">Demo</a>
+      <a href="benchmark.html">Benchmark</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="team.html" class="active">Team</a>
+      <a href="mailto:scottbaker@rusticagentic.agency?subject=Demo%20Request%20—%20RusticAgentic&body=Firm%3A%0ADocument%20count%20(approx)%3A%0ADocument%20types%3A%0AAvailability%3A" class="nav-cta">Request a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="page-hero">
+    <div class="eyebrow">Our Team</div>
+    <h1>One engineer.<br>Every layer.</h1>
+    <p>
+      RusticAgentic is built and maintained by a single founder who owns the full stack —
+      from the cryptographic vault to the GPU inference server to the WASM frontend.
+      No outsourced components. No black boxes. Complete accountability.
+    </p>
+  </div>
+
+  <!-- FOUNDER -->
+  <section class="block">
+    <div class="section-label">Founder &amp; Lead Developer</div>
+    <div class="founder-card">
+      <div class="founder-avatar">SB</div>
+      <div>
+        <div class="founder-name">Scott Baker</div>
+        <div class="founder-title">Founder &amp; Solo Developer — Systems, AI &amp; Cryptography</div>
+        <div class="founder-bio">
+          <p>
+            Scott is a systems engineer whose career spans web development, enterprise IT,
+            information security, data engineering, and sovereign AI infrastructure. His
+            relationship with computing started in the 1980s on a <strong>Mac SE/30 with
+            HyperCard</strong> at Haverford Preparatory School — that instinct for building
+            interactive systems has driven every project since.
+          </p>
+          <p>
+            In the early 2000s he ran his own <strong>architectural design firm</strong>,
+            working alongside attorneys daily. He watched them depend on
+            <strong>LexisNexis</strong> to search legal records — expensive, cloud-dependent,
+            and outside the firm's control. When he later began building a Rust-based RAG
+            system, that experience pointed him directly at legal AI as the right market.
+          </p>
+          <p>
+            Since late 2022, long-term disability has ended his ability to work onsite.
+            He has used that time for something most engineers never get: uninterrupted,
+            full-time technical immersion. No commute, no meetings, no context-switching —
+            just deep, sustained study of the hardest problems in systems programming, AI
+            infrastructure, and applied cryptography.
+          </p>
+          <p>
+            He holds an <strong>AWS Certified Solutions Architect</strong> and a
+            <strong>Databricks Certified Developer for Apache Spark</strong> (Scala track).
+            He completed a six-month structured <strong>Python RAG AI course</strong>, then
+            deliberately rebuilt the entire pipeline from scratch in Rust — no frameworks,
+            no external AI APIs, every layer owned. He has developed deep expertise in
+            <strong>prompt engineering</strong> for legal domain accuracy, and has studied
+            Kubernetes, post-quantum cryptography (NIST FIPS 203/204), CUDA GPU computing,
+            and distributed systems architecture in parallel with production code.
+          </p>
+          <p>
+            His web roots run from the early 2000s at <strong>Endurance International
+            Group</strong> and <strong>GoDaddy</strong> — Linux servers, VPS environments,
+            and high-traffic web hosting at scale. That foundation informs everything
+            about how RusticAgentic deploys. He is also the inventor of
+            <a href="https://skr8tr.online" target="_blank">skr8tr</a> — a sovereign,
+            masterless UDP distributed mesh framework built in C23 with post-quantum
+            authenticated command propagation and no single point of failure.
+          </p>
+        </div>
+        <div class="tags">
+          <span class="tag hi">Rust Systems Programming</span>
+          <span class="tag hi">C / Low-Level Systems</span>
+          <span class="tag hi">Post-Quantum Cryptography</span>
+          <span class="tag hi">AWS Solutions Architect</span>
+          <span class="tag hi">Databricks / Apache Spark</span>
+          <span class="tag hi">RAG Pipeline Architecture</span>
+          <span class="tag hi">Prompt Engineering</span>
+          <span class="tag">DuckDB</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">CUDA / GPU Computing</span>
+          <span class="tag">skr8tr — UDP Mesh</span>
+          <span class="tag">Web Development</span>
+          <span class="tag">HIPAA / HITRUST</span>
+          <span class="tag">GCP Infrastructure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="block">
+    <div class="section-label">Technical Expertise</div>
+    <div class="expertise-grid">
+
+      <div class="expertise-card">
+        <div class="label">Rust Systems Engineering</div>
+        <p>Multi-year deep study — production systems software, async runtimes, memory-safe
+        concurrent architecture. Every RusticAgentic crate is pure Rust, zero GC, zero JVM.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">C &amp; Low-Level Systems</div>
+        <p>C23 systems programming — distributed mesh protocols, GPU worker nodes, UDP fabric
+        implementations. Sovereign compute at the metal.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">RAG Pipeline Architecture</div>
+        <p>Six months of structured Python RAG AI study — vector indexing, hybrid BM25/HNSW
+        retrieval, embedding models, context assembly, LLM generation. Then rebuilt the full
+        pipeline from scratch in Rust, owning every layer without framework dependency.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Prompt Engineering</div>
+        <p>System prompt design, retrieval-aware context construction, and instruction tuning
+        for legal domain accuracy. Applied in RusticAgentic's pipeline to shape how the model
+        reasons over privileged documents without hallucination.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Post-Quantum Cryptography</div>
+        <p>ML-KEM-768 key encapsulation and ML-DSA-65 digital signatures — NIST FIPS 203/204.
+        Every vault shard AES-256-GCM encrypted with ML-KEM wrapped keys. Every deliverable
+        carries an ML-DSA-65 signature.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Cloud Architecture</div>
+        <p><strong>AWS Certified Solutions Architect</strong> (Associate). Production deployments
+        across AWS, Azure, and GCP — sole-tenant compute, managed secrets, encrypted storage,
+        private networking.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Data Engineering</div>
+        <p><strong>Databricks Certified Developer</strong> (Scala). Apache Spark 3.5 at scale,
+        functional programming patterns, multi-cloud ingestion. DuckDB analytics at
+        171M rows/sec on a single node — 685M row benchmark.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">GPU &amp; AI Inference</div>
+        <p>CUDA kernel development, ONNX Runtime CUDA EP, llama.cpp GPU offloading.
+        Benchmarked on A100 80GB SXM — 1.7s average query latency across 150 legal documents.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Kubernetes &amp; Orchestration</div>
+        <p>Container orchestration, workload scheduling, resource isolation — applied to
+        multi-tenant sovereign deployment architectures.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Web Development &amp; Infrastructure</div>
+        <p>Career roots in web development — Linux server administration, VPS hosting,
+        and high-traffic infrastructure at <strong>Endurance International</strong> and
+        <strong>GoDaddy</strong>. Full-stack understanding from bare metal to the browser.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">skr8tr — Distributed Mesh</div>
+        <p>Inventor of <a href="https://skr8tr.online" target="_blank">skr8tr</a>
+        — a sovereign, masterless UDP mesh framework for web-scale workloads. C23,
+        no central broker, no single point of failure, ML-DSA-65 PQ-authenticated packets.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Security &amp; Compliance</div>
+        <p>HIPAA compliance engineering, HITRUST audit remediation, enterprise vulnerability
+        management (CrowdStrike, CyberArk, Qualys). Attorney-client privilege architecture
+        for legal document vaults.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="block">
+    <div class="section-label">Certifications</div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-name">Databricks Certified Associate Developer for Apache Spark</div>
+        <div class="cert-issuer">Databricks · Scala track</div>
+        <a href="https://credentials.databricks.com/embed/96e65e17-56d5-4682-a8f4-c9e77b2a7251" target="_blank">Verify Credential ↗</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-name">AWS Certified Solutions Architect</div>
+        <div class="cert-issuer">Associate — Amazon Web Services</div>
+        <a href="https://www.credly.com/badges/0957ca40-e7ba-4984-99b8-444E8DE58A18/public_url" target="_blank">Verify on Credly ↗</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>
+      All RusticAgentic deliverables are post-quantum signed with
+      <strong style="color:var(--white);">ML-DSA-65 (NIST FIPS 204)</strong>.
+    </p>
+    <div class="footer-key-links">
+      <a href="assets/rusticagentic-mldsa65.pub.pem" download>↓ Public Key (.pem)</a>
+      <a href="assets/rusticagentic-mldsa65.pub.hex" download class="dim">↓ Public Key (.hex)</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
