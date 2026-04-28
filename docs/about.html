@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About RusticAgentic — the team, the story, and the expertise behind the only sovereign, post-quantum AI document intelligence platform built entirely in Rust.">
+  <title>About Us — RusticAgentic</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <style>
+    :root {
+      --bg:         #0a0806;
+      --bg2:        #100d0a;
+      --bg3:        #181210;
+      --border:     #2e2218;
+      --rust:       #c87941;
+      --rust-bright:#e8924a;
+      --rust-dim:   #7a4a28;
+      --copper:     #b87333;
+      --gold:       #c8a84b;
+      --gold-dim:   #8a7032;
+      --text:       #c8b89a;
+      --text-dim:   #7a6a58;
+      --white:      #f0e8d8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,8,6,0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      width: min(1320px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo img { height: 38px; width: auto; display: block; }
+    .nav-links { display: flex; gap: clamp(16px,2.5vw,36px); align-items: center; }
+    .nav-links a { font-size: 0.875rem; color: var(--text-dim); font-weight: 500; text-decoration: none; }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-links a.active { color: var(--rust); }
+    .nav-cta {
+      background: var(--rust); color: #000 !important;
+      padding: 7px 18px; border-radius: 4px; font-weight: 700; font-size: 0.875rem;
+    }
+    .nav-cta:hover { background: var(--rust-bright); }
+    @media(max-width:768px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+
+    /* ─── PAGE ─── */
+    .page {
+      width: min(960px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto;
+      padding: 64px 0 100px;
+    }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      margin-bottom: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 14px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .page-hero p {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: var(--text);
+      max-width: 680px;
+      line-height: 1.8;
+    }
+
+    /* ─── SECTION HEADINGS ─── */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 28px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section.block {
+      margin-bottom: 72px;
+    }
+
+    /* ─── TEAM CARD ─── */
+    .team-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 36px;
+    }
+    @media(max-width: 640px) {
+      .team-card { grid-template-columns: 1fr; padding: 28px 24px; }
+    }
+    .team-avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      background: var(--bg2);
+      border: 2px solid var(--rust-dim);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 2.2rem;
+      color: var(--rust);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      user-select: none;
+    }
+    .team-info {}
+    .team-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .team-title {
+      font-size: 0.88rem;
+      color: var(--rust);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .team-bio {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .team-bio p + p { margin-top: 12px; }
+    .team-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      background: var(--bg2);
+    }
+    .tag.highlight {
+      border-color: var(--rust-dim);
+      color: var(--rust);
+      background: rgba(200,121,65,0.08);
+    }
+
+    /* ─── ORIGIN STORY ─── */
+    .story-box {
+      background: var(--bg3);
+      border-left: 3px solid var(--rust);
+      border-radius: 0 10px 10px 0;
+      padding: 28px 32px;
+      font-size: 0.95rem;
+      line-height: 1.85;
+    }
+    .story-box p { color: var(--text); }
+    .story-box p + p { margin-top: 14px; }
+    .story-box strong { color: var(--white); }
+
+    /* ─── EXPERTISE GRID ─── */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+      gap: 14px;
+    }
+    .expertise-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 22px;
+      transition: border-color 0.2s;
+    }
+    .expertise-card:hover { border-color: var(--rust-dim); }
+    .expertise-card .label {
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--rust);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 8px;
+    }
+    .expertise-card p {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+    .expertise-card p strong { color: var(--text); }
+
+    /* ─── CERTS ─── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+      gap: 14px;
+    }
+    .cert-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 22px;
+      transition: border-color 0.2s;
+    }
+    .cert-card:hover { border-color: var(--rust); }
+    .cert-card .cert-name { font-weight: 700; color: var(--white); margin-bottom: 4px; font-size: 0.95rem; }
+    .cert-card .cert-issuer { color: var(--text-dim); font-size: 0.82rem; margin-bottom: 14px; }
+    .cert-card a {
+      font-size: 0.82rem; color: var(--rust); text-decoration: none;
+      border: 1px solid var(--border); padding: 5px 12px;
+      border-radius: 4px; display: inline-block; transition: border-color 0.15s;
+    }
+    .cert-card a:hover { border-color: var(--rust); }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: var(--bg3);
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      padding: 20px 0;
+    }
+    .footer-inner {
+      width: min(960px, 100% - clamp(24px,4vw,80px) * 2);
+      margin: 0 auto;
+      display: flex; gap: 20px; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+    }
+    .footer-inner p { font-size: 0.82rem; color: var(--text-dim); }
+    .footer-inner a { color: var(--rust); text-decoration: none; }
+    .footer-key-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .footer-key-links a {
+      font-size: 0.82rem; color: var(--rust);
+      border: 1px solid var(--border); padding: 6px 14px;
+      border-radius: 4px; text-decoration: none;
+    }
+    .footer-key-links a.dim { color: var(--text-dim); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo-icon.png" alt="RusticAgentic" height="38">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="demo.html">Demo</a>
+      <a href="benchmark.html">Benchmark</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="payment.html">Payment</a>
+      <a href="about.html" class="active">Team</a>
+      <a href="mailto:scottbaker@rusticagentic.agency?subject=Demo%20Request%20—%20RusticAgentic&body=Firm%3A%0ADocument%20count%20(approx)%3A%0ADocument%20types%3A%0AAvailability%3A" class="nav-cta">Request a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="eyebrow">About RusticAgentic</div>
+    <h1>Built from the ground up.<br>By someone who had the time to do it right.</h1>
+    <p>
+      RusticAgentic is a sovereign AI document intelligence platform built entirely from first
+      principles — no frameworks stitched together, no managed services, no data ever leaving
+      your infrastructure. This is the story of how it came to be.
+    </p>
+  </div>
+
+  <!-- TEAM -->
+  <section class="block">
+    <div class="section-label">Our Team</div>
+    <div class="team-card">
+      <div class="team-avatar">SB</div>
+      <div class="team-info">
+        <div class="team-name">Scott Baker</div>
+        <div class="team-title">Founder &amp; Lead Engineer — Systems, Cryptography &amp; AI</div>
+        <div class="team-bio">
+          <p>
+            Scott is a systems engineer and data architect who has spent the last several years
+            in intensive, full-time technical development — building the depth required to
+            architect sovereign AI infrastructure from scratch. His background spans information
+            security, HIPAA compliance, enterprise infrastructure, and large-scale data engineering.
+          </p>
+          <p>
+            He holds an <strong>AWS Certified Solutions Architect</strong> and a
+            <strong>Databricks Certified Associate Developer for Apache Spark</strong> (Scala track),
+            and has built production systems across AWS, Azure, and GCP. He designed and
+            benchmarked a columnar analytics pipeline processing <strong>685 million rows at
+            171 million rows per second</strong> on a single node — no cluster, no JVM.
+          </p>
+          <p>
+            RusticAgentic is the culmination of that work: a production sovereign AI system
+            that runs entirely on client-controlled infrastructure with post-quantum encryption
+            at every layer.
+          </p>
+        </div>
+        <div class="team-tags">
+          <span class="tag highlight">Rust Systems Programming</span>
+          <span class="tag highlight">C / Low-Level Systems</span>
+          <span class="tag highlight">Post-Quantum Cryptography</span>
+          <span class="tag highlight">AWS Solutions Architect</span>
+          <span class="tag highlight">Databricks / Apache Spark</span>
+          <span class="tag">DuckDB</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">CUDA / GPU Computing</span>
+          <span class="tag">HIPAA / HITRUST</span>
+          <span class="tag">GCP Infrastructure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORIGIN STORY -->
+  <section class="block">
+    <div class="section-label">The Origin Story</div>
+    <div class="story-box">
+      <p>
+        In late 2022, a long-term medical disability ended Scott's ability to work onsite.
+        Rather than stepping back from engineering, he stepped all the way in — treating the
+        time as an opportunity to go deeper technically than a conventional career ever allows.
+      </p>
+      <p>
+        He began with <strong>Rust</strong> — working through the language until systems-level
+        memory management, ownership semantics, and async concurrency became second nature.
+        He built real production tooling: distributed mesh frameworks in C23, GPU embedding
+        pipelines in CUDA, columnar data engines in DuckDB, and multi-node Apache Spark
+        clusters in functional Scala.
+      </p>
+      <p>
+        He earned his <strong>AWS Certified Solutions Architect</strong> and
+        <strong>Databricks Certified Developer</strong> while simultaneously studying
+        <strong>Kubernetes</strong> orchestration, <strong>post-quantum cryptography</strong>
+        (ML-KEM, ML-DSA — NIST FIPS 203/204), and large language model inference at the
+        systems level. Every certification was backed by working code.
+      </p>
+      <p>
+        The result is RusticAgentic — a platform that could only be built by someone with
+        the time and focus to own every layer: the cryptography, the embedding pipeline,
+        the vector index, the document extraction, the GPU inference server, and the
+        encrypted vault. <strong>No dependencies on external AI APIs. No shared infrastructure.
+        No data egress.</strong> Just a system that does exactly what it claims, provably,
+        on hardware the client controls.
+      </p>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="block">
+    <div class="section-label">Technical Expertise</div>
+    <div class="expertise-grid">
+
+      <div class="expertise-card">
+        <div class="label">Rust Systems Engineering</div>
+        <p>Multi-year deep study of Rust — production-grade systems software, async runtimes,
+        memory-safe concurrent architecture. Every RusticAgentic crate is pure Rust,
+        zero garbage collection, zero JVM.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">C &amp; Low-Level Systems</div>
+        <p>C23 systems programming — distributed mesh protocols, GPU worker nodes, UDP fabric
+        implementations. Sovereign compute at the metal.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Cloud Architecture</div>
+        <p><strong>AWS Certified Solutions Architect</strong> (Associate). Production deployments
+        across AWS, Azure, and GCP — sole-tenant compute, managed secrets, encrypted storage,
+        private networking.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Data Engineering</div>
+        <p><strong>Databricks Certified Developer</strong> (Scala). Apache Spark 3.5 at scale,
+        functional programming patterns, multi-cloud ingestion pipelines. DuckDB analytics
+        at 171M rows/sec on a single node.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Post-Quantum Cryptography</div>
+        <p>ML-KEM-768 key encapsulation and ML-DSA-65 digital signatures — NIST FIPS 203/204.
+        Every RusticAgentic vault shard is AES-256-GCM encrypted with ML-KEM wrapped keys.
+        Every deliverable carries an ML-DSA-65 signature.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">GPU &amp; Inference</div>
+        <p>CUDA kernel development, ONNX Runtime CUDA execution provider, llama.cpp GPU
+        offloading. Benchmarked on A100 80GB SXM — 1.7s average query latency across
+        150 legal documents.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Kubernetes &amp; Orchestration</div>
+        <p>Container orchestration, workload scheduling, resource isolation. Applied study
+        for multi-tenant sovereign deployment architectures.</p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="label">Security &amp; Compliance</div>
+        <p>HIPAA compliance engineering, HITRUST audit remediation, enterprise vulnerability
+        management (CrowdStrike, CyberArk, Qualys). Attorney-client privilege architecture
+        for legal document vaults.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="block">
+    <div class="section-label">Certifications</div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-name">Databricks Certified Associate Developer for Apache Spark</div>
+        <div class="cert-issuer">Databricks · Scala track</div>
+        <a href="https://credentials.databricks.com/embed/96e65e17-56d5-4682-a8f4-c9e77b2a7251" target="_blank">Verify Credential ↗</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-name">AWS Certified Solutions Architect</div>
+        <div class="cert-issuer">Associate — Amazon Web Services</div>
+        <a href="https://www.credly.com/badges/0957ca40-e7ba-4984-99b8-444E8DE58A18/public_url" target="_blank">Verify on Credly ↗</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>
+      All RusticAgentic deliverables are post-quantum signed with
+      <strong style="color:var(--text);">ML-DSA-65 (NIST FIPS 204)</strong>.
+      Download the public key to independently verify any signed report.
+    </p>
+    <div class="footer-key-links">
+      <a href="assets/rusticagentic-mldsa65.pub.pem" download>↓ Public Key (.pem)</a>
+      <a href="assets/rusticagentic-mldsa65.pub.hex" download class="dim">↓ Public Key (.hex)</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
